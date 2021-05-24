@@ -1,0 +1,27 @@
+version: "3"
+services:
+  typo3:
+    image: martinhelmich/typo3:10
+    ports:
+      - "80:80"
+    volumes:
+      - "fileadmin:/var/www/html/fileadmin"
+      - "typo3conf:/var/www/html/typo3conf"
+      - "uploads:/var/www/html/uploads"
+    networks:
+      - backend
+  db:
+    image: mariadb
+    restart: always
+    command:
+      - --character-set-server=utf8
+      - --collation-server=utf8_unicode_ci
+    env_file: .env
+    networks:
+      - backend
+volumes:
+  fileadmin:
+  typo3conf:
+  uploads:
+networks:
+  backend:
