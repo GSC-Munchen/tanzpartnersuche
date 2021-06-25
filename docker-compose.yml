@@ -8,6 +8,7 @@ services:
       - "fileadmin:/var/www/html/fileadmin"
       - "typo3conf:/var/www/html/typo3conf"
       - "uploads:/var/www/html/uploads"
+      - "./src:/var/www/html/typo3conf/ext/tanzpartnersuche"
     networks:
       - backend
   db:
