@@ -33,6 +33,9 @@
 			<trans-unit id="tanzpartnersuche.discipline" xml:space="preserve">
 				<source>Disziplin</source>
 			</trans-unit>
+			<trans-unit id="tanzpartnersuche.login" xml:space="preserve">
+				<source>Login</source>
+			</trans-unit>
 			<trans-unit id="tanzpartnersuche.intro" xml:space="preserve">
 				<source>Herzlich willkommen auf unserer Plattform. Hier k<![CDATA[&ouml;]]>nnen eigene Profile angelegt oder in vorhandenen 
             			Eintr<![CDATA[&auml;]]>gen gesucht werden. Wir w<![CDATA[&uuml;]]>nschen dabei viel Erfolg!</source>
