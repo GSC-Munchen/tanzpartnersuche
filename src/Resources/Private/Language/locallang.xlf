@@ -3,6 +3,9 @@
 	<file source-language="de" datatype="plaintext" original="messages" date="2021-05-24T14:00:00Z" product-name="tanzpartnersuche">
 		<header/>
 		<body>
+			<trans-unit id="tanzpartnersuche.title" xml:space="preserve">
+				<source>Auf der Suche nach einer Tanzpartnerin/einem Tanzpartner?</source>
+			</trans-unit>
 			<trans-unit id="tanzpartnersuche.header" xml:space="preserve">
 				<source>Tanzpartnersuche</source>
 			</trans-unit>
@@ -29,6 +32,13 @@
 			</trans-unit>
 			<trans-unit id="tanzpartnersuche.discipline" xml:space="preserve">
 				<source>Disziplin</source>
+			</trans-unit>
+			<trans-unit id="tanzpartnersuche.intro" xml:space="preserve">
+				<source>Herzlich willkommen auf unserer Plattform. Hier k<![CDATA[&ouml;]]>nnen eigene Profile angelegt oder in vorhandenen 
+            			Eintr<![CDATA[&auml;]]>gen gesucht werden. Wir w<![CDATA[&uuml;]]>nschen dabei viel Erfolg!</source>
+			</trans-unit>
+			<trans-unit id="tanzpartnersuche.legal" xml:space="preserve">
+				<source>Mit Benutzung unserer Tanzpartnersuche, erkl<![CDATA[&auml;]]>re ich meine Einwilligung in die Nutzungsbestimmungen, sowie die Verarbeitung der Angaben f<![CDATA[&uuml;]]>r die Tanzpartnersuche. Diese Einwilligung kann ich jederzeit widerrufen, wodurch die Rechtm<![CDATA[&auml;]]><![CDATA[&szlig;]]>igkeit der bis zum Widerruf erfolgten Verarbeitung nicht ber<![CDATA[&uuml;]]>hrt wird.</source>
 			</trans-unit>
 		</body>
 	</file>
