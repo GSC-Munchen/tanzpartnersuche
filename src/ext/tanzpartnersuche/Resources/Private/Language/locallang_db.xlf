@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2021-07-18T19:00:00Z" product-name="tanzpartnersuche">
+		<header/>
+		<body>
+			<trans-unit id="extension.title">
+				<source><![CDATA[Tanzpartnersuche Datensätze]]></source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user">
+				<source><![CDATA[Benutzer]]></source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.email">
+				<source><![CDATA[E-Mail Adresse]]></source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.username">
+				<source><![CDATA[Benutzername]]></source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

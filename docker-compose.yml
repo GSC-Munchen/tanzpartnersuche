@@ -7,22 +7,27 @@ services:
     volumes:
       - "fileadmin:/var/www/html/fileadmin"
       - "typo3conf:/var/www/html/typo3conf"
+      - "typo3temp:/var/www/html/typo3temp"
       - "uploads:/var/www/html/uploads"
-      - "./src:/var/www/html/typo3conf/ext/tanzpartnersuche"
+      - "./src/ext/tanzpartnersuche:/var/www/html/typo3conf/ext/tanzpartnersuche"
     networks:
       - backend
   db:
     image: mariadb
+    ports:
+      - "3306:3306"
     restart: always
-    command:
-      - --character-set-server=utf8
-      - --collation-server=utf8_unicode_ci
+    command: ['--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
     env_file: .env
     networks:
       - backend
+    volumes:
+      - "database:/var/lib/mysql"
 volumes:
   fileadmin:
   typo3conf:
   uploads:
+  typo3temp:
+  database:
 networks:
   backend:

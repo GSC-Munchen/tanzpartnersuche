@@ -1,0 +1,32 @@
+{
+  "name": "gsc/tanzpartnersuche",
+  "type": "typo3-cms-extension",
+  "description": "This Typo3 extension adds functionality to typo3 that allows people to use for finding a new dancing partner.",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Peter von Niebelschütz",
+      "role": "Developer"
+    },
+    {
+      "name": "Martin Arend",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "GSC\\Tanzpartnersuche\\": "Classes/"
+    }
+  },
+  "require": {
+    "typo3/cms-core": "^11.0.0"
+  },
+  "replace": {
+    "typo3-ter/tanzpartnersuche": "self.version"
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "tanzpartnersuche"
+    }
+  }
+}
