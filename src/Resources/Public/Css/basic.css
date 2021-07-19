@@ -115,9 +115,9 @@ body {
 
   /* Hauptmenu */
   #menu-table {
-    margin: 100px auto;
+    margin: 50px auto;
     text-align: center;
-    width: 892px; /* total computed width = 222 x 3 + 226 */
+    width: 970px; 
   }
   
   #menu-table .option {
