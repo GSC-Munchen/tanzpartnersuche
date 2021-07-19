@@ -64,6 +64,18 @@
 			<trans-unit id="tanzpartnersuche.helpdesc" xml:space="preserve">
 				<source>Datenschutz und Nutzungsbestimmungen</source>
 			</trans-unit>
+			<trans-unit id="tanzpartnersuche.helpintro" xml:space="preserve">
+				<source>Um die Tanzpartnersuche nutzen zu k<![CDATA[&ouml;]]>nnen, ist die Akzeptanz der folgenden Bestimmungen Voraussetzung. Des weiteren beschreiben wir hier die Bedienung und wollen Euch den ein oder anderen Tipp an die Hand geben.</source>
+			</trans-unit>
+			<trans-unit id="tanzpartnersuche.helpgdpr" xml:space="preserve">
+				<source>Hier stehen die Datenschutzklauseln</source>
+			</trans-unit>
+			<trans-unit id="tanzpartnersuche.helpguide" xml:space="preserve">
+				<source>Hier steht die Bedienungsanleitung</source>
+			</trans-unit>
+			<trans-unit id="tanzpartnersuche.backlink" xml:space="preserve">
+				<source>Zur<![CDATA[&uuml;]]>ck</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

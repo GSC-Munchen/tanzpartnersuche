@@ -1,0 +1,28 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+<f:layout name="default" />
+<!--
+	=====================
+		Templates/Help.html
+-->
+
+<f:section name="content">
+	<!--TYPO3SEARCH_end-->
+	
+	<h2><f:translate key="tanzpartnersuche.helpdesc" /></h2>
+	<p><f:translate key="tanzpartnersuche.helpintro" /></p>
+	<br /><br />
+	<p><f:translate key="tanzpartnersuche.gdpr" /></p>
+    <br /><br />
+	<p><f:translate key="tanzpartnersuche.helpguide" /></p>
+
+
+    <!-- Link Back -->
+    <!-- Todo: Settings mit Uid der Startseite anlegen -->
+	<f:link.page class="btn btn-default" pageUid="{settings.backPid}">
+		<f:translate key="tanzpartnersuche.backlink" />
+	</f:link.page>
+
+	<!--TYPO3SEARCH_begin-->
+</f:section>
+</html>
