@@ -76,6 +76,10 @@
 			<trans-unit id="tanzpartnersuche.backlink" xml:space="preserve">
 				<source>Zur<![CDATA[&uuml;]]>ck</source>
 			</trans-unit>
+			<trans-unit id="tanzpartnersuche.register" xml:space="preserve">
+				<source>Willkommen bei der Registrierung. Bitte f<![CDATA[&uuml;]]>lle die folgenden Felder aus um Dich auf unserer Plattform anzumelden:</source>
+			</trans-unit>
+			
 		</body>
 	</file>
 </xliff>
