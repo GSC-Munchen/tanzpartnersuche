@@ -4,23 +4,93 @@
 		<header/>
 		<body>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_main" resname="tx_tanzpartnersuche_domain_model_main">
-				<source>Main</source>
+				<source>Tanzpartnersuche</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_main.relation_user" resname="tx_tanzpartnersuche_domain_model_main.relation_user">
-				<source>Relation User</source>
+				<source>Benutzer</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_user" resname="tx_tanzpartnersuche_domain_model_user">
-				<source>User</source>
+				<source>Benutzer</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_user.username" resname="tx_tanzpartnersuche_domain_model_user.username">
-				<source>Username</source>
+				<source>Benutzername</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_user.email" resname="tx_tanzpartnersuche_domain_model_user.email">
-				<source>Email</source>
+				<source>E-Mail</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_user.password" resname="tx_tanzpartnersuche_domain_model_user.password">
-				<source>Password</source>
+				<source>Passwort</source>
 			</trans-unit>
+
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.title" resname="tx_tanzpartnersuche_domain_model_user.title">
+				<source>Auf der Suche nach einer Tanzpartnerin/einem Tanzpartner?</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.header" resname="tx_tanzpartnersuche_domain_model_user.header">
+				<source>Tanzpartnersuche</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.sex" resname="tx_tanzpartnersuche_domain_model_user.sex">
+				<source>Geschlecht</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.age" resname="tx_tanzpartnersuche_domain_model_user.age">
+				<source>Alter</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.size" resname="tx_tanzpartnersuche_domain_model_user.size">
+				<source>Gr<![CDATA[&ouml;&szlig;]]>e</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.level" resname="tx_tanzpartnersuche_domain_model_user.level">
+				<source>Niveau</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.discipline" resname="tx_tanzpartnersuche_domain_model_user.discipline">
+				<source>Disziplin</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.login" resname="tx_tanzpartnersuche_domain_model_user.login">
+				<source>Login</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.find" resname="tx_tanzpartnersuche_domain_model_user.find">
+				<source>Suche</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.register" resname="tx_tanzpartnersuche_domain_model_user.register">
+				<source>Registrierung</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.help" resname="tx_tanzpartnersuche_domain_model_user.help">
+				<source>Hinweise</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.intro" resname="tx_tanzpartnersuche_domain_model_user.intro">
+				<source>Herzlich willkommen auf unserer Plattform. Hier k<![CDATA[&ouml;]]>nnen eigene Profile angelegt oder in vorhandenen 
+            			Eintr<![CDATA[&auml;]]>gen gesucht werden. Wir w<![CDATA[&uuml;]]>nschen dabei viel Erfolg!</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.legal" resname="tx_tanzpartnersuche_domain_model_user.legal">
+				<source>Mit Benutzung unserer Tanzpartnersuche, erkl<![CDATA[&auml;]]>re ich meine Einwilligung in die Nutzungsbestimmungen, sowie die Verarbeitung der Angaben f<![CDATA[&uuml;]]>r die tx_tanzpartnersuche_domain_model_user. Diese Einwilligung kann ich jederzeit widerrufen, wodurch die Rechtm<![CDATA[&auml;]]><![CDATA[&szlig;]]>igkeit der bis zum Widerruf erfolgten Verarbeitung nicht ber<![CDATA[&uuml;]]>hrt wird.</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.logindesc" resname="tx_tanzpartnersuche_domain_model_user.logindesc">
+				<source><![CDATA[&Auml;]]>ndern/L<![CDATA[&ouml;]]>schen von Inhalten</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.finddesc" resname="tx_tanzpartnersuche_domain_model_user.finddesc">
+				<source>Suche nach Tanzpartnern</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.registerdesc" resname="tx_tanzpartnersuche_domain_model_user.registerdesc">
+				<source>Anlegen eines eigenen Profils</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.helpdesc" resname="tx_tanzpartnersuche_domain_model_user.helpdesc">
+				<source>Datenschutz und Nutzungsbestimmungen</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.helpintro" resname="tx_tanzpartnersuche_domain_model_user.helpintro">
+				<source>Um die Tanzpartnersuche nutzen zu k<![CDATA[&ouml;]]>nnen, ist die Akzeptanz der folgenden Bestimmungen Voraussetzung. Des weiteren beschreiben wir hier die Bedienung und wollen Euch den ein oder anderen Tipp an die Hand geben.</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.helpgdpr" resname="tx_tanzpartnersuche_domain_model_user.helpgdpr">
+				<source>Hier stehen die Datenschutzklauseln</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.helpguide" resname="tx_tanzpartnersuche_domain_model_user.helpguide">
+				<source>Hier steht die Bedienungsanleitung</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.backlink" resname="tx_tanzpartnersuche_domain_model_user.backlink">
+				<source>Zur<![CDATA[&uuml;]]>ck</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.register" resname="tx_tanzpartnersuche_domain_model_user.register">
+				<source>Willkommen bei der Registrierung. Bitte f<![CDATA[&uuml;]]>lle die folgenden Felder aus um Dich auf unserer Plattform anzumelden:</source>
+			</trans-unit>
+
+
 		</body>
 	</file>
 </xliff>
