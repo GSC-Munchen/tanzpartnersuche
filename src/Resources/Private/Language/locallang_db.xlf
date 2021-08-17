@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="de" datatype="plaintext" original="EXT:tanzpartnersuche/Resources/Private/Language/locallang" date="2021-08-17T20:56:58Z" product-name="tanzpartnersuche">
+	<file source-language="de" datatype="plaintext" original="EXT:tanzpartnersuche/Resources/Private/Language/locallang_db" date="2021-08-17T20:56:58Z" product-name="tanzpartnersuche">
 		<header/>
 		<body>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_main" resname="tx_tanzpartnersuche_domain_model_main">
@@ -20,6 +20,12 @@
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_user.password" resname="tx_tanzpartnersuche_domain_model_user.password">
 				<source>Password</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_main.name" resname="tx_tanzpartnersuche_main.name">
+				<source>Tanzpartnersuche</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_main.description" resname="tx_tanzpartnersuche_main.description">
+				<source>This Typo3 extension adds functionality that allows people to use for finding a new dancing partner.</source>
 			</trans-unit>
 		</body>
 	</file>

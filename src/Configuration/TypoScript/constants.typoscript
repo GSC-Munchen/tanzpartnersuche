@@ -1,0 +1,14 @@
+plugin.tx_tanzpartnersuche_main {
+    view {
+        # cat=plugin.tx_tanzpartnersuche_main/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:tanzpartnersuche/Resources/Private/Templates/
+        # cat=plugin.tx_tanzpartnersuche_main/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:tanzpartnersuche/Resources/Private/Partials/
+        # cat=plugin.tx_tanzpartnersuche_main/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:tanzpartnersuche/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_tanzpartnersuche_main//a; type=string; label=Default storage PID
+        storagePid =
+    }
+}

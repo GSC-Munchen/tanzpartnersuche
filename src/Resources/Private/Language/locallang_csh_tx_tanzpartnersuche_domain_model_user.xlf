@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="EXT:tanzpartnersuche/Resources/Private/Language/locallang_csh" date="2021-08-17T20:56:58Z" product-name="tanzpartnersuche">
+		<header/>
+		<body>
+			<trans-unit id="username.description" resname="username.description">
+				<source>username</source>
+			</trans-unit>
+			<trans-unit id="email.description" resname="email.description">
+				<source>email</source>
+			</trans-unit>
+			<trans-unit id="password.description" resname="password.description">
+				<source>password</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
