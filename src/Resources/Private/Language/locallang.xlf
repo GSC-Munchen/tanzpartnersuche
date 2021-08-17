@@ -22,7 +22,7 @@
 				<source>Passwort</source>
 			</trans-unit>
 
-			<trans-unit id="tx_tanzpartnersuche_domain_model_user.title" resname="tx_tanzpartnersuche_domain_model_user.title">
+			<trans-unit id="tx_tanzpartnersuche_domain_model_main.title" resname="tx_tanzpartnersuche_domain_model_main.title">
 				<source>Auf der Suche nach einer Tanzpartnerin/einem Tanzpartner?</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_user.header" resname="tx_tanzpartnersuche_domain_model_user.header">
@@ -55,12 +55,12 @@
 			<trans-unit id="tx_tanzpartnersuche_domain_model_user.help" resname="tx_tanzpartnersuche_domain_model_user.help">
 				<source>Hinweise</source>
 			</trans-unit>
-			<trans-unit id="tx_tanzpartnersuche_domain_model_user.intro" resname="tx_tanzpartnersuche_domain_model_user.intro">
-				<source>Herzlich willkommen auf unserer Plattform. Hier k<![CDATA[&ouml;]]>nnen eigene Profile angelegt oder in vorhandenen 
-            			Eintr<![CDATA[&auml;]]>gen gesucht werden. Wir w<![CDATA[&uuml;]]>nschen dabei viel Erfolg!</source>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_main.intro" resname="tx_tanzpartnersuche_domain_model_main.intro">
+				<source>Herzlich willkommen auf unserer Plattform. Hier können eigene Profile angelegt oder in vorhandenen 
+            			Einträgen gesucht werden. Wir wünschen dabei viel Erfolg!</source>
 			</trans-unit>
-			<trans-unit id="tx_tanzpartnersuche_domain_model_user.legal" resname="tx_tanzpartnersuche_domain_model_user.legal">
-				<source>Mit Benutzung unserer Tanzpartnersuche, erkl<![CDATA[&auml;]]>re ich meine Einwilligung in die Nutzungsbestimmungen, sowie die Verarbeitung der Angaben f<![CDATA[&uuml;]]>r die tx_tanzpartnersuche_domain_model_user. Diese Einwilligung kann ich jederzeit widerrufen, wodurch die Rechtm<![CDATA[&auml;]]><![CDATA[&szlig;]]>igkeit der bis zum Widerruf erfolgten Verarbeitung nicht ber<![CDATA[&uuml;]]>hrt wird.</source>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_main.legal" resname="tx_tanzpartnersuche_domain_model_main.legal">
+				<source>Mit Benutzung unserer Tanzpartnersuche, erkläre ich meine Einwilligung in die Nutzungsbestimmungen, sowie die Verarbeitung meiner Angaben. Diese Einwilligung kann ich jederzeit widerrufen, wodurch die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung nicht berührt wird.</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_user.logindesc" resname="tx_tanzpartnersuche_domain_model_user.logindesc">
 				<source><![CDATA[&Auml;]]>ndern/L<![CDATA[&ouml;]]>schen von Inhalten</source>
