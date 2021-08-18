@@ -1,0 +1,52 @@
+/* Main Menu */
+.appmenu {
+    display: flex;
+    display: -ms-flexbox;
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 600px;
+    margin: auto;
+  }
+
+  .tile, .tileyellow {
+    margin-right: 10px;
+    width: 290px;
+    height: 290px;
+    margin-bottom: 10px;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    text-decoration: none;
+    padding: 25px;
+    transition: all .2s ease-in;
+  }
+
+  .tileyellow {
+    background-color: #FFC300;
+    color: #FFFFFF;
+  }
+
+  .tile {
+    background-color: lightgrey;
+    color: #000000;
+  }
+
+  .tile:hover, .tileyellow:hover {
+    background-color: #F0F0F0;
+    color: #313131;
+    text-decoration: none;
+  }
+
+  .info {
+    font-weight: 700;
+    margin-bottom: 80px;
+  }
+
+  .fittext {
+    font-weight: lighter;
+  }
+
+  #appmenu h4 {
+    font-size: 1.5rem;
+  }

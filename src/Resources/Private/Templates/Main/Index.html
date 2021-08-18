@@ -13,12 +13,41 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
+<f:section name="HeaderAssets">
+    <link rel="stylesheet" href="{f:uri.resource(path: 'Css/custom.css')}"/>
+</f:section>
+
 <f:section name="content">
     <h2><f:translate key="tx_tanzpartnersuche_domain_model_main.title" /></h2>
 
     <p><f:translate key="tx_tanzpartnersuche_domain_model_main.intro" /></p>
 
     <p><f:translate key="tx_tanzpartnersuche_domain_model_main.legal" /></p>
+
+    <div id="appmenu" class="appmenu">
+      <a href="#dummy" class="tile" title="Login">
+          <div class="info">Login</div>
+          <img src="Login.png" width="50px" height="50px">
+          <h4 class="fittext">Ändern/Löschen von Inhalten</h4>
+      </a>
+      <a href="#dummy" class="tileyellow" title="Suche">
+          <div class="info">Suche</div>
+          <img src="Search.png" width="50px" height="50px">
+          <h4 class="fittext">Suche nach Tanzpartnern</h4>
+      </a>
+      <a href="#dummy" class="tile" title="Registrierung">
+          <div class="info">Registrierung</div>
+          <img src="Signup.png" width="50px" height="50px">
+          <h4 class="fittext">Anlegen eines eigenen Profils</h4>
+      </a>
+      <a href="#dummy" class="tile" title="Hinweise">
+          <div class="info">Hinweise</div>
+          <img src="Docs.png" width="50px" height="50px">
+          <h4 class="fittext">Datenschutz und Nutzungshinweise</h4>
+      </a>
+    </div>
+
+
 
     <table class="tx_tanzpartnersuche">
         <tr>
