@@ -49,7 +49,7 @@
 			<trans-unit id="tx_tanzpartnersuche_domain_model_user.find" resname="tx_tanzpartnersuche_domain_model_user.find">
 				<source>Suche</source>
 			</trans-unit>
-			<trans-unit id="tx_tanzpartnersuche_domain_model_user.register" resname="tx_tanzpartnersuche_domain_model_user.register">
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.registermenu" resname="tx_tanzpartnersuche_domain_model_user.registermenu">
 				<source>Registrierung</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_user.help" resname="tx_tanzpartnersuche_domain_model_user.help">
@@ -63,7 +63,7 @@
 				<source>Mit Benutzung unserer Tanzpartnersuche, erkläre ich meine Einwilligung in die Nutzungsbestimmungen, sowie die Verarbeitung meiner Angaben. Diese Einwilligung kann ich jederzeit widerrufen, wodurch die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung nicht berührt wird.</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_user.logindesc" resname="tx_tanzpartnersuche_domain_model_user.logindesc">
-				<source><![CDATA[&Auml;]]>ndern/L<![CDATA[&ouml;]]>schen von Inhalten</source>
+				<source>Ändern/Löschen von Inhalten</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_user.finddesc" resname="tx_tanzpartnersuche_domain_model_user.finddesc">
 				<source>Suche nach Tanzpartnern</source>
@@ -72,7 +72,7 @@
 				<source>Anlegen eines eigenen Profils</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_user.helpdesc" resname="tx_tanzpartnersuche_domain_model_user.helpdesc">
-				<source>Datenschutz und Nutzungsbestimmungen</source>
+				<source>Datenschutz und Nutzungshinweise</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_user.helpintro" resname="tx_tanzpartnersuche_domain_model_user.helpintro">
 				<source>Um die Tanzpartnersuche nutzen zu k<![CDATA[&ouml;]]>nnen, ist die Akzeptanz der folgenden Bestimmungen Voraussetzung. Des weiteren beschreiben wir hier die Bedienung und wollen Euch den ein oder anderen Tipp an die Hand geben.</source>
@@ -89,8 +89,6 @@
 			<trans-unit id="tx_tanzpartnersuche_domain_model_user.register" resname="tx_tanzpartnersuche_domain_model_user.register">
 				<source>Willkommen bei der Registrierung. Bitte f<![CDATA[&uuml;]]>lle die folgenden Felder aus um Dich auf unserer Plattform anzumelden:</source>
 			</trans-unit>
-
-
 		</body>
 	</file>
 </xliff>

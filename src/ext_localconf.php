@@ -6,12 +6,12 @@ call_user_func(static function() {
         'Tanzpartnersuche',
         'Main',
         [
-            \GSC\Tanzpartnersuche\Controller\MainController::class => 'index, list, show',
+            \GSC\Tanzpartnersuche\Controller\MainController::class => 'index, show, docs, edit, new',
             \GSC\Tanzpartnersuche\Controller\UserController::class => 'index, list, show, new, create, edit, update, delete'
         ],
         // non-cacheable actions
         [
-            \GSC\Tanzpartnersuche\Controller\MainController::class => '',
+            \GSC\Tanzpartnersuche\Controller\MainController::class => 'show',
             \GSC\Tanzpartnersuche\Controller\UserController::class => 'create, update, delete'
         ]
     );
