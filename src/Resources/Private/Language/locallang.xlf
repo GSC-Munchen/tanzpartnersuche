@@ -75,7 +75,7 @@
 				<source>Datenschutz und Nutzungshinweise</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_user.helpintro" resname="tx_tanzpartnersuche_domain_model_user.helpintro">
-				<source>Um die Tanzpartnersuche nutzen zu k<![CDATA[&ouml;]]>nnen, ist die Akzeptanz der folgenden Bestimmungen Voraussetzung. Des weiteren beschreiben wir hier die Bedienung und wollen Euch den ein oder anderen Tipp an die Hand geben.</source>
+				<source>Um die Tanzpartnersuche nutzen zu können, ist die Akzeptanz der folgenden Bestimmungen Voraussetzung.</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_user.helpgdpr" resname="tx_tanzpartnersuche_domain_model_user.helpgdpr">
 				<source>Hier stehen die Datenschutzklauseln</source>
@@ -84,10 +84,22 @@
 				<source>Hier steht die Bedienungsanleitung</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_user.backlink" resname="tx_tanzpartnersuche_domain_model_user.backlink">
-				<source>Zur<![CDATA[&uuml;]]>ck</source>
+				<source>Zurück</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_user.register" resname="tx_tanzpartnersuche_domain_model_user.register">
 				<source>Willkommen bei der Registrierung. Bitte f<![CDATA[&uuml;]]>lle die folgenden Felder aus um Dich auf unserer Plattform anzumelden:</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.hdrprivacy" resname="tx_tanzpartnersuche_domain_model_user.hdrprivacy">
+				<source>Datenschutzerklärung</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.txtguide" resname="tx_tanzpartnersuche_domain_model_user.txtguide">
+				<source>Hinweise</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.txtprivacy" resname="tx_tanzpartnersuche_domain_model_user.txtprivacy">
+				<source>Die bei der Registrierung durch den Nutzer getätigten Angaben und Daten dienen lediglich zur Nutzung der Tanzpartnersuche des GSC München e. V. Diese Daten werden keinen Dritten zugänglich gemacht. Durch Löschen des Eintrags werden die Daten des Nutzers sofort aus unserer Datenbank entfernt.
+				Inhalt und Angaben innerhalb des eigenen Profils unterliegen der Verantwortung des jeweiligen Nutzers.
+				Gerne geben wir Auskunft über die innerhalb unseres Internetangebotes zu einer Person oder zu ihrem Pseudonym gespeicherten Daten. Anfragen dazu bitte von der im System registrierten E-Mail-Adresse aus an tanzpartner@gsc-muenchen.de richten.
+				</source>
 			</trans-unit>
 		</body>
 	</file>

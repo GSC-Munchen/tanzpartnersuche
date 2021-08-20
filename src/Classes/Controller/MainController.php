@@ -67,12 +67,14 @@ class MainController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $this->view->assign('main', $main);
     }
 
+    
     /**
      * action docs
      *
-     * @return string|object|null|void
+     * @return void
      */
     public function docsAction()
     {
     }
+
 }
