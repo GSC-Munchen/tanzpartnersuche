@@ -87,7 +87,7 @@
 				<source>Zurück</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_user.register" resname="tx_tanzpartnersuche_domain_model_user.register">
-				<source>Willkommen bei der Registrierung. Bitte f<![CDATA[&uuml;]]>lle die folgenden Felder aus um Dich auf unserer Plattform anzumelden:</source>
+				<source>Willkommen bei der Registrierung. Bitte fülle die folgenden Felder aus um Dich auf unserer Plattform anzumelden:</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_user.hdrprivacy" resname="tx_tanzpartnersuche_domain_model_user.hdrprivacy">
 				<source>Datenschutzerklärung</source>
@@ -100,6 +100,9 @@
 				Inhalt und Angaben innerhalb des eigenen Profils unterliegen der Verantwortung des jeweiligen Nutzers.
 				Gerne geben wir Auskunft über die innerhalb unseres Internetangebotes zu einer Person oder zu ihrem Pseudonym gespeicherten Daten. Anfragen dazu bitte von der im System registrierten E-Mail-Adresse aus an tanzpartner@gsc-muenchen.de richten.
 				</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.valerror" resname="tx_tanzpartnersuche_domain_model_user.valerror">
+				<source>Bitte prüfe Deine Eingaben:</source>
 			</trans-unit>
 		</body>
 	</file>

@@ -13,12 +13,17 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
-<f:section name="content">
-    <h1>Single View for Main</h1>
+<f:section name="HeaderAssets">
+    <link rel="stylesheet" href="{f:uri.resource(path: 'Css/custom.css')}"/>
+</f:section>
 
-    <f:flashMessages />
-    <f:render partial="Main/Properties" arguments="{main:main}" />
+<f:section name="content">
+    <h2><f:translate key="tx_tanzpartnersuche_domain_model_user.find" /></h2>
+
+    <!-- <f:render partial="Main/Properties" arguments="{main:main}" />
     <f:link.action action="list">Back to list</f:link.action><br />
-    <f:link.action action="new">New Main</f:link.action>
+    <f:link.action action="new">New Main</f:link.action>  -->
+
+    <f:link.action action="index" class="tpsbutton"><f:translate key="tx_tanzpartnersuche_domain_model_user.backlink" /></f:link.action>
 </f:section>
 </html>

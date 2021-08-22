@@ -6,7 +6,7 @@
     -ms-flex-wrap: wrap;
     justify-content: space-around;
     max-width: 600px;
-    margin: auto;
+    margin: 30px auto;
   }
 
   .tile, .tileyellow {
@@ -51,7 +51,8 @@
     font-size: 1.5rem;
   }
 
-  .tpsbutton {
+  /* Buttons */
+  .tpsbutton, input[type=submit] {
     -webkit-appearance: button;
     cursor: pointer;
     color: #ffffff;
@@ -66,4 +67,30 @@
     color: #ffffff;
     background-color: #cc6c00;
     border-color: #a85900;
+  }
+
+  /* Eingabefelder */
+
+  input[type=text], input[type=password] {
+    border: 0;
+    border-bottom: 1px solid #FFC300;
+    outline: 0;
+    background: #FFEFC6;
+    color: #000;
+    transition: all .5s cubic-bezier(.4, .25, .8, .3);
+    margin-bottom: 20px;
+    letter-spacing: 0.04em;
+    font-size: clamp(13px,calc(0.8125rem + (18 - 13) * ((100vw - 300px) / (1600 - 300))),18px);
+    line-height: clamp(20px,calc(1.25rem + (28 - 20) * ((100vw - 300px) / (1600 - 300))),28px);
+    width: 66%;
+  }
+
+  .alignright {
+    float: right;
+  }
+
+  .validationError {
+    background-color: #FFC300;
+    padding: 5px 5px 1px 5px;
+    margin-bottom: 20px;
   }
