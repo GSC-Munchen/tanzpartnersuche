@@ -11,7 +11,18 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
+<f:section name="HeaderAssets">
+    <link rel="stylesheet" href="{f:uri.resource(path: 'Css/custom.css')}"/>
+</f:section>
+
 <f:section name="content">
-    <h1>Template for help action</h1>
+    <h2><f:translate key="tx_tanzpartnersuche_domain_model_user.helpdesc" /></h2>
+    <p><f:translate key="tx_tanzpartnersuche_domain_model_user.helpintro" /></p>
+
+    <h2><f:translate key="tx_tanzpartnersuche_domain_model_user.hdrprivacy" /></h2>
+    <p><f:translate key="tx_tanzpartnersuche_domain_model_user.txtprivacy" /></p>
+    
+    <f:link.action action="index" class="tpsbutton"><f:translate key="tx_tanzpartnersuche_domain_model_user.backlink" /></f:link.action>
+
 </f:section>
 </html>
