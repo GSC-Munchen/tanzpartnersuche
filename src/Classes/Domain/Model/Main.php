@@ -11,23 +11,23 @@ namespace GSC\Tanzpartnersuche\Domain\Model;
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- * (c) 2021 Peter von Niebelschütz <ias@gsc-muenchen.de>
- *          Martin Arend <ias@gsc-muenchen.de>
+ * (c) 2021 Peter-Benedikt von Niebelschütz <ias@gsc-muenchen.de>, GSC München e.V.
+ *          Martin Arend <ias@gsc-muenchen.de>, GSC München e.V.
  */
 
 /**
- * Main Module
+ * Main
  */
 class Main extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
 
     /**
-     * relationUser
+     * relUser
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\GSC\Tanzpartnersuche\Domain\Model\User>
      * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
      */
-    protected $relationUser = null;
+    protected $relUser = null;
 
     /**
      * __construct
@@ -49,49 +49,49 @@ class Main extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     public function initializeObject()
     {
-        $this->relationUser = $this->relationUser ?: new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->relUser = $this->relUser ?: new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
 
     /**
      * Adds a User
      *
-     * @param \GSC\Tanzpartnersuche\Domain\Model\User $relationUser
+     * @param \GSC\Tanzpartnersuche\Domain\Model\User $relUser
      * @return void
      */
-    public function addRelationUser(\GSC\Tanzpartnersuche\Domain\Model\User $relationUser)
+    public function addRelUser(\GSC\Tanzpartnersuche\Domain\Model\User $relUser)
     {
-        $this->relationUser->attach($relationUser);
+        $this->relUser->attach($relUser);
     }
 
     /**
      * Removes a User
      *
-     * @param \GSC\Tanzpartnersuche\Domain\Model\User $relationUserToRemove The User to be removed
+     * @param \GSC\Tanzpartnersuche\Domain\Model\User $relUserToRemove The User to be removed
      * @return void
      */
-    public function removeRelationUser(\GSC\Tanzpartnersuche\Domain\Model\User $relationUserToRemove)
+    public function removeRelUser(\GSC\Tanzpartnersuche\Domain\Model\User $relUserToRemove)
     {
-        $this->relationUser->detach($relationUserToRemove);
+        $this->relUser->detach($relUserToRemove);
     }
 
     /**
-     * Returns the relationUser
+     * Returns the relUser
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\GSC\Tanzpartnersuche\Domain\Model\User> $relationUser
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\GSC\Tanzpartnersuche\Domain\Model\User> $relUser
      */
-    public function getRelationUser()
+    public function getRelUser()
     {
-        return $this->relationUser;
+        return $this->relUser;
     }
 
     /**
-     * Sets the relationUser
+     * Sets the relUser
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\GSC\Tanzpartnersuche\Domain\Model\User> $relationUser
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\GSC\Tanzpartnersuche\Domain\Model\User> $relUser
      * @return void
      */
-    public function setRelationUser(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $relationUser)
+    public function setRelUser(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $relUser)
     {
-        $this->relationUser = $relationUser;
+        $this->relUser = $relUser;
     }
 }

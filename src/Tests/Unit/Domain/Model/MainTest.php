@@ -8,7 +8,7 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 /**
  * Test case
  *
- * @author Peter von Niebelschütz <ias@gsc-muenchen.de>
+ * @author Peter-Benedikt von Niebelschütz <ias@gsc-muenchen.de>
  * @author Martin Arend <ias@gsc-muenchen.de>
  */
 class MainTest extends UnitTestCase
@@ -32,28 +32,28 @@ class MainTest extends UnitTestCase
     /**
      * @test
      */
-    public function getRelationUserReturnsInitialValueForUser()
+    public function getRelUserReturnsInitialValueForUser()
     {
         $newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         self::assertEquals(
             $newObjectStorage,
-            $this->subject->getRelationUser()
+            $this->subject->getRelUser()
         );
     }
 
     /**
      * @test
      */
-    public function setRelationUserForObjectStorageContainingUserSetsRelationUser()
+    public function setRelUserForObjectStorageContainingUserSetsRelUser()
     {
-        $relationUser = new \GSC\Tanzpartnersuche\Domain\Model\User();
-        $objectStorageHoldingExactlyOneRelationUser = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $objectStorageHoldingExactlyOneRelationUser->attach($relationUser);
-        $this->subject->setRelationUser($objectStorageHoldingExactlyOneRelationUser);
+        $relUser = new \GSC\Tanzpartnersuche\Domain\Model\User();
+        $objectStorageHoldingExactlyOneRelUser = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $objectStorageHoldingExactlyOneRelUser->attach($relUser);
+        $this->subject->setRelUser($objectStorageHoldingExactlyOneRelUser);
 
         self::assertAttributeEquals(
-            $objectStorageHoldingExactlyOneRelationUser,
-            'relationUser',
+            $objectStorageHoldingExactlyOneRelUser,
+            'relUser',
             $this->subject
         );
     }
@@ -61,34 +61,34 @@ class MainTest extends UnitTestCase
     /**
      * @test
      */
-    public function addRelationUserToObjectStorageHoldingRelationUser()
+    public function addRelUserToObjectStorageHoldingRelUser()
     {
-        $relationUser = new \GSC\Tanzpartnersuche\Domain\Model\User();
-        $relationUserObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+        $relUser = new \GSC\Tanzpartnersuche\Domain\Model\User();
+        $relUserObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
             ->setMethods(['attach'])
             ->disableOriginalConstructor()
             ->getMock();
 
-        $relationUserObjectStorageMock->expects(self::once())->method('attach')->with(self::equalTo($relationUser));
-        $this->inject($this->subject, 'relationUser', $relationUserObjectStorageMock);
+        $relUserObjectStorageMock->expects(self::once())->method('attach')->with(self::equalTo($relUser));
+        $this->inject($this->subject, 'relUser', $relUserObjectStorageMock);
 
-        $this->subject->addRelationUser($relationUser);
+        $this->subject->addRelUser($relUser);
     }
 
     /**
      * @test
      */
-    public function removeRelationUserFromObjectStorageHoldingRelationUser()
+    public function removeRelUserFromObjectStorageHoldingRelUser()
     {
-        $relationUser = new \GSC\Tanzpartnersuche\Domain\Model\User();
-        $relationUserObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+        $relUser = new \GSC\Tanzpartnersuche\Domain\Model\User();
+        $relUserObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
             ->setMethods(['detach'])
             ->disableOriginalConstructor()
             ->getMock();
 
-        $relationUserObjectStorageMock->expects(self::once())->method('detach')->with(self::equalTo($relationUser));
-        $this->inject($this->subject, 'relationUser', $relationUserObjectStorageMock);
+        $relUserObjectStorageMock->expects(self::once())->method('detach')->with(self::equalTo($relUser));
+        $this->inject($this->subject, 'relUser', $relUserObjectStorageMock);
 
-        $this->subject->removeRelationUser($relationUser);
+        $this->subject->removeRelUser($relUser);
     }
 }

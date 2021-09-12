@@ -8,17 +8,17 @@ in /Configuration/ExtensionBuilder/settings.yaml:
   Resources:
     Private:
       Templates:
-        Main:
+        Offer:
           Show.html: keep
 
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="content">
-    <h1>Single View for Main</h1>
+    <h1>Single View for Offer</h1>
 
     <f:flashMessages />
-    <f:render partial="Main/Properties" arguments="{main:main}" />
+    <f:render partial="Offer/Properties" arguments="{offer:offer}" />
     <f:link.action action="list">Back to list</f:link.action><br />
-    <f:link.action action="new">New Main</f:link.action>
+    <f:link.action action="new">New Offer</f:link.action>
 </f:section>
 </html>

@@ -8,7 +8,7 @@ use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 /**
  * Test case
  *
- * @author Peter von Niebelschütz <ias@gsc-muenchen.de>
+ * @author Peter-Benedikt von Niebelschütz <ias@gsc-muenchen.de>
  * @author Martin Arend <ias@gsc-muenchen.de>
  */
 class BasicTest extends FunctionalTestCase

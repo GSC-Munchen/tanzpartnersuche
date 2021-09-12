@@ -8,7 +8,7 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 /**
  * Test case
  *
- * @author Peter von Niebelschütz <ias@gsc-muenchen.de>
+ * @author Peter-Benedikt von Niebelschütz <ias@gsc-muenchen.de>
  * @author Martin Arend <ias@gsc-muenchen.de>
  */
 class UserControllerTest extends UnitTestCase
@@ -41,7 +41,7 @@ class UserControllerTest extends UnitTestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $userRepository = $this->getMockBuilder(\::class)
+        $userRepository = $this->getMockBuilder(\GSC\Tanzpartnersuche\Domain\Repository\UserRepository::class)
             ->setMethods(['findAll'])
             ->disableOriginalConstructor()
             ->getMock();
@@ -76,7 +76,7 @@ class UserControllerTest extends UnitTestCase
     {
         $user = new \GSC\Tanzpartnersuche\Domain\Model\User();
 
-        $userRepository = $this->getMockBuilder(\::class)
+        $userRepository = $this->getMockBuilder(\GSC\Tanzpartnersuche\Domain\Repository\UserRepository::class)
             ->setMethods(['add'])
             ->disableOriginalConstructor()
             ->getMock();
@@ -108,7 +108,7 @@ class UserControllerTest extends UnitTestCase
     {
         $user = new \GSC\Tanzpartnersuche\Domain\Model\User();
 
-        $userRepository = $this->getMockBuilder(\::class)
+        $userRepository = $this->getMockBuilder(\GSC\Tanzpartnersuche\Domain\Repository\UserRepository::class)
             ->setMethods(['update'])
             ->disableOriginalConstructor()
             ->getMock();
@@ -126,7 +126,7 @@ class UserControllerTest extends UnitTestCase
     {
         $user = new \GSC\Tanzpartnersuche\Domain\Model\User();
 
-        $userRepository = $this->getMockBuilder(\::class)
+        $userRepository = $this->getMockBuilder(\GSC\Tanzpartnersuche\Domain\Repository\UserRepository::class)
             ->setMethods(['remove'])
             ->disableOriginalConstructor()
             ->getMock();

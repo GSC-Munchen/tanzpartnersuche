@@ -9,7 +9,7 @@ in /Configuration/ExtensionBuilder/settings.yaml:
     Private:
       Templates:
         User:
-          New.html: keep
+          Login.html: keep
 
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
@@ -18,15 +18,15 @@ Otherwise your changes will be overwritten the next time you save the extension 
 </f:section>
 
 <f:section name="content">
-    <h2><f:translate key="tx_tanzpartnersuche_domain_model_user.registermenu" /></h2>
+    <h2><f:translate key="tx_tanzpartnersuche_domain_model_user.login" /></h2>
 
-    <p> <f:translate key="tx_tanzpartnersuche_domain_model_user.register" /> </p>
+    <p> <f:translate key="tx_tanzpartnersuche_domain_model_user.loginintro" /> </p>
 
     <f:render partial="FormErrors" />
 
-    <f:form action="new" name="newUser" object="{newUser}">   <!-- create -->
+    <f:form action="edit" name="newUser" object="{newUser}">
       <f:render partial="User/FormFields" />
-      <f:form.submit value="Absenden" />
+      <f:form.submit value="Login" />
     </f:form>
 
     <f:link.action action="index" controller="Main" class="tpsbutton alignright"><f:translate key="tx_tanzpartnersuche_domain_model_user.backlink" /></f:link.action>

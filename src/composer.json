@@ -1,10 +1,10 @@
 {
     "name": "g-s-c/tanzpartnersuche",
     "type": "typo3-cms-extension",
-    "description": "This Typo3 extension adds functionality that allows people to use for finding a new dancing partner.",
+    "description": "A typo3 extension for our dancing club, used to find a dancing partner.",
     "authors": [
         {
-            "name": "Peter von Niebelsch\u00fctz",
+            "name": "Peter-Benedikt von Niebelsch\u00fctz",
             "role": "Developer"
         },
         {

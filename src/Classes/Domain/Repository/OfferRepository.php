@@ -16,8 +16,8 @@ namespace GSC\Tanzpartnersuche\Domain\Repository;
  */
 
 /**
- * The repository for Mains
+ * The repository for Offers
  */
-class MainRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class OfferRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
 }

@@ -21,16 +21,24 @@ Otherwise your changes will be overwritten the next time you save the extension 
     <table class="tx_tanzpartnersuche">
         <tr>
             <th><f:translate key="tx_tanzpartnersuche_domain_model_user.username" /></th>
-            <th><f:translate key="tx_tanzpartnersuche_domain_model_user.email" /></th>
             <th><f:translate key="tx_tanzpartnersuche_domain_model_user.password" /></th>
+            <th><f:translate key="tx_tanzpartnersuche_domain_model_user.email" /></th>
+            <th><f:translate key="tx_tanzpartnersuche_domain_model_user.height" /></th>
+            <th><f:translate key="tx_tanzpartnersuche_domain_model_user.age" /></th>
+            <th><f:translate key="tx_tanzpartnersuche_domain_model_user.gender" /></th>
+            <th><f:translate key="tx_tanzpartnersuche_domain_model_user.picture" /></th>
             <th></th>
             <th></th>
         </tr>
         <f:for each="{users}" as="user">
             <tr>
                 <td><f:link.action action="show" arguments="{user : user}">{user.username}</f:link.action></td>
-                <td><f:link.action action="show" arguments="{user : user}">{user.email}</f:link.action></td>
                 <td><f:link.action action="show" arguments="{user : user}">{user.password}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{user : user}">{user.email}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{user : user}">{user.height}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{user : user}">{user.age}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{user : user}">{user.gender}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{user : user}">{user.picture.originalResource.name}</f:link.action></td>
                 <td><f:link.action action="edit" arguments="{user : user}">Edit</f:link.action></td>
                 <td><f:link.action action="delete" arguments="{user : user}">Delete</f:link.action></td>
             </tr>

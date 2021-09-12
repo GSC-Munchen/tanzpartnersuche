@@ -1,8 +1,8 @@
 <?php
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:tanzpartnersuche/Resources/Private/Language/locallang_db.xlf:tx_tanzpartnersuche_domain_model_main',
-        'label' => 'rel_user',
+        'title' => 'LLL:EXT:tanzpartnersuche/Resources/Private/Language/locallang_db.xlf:tx_tanzpartnersuche_domain_model_offer',
+        'label' => 'level',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
@@ -16,11 +16,11 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => '',
-        'iconfile' => 'EXT:tanzpartnersuche/Resources/Public/Icons/tx_tanzpartnersuche_domain_model_main.gif'
+        'searchFields' => 'level,category,bio,role',
+        'iconfile' => 'EXT:tanzpartnersuche/Resources/Public/Icons/tx_tanzpartnersuche_domain_model_offer.gif'
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, rel_user, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, level, category, bio, role, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -50,8 +50,8 @@ return [
                 'items' => [
                     ['', 0],
                 ],
-                'foreign_table' => 'tx_tanzpartnersuche_domain_model_main',
-                'foreign_table_where' => 'AND {#tx_tanzpartnersuche_domain_model_main}.{#pid}=###CURRENT_PID### AND {#tx_tanzpartnersuche_domain_model_main}.{#sys_language_uid} IN (-1,0)',
+                'foreign_table' => 'tx_tanzpartnersuche_domain_model_offer',
+                'foreign_table_where' => 'AND {#tx_tanzpartnersuche_domain_model_offer}.{#pid}=###CURRENT_PID### AND {#tx_tanzpartnersuche_domain_model_offer}.{#sys_language_uid} IN (-1,0)',
             ],
         ],
         'l10n_diffsource' => [
@@ -104,24 +104,52 @@ return [
             ],
         ],
 
-        'rel_user' => [
+        'level' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:tanzpartnersuche/Resources/Private/Language/locallang_db.xlf:tx_tanzpartnersuche_domain_model_main.rel_user',
+            'label' => 'LLL:EXT:tanzpartnersuche/Resources/Private/Language/locallang_db.xlf:tx_tanzpartnersuche_domain_model_offer.level',
             'config' => [
-                'type' => 'inline',
-                'foreign_table' => 'tx_tanzpartnersuche_domain_model_user',
-                'foreign_field' => 'main',
-                'maxitems' => 9999,
-                'appearance' => [
-                    'collapseAll' => 0,
-                    'levelLinksPosition' => 'top',
-                    'showSynchronizationLink' => 1,
-                    'showPossibleLocalizationRecords' => 1,
-                    'showAllLocalizationLink' => 1
-                ],
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim',
+                'default' => ''
             ],
-
+        ],
+        'category' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:tanzpartnersuche/Resources/Private/Language/locallang_db.xlf:tx_tanzpartnersuche_domain_model_offer.category',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim',
+                'default' => ''
+            ],
+        ],
+        'bio' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:tanzpartnersuche/Resources/Private/Language/locallang_db.xlf:tx_tanzpartnersuche_domain_model_offer.bio',
+            'config' => [
+                'type' => 'text',
+                'cols' => 40,
+                'rows' => 15,
+                'eval' => 'trim',
+                'default' => ''
+            ]
+        ],
+        'role' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:tanzpartnersuche/Resources/Private/Language/locallang_db.xlf:tx_tanzpartnersuche_domain_model_offer.role',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim',
+                'default' => ''
+            ],
         ],
     
+        'user' => [
+            'config' => [
+                'type' => 'passthrough',
+            ],
+        ],
     ],
 ];

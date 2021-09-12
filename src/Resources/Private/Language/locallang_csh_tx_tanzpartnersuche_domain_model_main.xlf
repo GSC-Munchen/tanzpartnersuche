@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="de" datatype="plaintext" original="EXT:tanzpartnersuche/Resources/Private/Language/locallang_csh" date="2021-08-17T20:56:58Z" product-name="tanzpartnersuche">
+	<file source-language="de" datatype="plaintext" original="EXT:tanzpartnersuche/Resources/Private/Language/locallang_csh" date="2021-09-12T14:09:11Z" product-name="tanzpartnersuche">
 		<header/>
 		<body>
-			<trans-unit id="relation_user.description" resname="relation_user.description">
-				<source>relationUser</source>
+			<trans-unit id="rel_user.description" resname="rel_user.description">
+				<source>relUser</source>
 			</trans-unit>
 		</body>
 	</file>

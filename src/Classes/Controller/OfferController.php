@@ -16,17 +16,17 @@ namespace GSC\Tanzpartnersuche\Controller;
  */
 
 /**
- * UserController
+ * OfferController
  */
-class UserController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class OfferController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
 
     /**
-     * userRepository
+     * offerRepository
      *
-     * @var \GSC\Tanzpartnersuche\Domain\Repository\UserRepository
+     * @var \GSC\Tanzpartnersuche\Domain\Repository\OfferRepository
      */
-    protected $userRepository = null;
+    protected $offerRepository = null;
 
     /**
      * action index
@@ -44,19 +44,19 @@ class UserController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function listAction()
     {
-        $users = $this->userRepository->findAll();
-        $this->view->assign('users', $users);
+        $offers = $this->offerRepository->findAll();
+        $this->view->assign('offers', $offers);
     }
 
     /**
      * action show
      *
-     * @param \GSC\Tanzpartnersuche\Domain\Model\User $user
+     * @param \GSC\Tanzpartnersuche\Domain\Model\Offer $offer
      * @return string|object|null|void
      */
-    public function showAction(\GSC\Tanzpartnersuche\Domain\Model\User $user)
+    public function showAction(\GSC\Tanzpartnersuche\Domain\Model\Offer $offer)
     {
-        $this->view->assign('user', $user);
+        $this->view->assign('offer', $offer);
     }
 
     /**
@@ -71,68 +71,59 @@ class UserController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     /**
      * action create
      *
-     * @param \GSC\Tanzpartnersuche\Domain\Model\User $newUser
+     * @param \GSC\Tanzpartnersuche\Domain\Model\Offer $newOffer
      * @return string|object|null|void
      */
-    public function createAction(\GSC\Tanzpartnersuche\Domain\Model\User $newUser)
+    public function createAction(\GSC\Tanzpartnersuche\Domain\Model\Offer $newOffer)
     {
         $this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/p/friendsoftypo3/extension-builder/master/en-us/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
-        $this->userRepository->add($newUser);
+        $this->offerRepository->add($newOffer);
         $this->redirect('list');
     }
 
     /**
      * action edit
      *
-     * @param \GSC\Tanzpartnersuche\Domain\Model\User $user
-     * @TYPO3\CMS\Extbase\Annotation\IgnoreValidation("user")
+     * @param \GSC\Tanzpartnersuche\Domain\Model\Offer $offer
+     * @TYPO3\CMS\Extbase\Annotation\IgnoreValidation("offer")
      * @return string|object|null|void
      */
-    public function editAction(\GSC\Tanzpartnersuche\Domain\Model\User $user)
+    public function editAction(\GSC\Tanzpartnersuche\Domain\Model\Offer $offer)
     {
-        $this->view->assign('user', $user);
+        $this->view->assign('offer', $offer);
     }
 
     /**
      * action update
      *
-     * @param \GSC\Tanzpartnersuche\Domain\Model\User $user
+     * @param \GSC\Tanzpartnersuche\Domain\Model\Offer $offer
      * @return string|object|null|void
      */
-    public function updateAction(\GSC\Tanzpartnersuche\Domain\Model\User $user)
+    public function updateAction(\GSC\Tanzpartnersuche\Domain\Model\Offer $offer)
     {
         $this->addFlashMessage('The object was updated. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/p/friendsoftypo3/extension-builder/master/en-us/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
-        $this->userRepository->update($user);
+        $this->offerRepository->update($offer);
         $this->redirect('list');
     }
 
     /**
      * action delete
      *
-     * @param \GSC\Tanzpartnersuche\Domain\Model\User $user
+     * @param \GSC\Tanzpartnersuche\Domain\Model\Offer $offer
      * @return string|object|null|void
      */
-    public function deleteAction(\GSC\Tanzpartnersuche\Domain\Model\User $user)
+    public function deleteAction(\GSC\Tanzpartnersuche\Domain\Model\Offer $offer)
     {
         $this->addFlashMessage('The object was deleted. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/p/friendsoftypo3/extension-builder/master/en-us/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
-        $this->userRepository->remove($user);
+        $this->offerRepository->remove($offer);
         $this->redirect('list');
     }
 
     /**
-     * action login
-     *
-     * @return string|object|null|void
+     * @param \GSC\Tanzpartnersuche\Domain\Repository\OfferRepository $offerRepository
      */
-    public function loginAction()
+    public function injectOfferRepository(\GSC\Tanzpartnersuche\Domain\Repository\OfferRepository $offerRepository)
     {
-    }
-
-    /**
-     * @param \GSC\Tanzpartnersuche\Domain\Repository\UserRepository $userRepository
-     */
-    public function injectUserRepository(\GSC\Tanzpartnersuche\Domain\Repository\UserRepository $userRepository)
-    {
-        $this->userRepository = $userRepository;
+        $this->offerRepository = $offerRepository;
     }
 }

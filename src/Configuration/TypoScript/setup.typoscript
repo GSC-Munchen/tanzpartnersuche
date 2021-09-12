@@ -1,14 +1,14 @@
-plugin.tx_tanzpartnersuche_main {
+plugin.tx_tanzpartnersuche_tanzpartnersuche {
     view {
         templateRootPaths.0 = EXT:tanzpartnersuche/Resources/Private/Templates/
-        templateRootPaths.1 = {$plugin.tx_tanzpartnersuche_main.view.templateRootPath}
+        templateRootPaths.1 = {$plugin.tx_tanzpartnersuche_tanzpartnersuche.view.templateRootPath}
         partialRootPaths.0 = EXT:tanzpartnersuche/Resources/Private/Partials/
-        partialRootPaths.1 = {$plugin.tx_tanzpartnersuche_main.view.partialRootPath}
+        partialRootPaths.1 = {$plugin.tx_tanzpartnersuche_tanzpartnersuche.view.partialRootPath}
         layoutRootPaths.0 = EXT:tanzpartnersuche/Resources/Private/Layouts/
-        layoutRootPaths.1 = {$plugin.tx_tanzpartnersuche_main.view.layoutRootPath}
+        layoutRootPaths.1 = {$plugin.tx_tanzpartnersuche_tanzpartnersuche.view.layoutRootPath}
     }
     persistence {
-        storagePid = {$plugin.tx_tanzpartnersuche_main.persistence.storagePid}
+        storagePid = {$plugin.tx_tanzpartnersuche_tanzpartnersuche.persistence.storagePid}
         #recursive = 1
     }
     features {
@@ -22,3 +22,37 @@ plugin.tx_tanzpartnersuche_main {
         #callDefaultActionIfActionCantBeResolved = 1
     }
 }
+
+# these classes are only used in auto-generated templates
+plugin.tx_tanzpartnersuche._CSS_DEFAULT_STYLE (
+    textarea.f3-form-error {
+        background-color:#FF9F9F;
+        border: 1px #FF0000 solid;
+    }
+
+    input.f3-form-error {
+        background-color:#FF9F9F;
+        border: 1px #FF0000 solid;
+    }
+
+    .tx-tanzpartnersuche table {
+        border-collapse:separate;
+        border-spacing:10px;
+    }
+
+    .tx-tanzpartnersuche table th {
+        font-weight:bold;
+    }
+
+    .tx-tanzpartnersuche table td {
+        vertical-align:top;
+    }
+
+    .typo3-messages .message-error {
+        color:red;
+    }
+
+    .typo3-messages .message-ok {
+        color:green;
+    }
+)

@@ -11,8 +11,8 @@ namespace GSC\Tanzpartnersuche\Controller;
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- * (c) 2021 Peter von Niebelschütz <ias@gsc-muenchen.de>
- *          Martin Arend <ias@gsc-muenchen.de>
+ * (c) 2021 Peter-Benedikt von Niebelschütz <ias@gsc-muenchen.de>, GSC München e.V.
+ *          Martin Arend <ias@gsc-muenchen.de>, GSC München e.V.
  */
 
 /**
@@ -46,14 +46,12 @@ class MainController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     }
 
     /**
-     * action list
+     * action help
      *
      * @return string|object|null|void
      */
-    public function listAction()
+    public function helpAction()
     {
-        $mains = $this->mainRepository->findAll();
-        $this->view->assign('mains', $mains);
     }
 
     /**
@@ -66,15 +64,4 @@ class MainController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     {
         $this->view->assign('main', $main);
     }
-
-    
-    /**
-     * action docs
-     *
-     * @return void
-     */
-    public function docsAction()
-    {
-    }
-
 }

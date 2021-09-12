@@ -10,6 +10,14 @@
 	</tr>
 	<tr>
 		<td>
+			<f:translate key="tx_tanzpartnersuche_domain_model_user.password" />
+		</td>
+		<td>
+		{user.password}
+		</td>
+	</tr>
+	<tr>
+		<td>
 			<f:translate key="tx_tanzpartnersuche_domain_model_user.email" />
 		</td>
 		<td>
@@ -18,10 +26,34 @@
 	</tr>
 	<tr>
 		<td>
-			<f:translate key="tx_tanzpartnersuche_domain_model_user.password" />
+			<f:translate key="tx_tanzpartnersuche_domain_model_user.height" />
 		</td>
 		<td>
-		{user.password}
+		{user.height}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_tanzpartnersuche_domain_model_user.age" />
+		</td>
+		<td>
+		{user.age}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_tanzpartnersuche_domain_model_user.gender" />
+		</td>
+		<td>
+		{user.gender}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_tanzpartnersuche_domain_model_user.picture" />
+		</td>
+		<td>
+				<f:image src="{user.picture.originalResource.publicUrl}" width="200"/>
 		</td>
 	</tr>
 </table>
