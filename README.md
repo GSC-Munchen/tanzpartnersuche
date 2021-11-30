@@ -10,3 +10,5 @@ Based on Typo3 10.x, Exbase and Fluid.
 1. Copy `template.env` to `.env` and fill in the values
 1. Run `docker-compose up`
 1. Visit [localhost](http://localhost:80) and complete the Typo3 installation
+1. If the error "Directory /typo3conf/ext is not writable" occurs during the Typo3 installation,
+   run `docker exec tanzpartnersuche_typo3_1 chown www-data:www-data typo3conf/ext`
