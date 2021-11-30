@@ -14,6 +14,7 @@
 *.bak
 *.swp
 .DS_Store
+*/desktop.ini
 #
 # Ignore by common IDEs used directories/files
 nbproject
