@@ -21,6 +21,9 @@
 			<trans-unit id="tx_tanzpartnersuche_domain_model_user.password" resname="tx_tanzpartnersuche_domain_model_user.password">
 				<source>Passwort</source>
 			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.password2" resname="tx_tanzpartnersuche_domain_model_user.password2">
+				<source>Passwort (Wdh.)</source>
+			</trans-unit>
 
 			<trans-unit id="tx_tanzpartnersuche_domain_model_main.title" resname="tx_tanzpartnersuche_domain_model_main.title">
 				<source>Auf der Suche nach einer Tanzpartnerin/einem Tanzpartner?</source>
@@ -28,14 +31,23 @@
 			<trans-unit id="tx_tanzpartnersuche_domain_model_user.header" resname="tx_tanzpartnersuche_domain_model_user.header">
 				<source>Tanzpartnersuche</source>
 			</trans-unit>
-			<trans-unit id="tx_tanzpartnersuche_domain_model_user.sex" resname="tx_tanzpartnersuche_domain_model_user.sex">
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.age" resname="tx_tanzpartnersuche_domain_model_user.age">
+				<source>Alter (in Jahren)</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.height" resname="tx_tanzpartnersuche_domain_model_user.height">
+				<source>Größe (in cm)</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.gender" resname="tx_tanzpartnersuche_domain_model_user.gender">
 				<source>Geschlecht</source>
 			</trans-unit>
-			<trans-unit id="tx_tanzpartnersuche_domain_model_user.age" resname="tx_tanzpartnersuche_domain_model_user.age">
-				<source>Alter</source>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.gender-female" resname="tx_tanzpartnersuche_domain_model_user.gender-female">
+				<source>Frau</source>
 			</trans-unit>
-			<trans-unit id="tx_tanzpartnersuche_domain_model_user.size" resname="tx_tanzpartnersuche_domain_model_user.size">
-				<source>Gr<![CDATA[&ouml;&szlig;]]>e</source>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.gender-male" resname="tx_tanzpartnersuche_domain_model_user.gender-male">
+				<source>Mann</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_user.picture" resname="tx_tanzpartnersuche_domain_model_user.picture">
+				<source>Bild/Avatar</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_user.level" resname="tx_tanzpartnersuche_domain_model_user.level">
 				<source>Niveau</source>
@@ -107,6 +119,65 @@
 			<trans-unit id="tx_tanzpartnersuche_domain_model_user.loginintro" resname="tx_tanzpartnersuche_domain_model_user.loginintro">
 				<source>Bitte melde Dich an, um Deine Einträge oder Dein Profil ändern zu können:</source>
 			</trans-unit>
+			
+
+
+
+			<trans-unit id="tx_tanzpartnersuche_domain_model_offer.category" resname="tx_tanzpartnersuche_domain_model_offer.category">
+				<source>Disziplin:</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_offer.level" resname="tx_tanzpartnersuche_domain_model_offer.level">
+				<source>Leistungsstufe:</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_offer.bio" resname="tx_tanzpartnersuche_domain_model_offer.bio">
+				<source>Über mich:</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_offer.role" resname="tx_tanzpartnersuche_domain_model_offer.role">
+				<source>Rolle im Tanzpaar:</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_offer.role0" resname="tx_tanzpartnersuche_domain_model_offer.role0">
+				<source>--- bitte wählen ---</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_offer.role1" resname="tx_tanzpartnersuche_domain_model_offer.role1">
+				<source>ich möchte führen</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_offer.role2" resname="tx_tanzpartnersuche_domain_model_offer.role2">
+				<source>ich möchte geführt werden</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_offer.level0" resname="tx_tanzpartnersuche_domain_model_offer.level0">
+				<source>--- bitte wählen ---</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_offer.level1" resname="tx_tanzpartnersuche_domain_model_offer.level1">
+				<source>Breitensport</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_offer.level2" resname="tx_tanzpartnersuche_domain_model_offer.level2">
+				<source>Vorturnier</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_offer.level3" resname="tx_tanzpartnersuche_domain_model_offer.level3">
+				<source>D-Klasse</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_offer.level4" resname="tx_tanzpartnersuche_domain_model_offer.level4">
+				<source>C-Klasse</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_offer.level5" resname="tx_tanzpartnersuche_domain_model_offer.level5">
+				<source>B-Klasse</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_offer.level6" resname="tx_tanzpartnersuche_domain_model_offer.level6">
+				<source>A-Klasse</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_offer.level7" resname="tx_tanzpartnersuche_domain_model_offer.level7">
+				<source>S-Klasse</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_offer.category0" resname="tx_tanzpartnersuche_domain_model_offer.category0">
+				<source>--- bitte wählen ---</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_offer.category1" resname="tx_tanzpartnersuche_domain_model_offer.category1">
+				<source>Latein</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_offer.category2" resname="tx_tanzpartnersuche_domain_model_offer.category2">
+				<source>Standard</source>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>

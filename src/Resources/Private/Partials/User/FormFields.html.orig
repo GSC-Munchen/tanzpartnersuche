@@ -7,10 +7,6 @@
 	<f:translate key="tx_tanzpartnersuche_domain_model_user.password" />
 </label><br />
 	<f:form.password property="password" id="password" /><br />
-<label for="password2">
-	<f:translate key="tx_tanzpartnersuche_domain_model_user.password2" />
-</label><br />
-	<f:form.password property="password2" id="password2" /><br />
 <label for="email">
 	<f:translate key="tx_tanzpartnersuche_domain_model_user.email" />
 </label><br />
@@ -26,15 +22,9 @@
 <label for="gender">
 	<f:translate key="tx_tanzpartnersuche_domain_model_user.gender" />
 </label><br />
-	<f:form.select name="gender">
-		<f:form.select.option value="0">--- bitte wählen ---</f:form.select.option>
-		<f:form.select.option value="1"><f:translate key="tx_tanzpartnersuche_domain_model_user.gender-female" /></f:form.select.option>
-		<f:form.select.option value="2"><f:translate key="tx_tanzpartnersuche_domain_model_user.gender-male" /></f:form.select.option>
-	 </f:form.select> <br /><br />
-<!-- <label for="picture">
+	<f:form.textfield property="gender" id="gender" /><br />
+<label for="picture">
 	<f:translate key="tx_tanzpartnersuche_domain_model_user.picture" />
-</label><br /> -->
-<label for="txtprivacy">
-	<f:translate key="tx_tanzpartnersuche_domain_model_user.txtprivacy" />
-</label><br /><br />
+</label><br />
+	<span>File upload is not implemented!</span><br  /><br />
 </html>

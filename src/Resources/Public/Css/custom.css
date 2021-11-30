@@ -71,7 +71,7 @@
 
   /* Eingabefelder */
 
-  input[type=text], input[type=password] {
+  input[type=text], input[type=password], input[type=email], select {
     border: 0;
     border-bottom: 1px solid #FFC300;
     outline: 0;
@@ -83,6 +83,7 @@
     font-size: clamp(13px,calc(0.8125rem + (18 - 13) * ((100vw - 300px) / (1600 - 300))),18px);
     line-height: clamp(20px,calc(1.25rem + (28 - 20) * ((100vw - 300px) / (1600 - 300))),28px);
     width: 66%;
+    height: 28px;
   }
 
   .alignright {

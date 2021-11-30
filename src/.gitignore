@@ -1,3 +1,0 @@
-.Build/
-.idea/
-composer.lock
