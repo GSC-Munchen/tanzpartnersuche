@@ -1,7 +1,9 @@
 version: "3"
 services:
   typo3:
-    image: martinhelmich/typo3:10
+    build: .
+    image: gsc/typo3:10.4.18
+    #image: martinhelmich/typo3:10
     ports:
       - "80:80"
     volumes:
