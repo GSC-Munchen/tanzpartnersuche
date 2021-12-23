@@ -64,4 +64,13 @@ class MainController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     {
         $this->view->assign('main', $main);
     }
+
+    /**
+     * action search
+     *
+     * @return string|object|null|void
+     */
+    public function searchAction()
+    {
+    }
 }
