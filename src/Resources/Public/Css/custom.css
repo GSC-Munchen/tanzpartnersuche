@@ -166,6 +166,10 @@
     float: left;
   }
 
+  #breadcrumb {
+    flex-wrap: wrap;
+  }
+
   #wrapper button {
     width: 150px;
     background-color: #fefdf4;
