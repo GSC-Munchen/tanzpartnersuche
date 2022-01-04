@@ -300,6 +300,12 @@ var rangeValue = function(){
   var newValue = elem.value;
   var target = document.querySelector('.range-value_start');
   target.innerHTML = newValue;
+  document.getElementById("bcStartAgeIntro").classList.remove("is-hidden");
+  document.getElementById("bcStartAge").classList.remove("is-hidden");
+  document.getElementById("bcStartAge").innerHTML = elem.value;
+  document.getElementById("bcEndAgeIntro").classList.remove("is-hidden");
+  document.getElementById("bcEndAge").classList.remove("is-hidden");
+  document.getElementById("bcEndAge").innerHTML = elem2.value;
   if (elem.value > elem2.value) {
     elem2.value = parseInt (elem.value) + 1;
     document.querySelector('.range-value_end').innerHTML = parseInt (elem.value) + 1;
@@ -314,6 +320,12 @@ var rangeValue = function(){
   var newValue = elem2.value;
   var target = document.querySelector('.range-value_end');
   target.innerHTML = newValue;
+  document.getElementById("bcStartAgeIntro").classList.remove("is-hidden");
+  document.getElementById("bcStartAge").classList.remove("is-hidden");
+  document.getElementById("bcStartAge").innerHTML = elem.value;
+  document.getElementById("bcEndAgeIntro").classList.remove("is-hidden");
+  document.getElementById("bcEndAge").classList.remove("is-hidden");
+  document.getElementById("bcEndAge").innerHTML = elem2.value;
   if (elem.value > elem2.value) {
     elem.value = parseInt (elem2.value) - 1;
     document.querySelector('.range-value_start').innerHTML = elem.value;
