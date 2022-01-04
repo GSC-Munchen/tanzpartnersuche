@@ -300,6 +300,10 @@ var rangeValue = function(){
   var newValue = elem.value;
   var target = document.querySelector('.range-value_start');
   target.innerHTML = newValue;
+  if (elem.value > elem2.value) {
+    elem2.value = parseInt (elem.value) + 1;
+    document.querySelector('.range-value_end').innerHTML = parseInt (elem.value) + 1;
+  }
 }
 
 elem.addEventListener("input", rangeValue);
@@ -310,6 +314,10 @@ var rangeValue = function(){
   var newValue = elem2.value;
   var target = document.querySelector('.range-value_end');
   target.innerHTML = newValue;
+  if (elem.value > elem2.value) {
+    elem.value = parseInt (elem2.value) - 1;
+    document.querySelector('.range-value_start').innerHTML = elem.value;
+  }
 }
 
 elem2.addEventListener("input", rangeValue);

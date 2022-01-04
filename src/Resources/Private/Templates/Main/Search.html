@@ -27,7 +27,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
         <div id="gender2">Ich suche</div>
         <div id="discipline">Disziplin</div>
         <div id="level">Niveau</div>
-        <div id="age">Altersklasse</div>
+        <div id="age">Alter</div>
       </div>
     
       <div id="border">
@@ -111,46 +111,32 @@ Otherwise your changes will be overwritten the next time you save the extension 
           <div id="appmenu" class="appmenu">
             <div class="range-slider tile-mini">
               <h4 class="sliderval range-value_start">18</h4>
-              <input class="range-slider" type="range" id="range-value_start" value="18" min="18" max="99">
+              <input class="range-slider" type="range" id="range-value_start" value="18" min="18" max="98">
             </div>
             <div class="range-slider tile-mini">
-              <h4 class="sliderval range-value_end">100</h4>
-              <input class="range-slider" type="range" id="range-value_end" value="100" min="19" max="100">
+              <h4 class="sliderval range-value_end">99</h4>
+              <input class="range-slider" type="range" id="range-value_end" value="100" min="19" max="99">
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div id="wrapper" class="spacer10 breadcrumb-search">
-      <div id="1st" class="filter is-hidden"></div><div id="2nd" class="is-hidden"> sucht </div>
-      <div id="3rd" class="filter is-hidden">Herr</div><div id="4th" class="is-hidden"> für </div>
-      <div id="5th" class="filter is-hidden">Standard</div> <div id="6th" class="filter is-hidden">B-Klasse</div>
-      <div id="bcJugend" class="filter is-hidden">Jugend</div>
-      <div id="bcBreitensport" class="filter is-hidden">Breitensport</div>
-      <div id="bcVorturnier" class="filter is-hidden">Vorturnier</div>
-      <div id="bcD" class="filter is-hidden">D-Klasse</div>
-      <div id="bcC" class="filter is-hidden">C-Klasse</div>
-      <div id="bcB" class="filter is-hidden">B-Klasse</div>
-      <div id="bcA" class="filter is-hidden">A-Klasse</div>
-      <div id="bcS" class="filter is-hidden">S-Klasse</div>
+    <div id="breadcrumb" class="spacer10 breadcrumb-search">
+        <div id="1st" class="filter is-hidden"></div><div id="2nd" class="is-hidden"> sucht </div>
+        <div id="3rd" class="filter is-hidden">Herr</div><div id="4th" class="is-hidden"> für </div>
+        <div id="5th" class="filter is-hidden">Standard</div> <div id="6th" class="filter is-hidden">Latein</div>
+        <div id="bcJugend" class="filter is-hidden">Jugend</div>
+        <div id="bcBreitensport" class="filter is-hidden">Breitensport</div>
+        <div id="bcVorturnier" class="filter is-hidden">Vorturnier</div>
+        <div id="bcD" class="filter is-hidden">D-Klasse</div>
+        <div id="bcC" class="filter is-hidden">C-Klasse</div>
+        <div id="bcB" class="filter is-hidden">B-Klasse</div>
+        <div id="bcA" class="filter is-hidden">A-Klasse</div>
+        <div id="bcS" class="filter is-hidden">S-Klasse</div>
     </div>
-    <div id="wrapper" class="spacer10">
-      <table>
-        <tbody>
-          <tr>
-            <th>Benutzername</th>
-            <th>Größe (in cm)</th>
-            <th>Alter (in Jahren)</th>
-            <th>Geschlecht</th>
-            <th>Disziplin</th>
-            <th>Niveau</th>
-          </tr>
-          <tr>
-            <td colspan="6"><i>Suchergebnisse</i></td>      
-          </tr>
-        </tbody>
-      </table>
-    </div>
+
+    <f:render partial="Main/Searchlist" />
+
     <br /><br />
 
     <f:link.action action="index">Zurück</f:link.action><br />
