@@ -5,7 +5,7 @@ document.getElementById("discipline").addEventListener("click", C3);
 document.getElementById("level").addEventListener("click", C4);
 document.getElementById("age").addEventListener("click", C5);
 
-// logic for Columns 1 (function C1) - 5 ( function C5)
+// logic for Columns 1 (function C1) - 5 (function C5)
 function C1() {
   if (document.getElementById("gender").classList.contains("active")) {
     // do nothing

@@ -121,6 +121,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
         </div>
       </div>
     </div>
+
     <div id="breadcrumb" class="spacer10 breadcrumb-search">
         <div id="1st" class="filter is-hidden"></div><div id="2nd" class="is-hidden"> sucht </div>
         <div id="3rd" class="filter is-hidden">Herr</div><div id="4th" class="is-hidden"> für </div>
@@ -137,9 +138,9 @@ Otherwise your changes will be overwritten the next time you save the extension 
         <div id="bcEndAgeIntro" class="is-hidden"> und </div><div id="bcEndAge" class="filter is-hidden">99</div>
     </div>
 
-    <f:render partial="Main/Searchlist" />
-
-    <br /><br />
+    <div id="searchlist">
+      <f:render partial="Main/Searchlist" />
+    </div>
 
     <f:link.action action="index">Zurück</f:link.action><br />
 
