@@ -73,4 +73,13 @@ class MainController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     public function searchAction()
     {
     }
+
+    /**
+     * action detail
+     *
+     * @return string|object|null|void
+     */
+    public function detailAction()
+    {
+    }
 }
