@@ -1,0 +1,48 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    
+    
+    
+        <div class="profile__info">
+            
+            <f:form action="new" name="newUser" object="{newUser}">   <!-- create -->
+                <label for="sender">
+                    Absender: Name
+                </label>
+                <br />
+                <f:form.textfield property="sender" id="sender" /><br />
+                <br />
+                <label for="sendmail">
+                    Absender: E-Mail
+                </label>
+                <br />
+                <f:form.textfield property="sendmail" id="sendmail" /><br />
+                <br />
+                <label for="recipient">
+                    Empfänger
+                </label>
+                <br />
+                <f:form.textfield disabled="true" readonly="true" property="recipient" id="recipient" value="Max Mustermann"/><br />
+                <br />
+                <label for="subject">
+                    Betreff
+                </label>
+                <br />
+                <f:form.textfield disabled="true" readonly="true" property="subject" id="subject" value="Kontaktanfrage aus der Tanzpartnersuche des Gelb-Schwarz Casino München"/><br />
+                <br />
+                <label for="plaintext">
+                    Nachricht
+                </label>
+                <br />
+                <f:form.textarea property="plaintext" id="plaintext" rows="7" cols="48" />
+                <br />
+                <f:form.submit value="Absenden" />
+                <br /> <br />
+            </f:form>
+
+            
+        </div>
+        
+        
+
+</html>
+    

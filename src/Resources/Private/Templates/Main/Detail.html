@@ -56,13 +56,19 @@ Otherwise your changes will be overwritten the next time you save the extension 
         <p class="profile__stats__title">Aktiv seit</p>
         <span class="profile__stats__info">06.01.2022</span>
       </div>
-      <div class="profile__cta">
+      <div id="MailButton" class="profile__cta">
         <a class="profilebutton">E-Mail an Max</a>
       </div>
     </div>
   </section>
 
-  <f:link.action action="search">Zurück</f:link.action><br />
+  <div id="mail" class="profile profile-default spacer10 is-hidden">
+    <f:render partial="Main/Mail" />
+  </div>
+
+  <f:link.action action="search" class="tpsbutton alignright spacer10 spacer-bottom30">Zurück</f:link.action><br />
+
+  <script src="{f:uri.resource(path: 'Js/mail.js')}"></script>
 
 </f:section>
 </html>
