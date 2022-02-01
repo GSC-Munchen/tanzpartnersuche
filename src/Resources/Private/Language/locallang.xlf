@@ -79,6 +79,18 @@
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.helpdesc" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.helpdesc">
 				<source>Datenschutz und Nutzungshinweise</source>
 			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.helpdesc" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.helpdesc">
+				<source>Datenschutz und Nutzungshinweise</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.helpintro" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.helpintro">
+				<source>Um die Tanzpartnersuche nutzen zu können, ist die Akzeptanz der folgenden Bestimmungen Voraussetzung.</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.helpgdpr" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.helpgdpr">
+				<source>Hier stehen die Datenschutzklauseln</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.backlink" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.backlink">
+				<source>Zurück</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
