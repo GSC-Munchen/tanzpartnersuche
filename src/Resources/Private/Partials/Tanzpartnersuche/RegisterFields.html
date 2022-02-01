@@ -1,0 +1,40 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<label for="username">
+	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.username" />
+</label><br />
+	<f:form.textfield property="username" name="username" id="username" required="TRUE" /><br />
+<label for="password">
+	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.password" />
+</label><br />
+	<f:form.password property="password" name="password" id="password" /><br />
+<label for="password2">
+	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.password2" />
+</label><br />
+	<f:form.password name="password2" value="{password2}" /><br />
+<label for="email">
+	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.email" />
+</label><br />
+	<f:form.textfield type="email" property="email" name="email" id="email" required="TRUE" /><br />
+<label for="height">
+	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.height" />
+</label><br />
+	<f:form.textfield property="height" name="height" id="height" required="TRUE" /><br />
+<label for="age">
+	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.age" />
+</label><br />
+	<f:form.textfield property="age" name="age" id="age" required="TRUE" /><br />
+<label for="gender">
+	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender" />
+</label><br />
+	<f:form.select name="gender">
+		<f:form.select.option value="0">--- bitte wählen ---</f:form.select.option>
+		<f:form.select.option value="1"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender-female" /></f:form.select.option>
+		<f:form.select.option value="2"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender-male" /></f:form.select.option>
+	 </f:form.select> <br /><br />
+<!-- <label for="picture">
+	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.picture" />
+</label><br /> -->
+<label for="txtprivacy">
+	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.txtprivacy" />
+</label><br /><br />
+</html>

@@ -13,16 +13,28 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
+<f:section name="HeaderAssets">
+    <link rel="stylesheet" href="{f:uri.resource(path: 'Css/custom.css')}"/>
+</f:section>
+
 <f:section name="content">
-    <h1>New Tanzpartnersuche</h1>
+    <h2><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.registermenu" /></h2>
 
     <f:flashMessages />
 
+    <!-- ToDo: muss wieder entfernt werden -->
+    <!-- <f:deb  ug>{_all}</f:deb  ug> -->
+  
+
+    <p> <f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.register" /> </p>
+
     <f:render partial="FormErrors" />
 
-    <f:form action="create" name="newTanzpartnersuche" object="{newTanzpartnersuche}">
-    <f:render partial="Tanzpartnersuche/FormFields" />
-    <f:form.submit value="Create new" />
+    <f:form action="create" name="newTanzpartnersuche" object="{newTanzpartnersuche}">   <!-- create -->
+      <f:render partial="Tanzpartnersuche/RegisterFields" />
+      <f:form.submit value="Absenden" />
     </f:form>
+
+    <f:link.action action="index" class="tpsbutton alignright"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.backlink" /></f:link.action>
 </f:section>
 </html>

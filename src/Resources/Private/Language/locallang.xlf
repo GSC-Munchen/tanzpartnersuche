@@ -25,7 +25,7 @@
 				<source>Geschlecht</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.picture" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.picture">
-				<source>Profilbild</source>
+				<source>Bild/Avatar</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level">
 				<source>Niveau</source>
@@ -96,6 +96,21 @@
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.loginintro" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.loginintro">
 				<source>Bitte melde Dich an, um Deine Einträge oder Dein Profil ändern zu können:</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.register" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.register">
+				<source>Willkommen bei der Registrierung. Bitte fülle die folgenden Felder aus um Dich auf unserer Plattform anzumelden:</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.registermenu" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.registermenu">
+				<source>Registrierung</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.password2" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.password2">
+				<source>Passwort (Wdh.)</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender-female" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender-female">
+				<source>Frau</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender-male" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender-male">
+				<source>Mann</source>
 			</trans-unit>
 		</body>
 	</file>
