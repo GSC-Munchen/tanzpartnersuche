@@ -8,55 +8,44 @@ in /Configuration/ExtensionBuilder/settings.yaml:
   Resources:
     Private:
       Templates:
-        Tanzpartnersuche:
+        Main:
           Index.html: keep
 
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
+<f:section name="HeaderAssets">
+    <link rel="stylesheet" href="{f:uri.resource(path: 'Css/custom.css')}"/>
+</f:section>
+
 <f:section name="content">
-    <h1>Listing for Tanzpartnersuche</h1>
+    <h2><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.title" /></h2>
 
-    <f:flashMessages />
+    <p><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.intro" /></p>
 
-    <table class="tx_tanzpartnersuche">
-        <tr>
-            <th><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.username" /></th>
-            <th><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.password" /></th>
-            <th><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.email" /></th>
-            <th><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.height" /></th>
-            <th><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.age" /></th>
-            <th><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender" /></th>
-            <th><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.picture" /></th>
-            <th><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level" /></th>
-            <th><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category" /></th>
-            <th><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.bio" /></th>
-            <th><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.role" /></th>
-            <th><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.verificationcode" /></th>
-            <th><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.loggedin" /></th>
-            <th></th>
-            <th></th>
-        </tr>
-        <f:for each="{tanzpartnersuches}" as="tanzpartnersuche">
-            <tr>
-                <td><f:link.action action="show" arguments="{tanzpartnersuche : tanzpartnersuche}">{tanzpartnersuche.username}</f:link.action></td>
-                <td><f:link.action action="show" arguments="{tanzpartnersuche : tanzpartnersuche}">{tanzpartnersuche.password}</f:link.action></td>
-                <td><f:link.action action="show" arguments="{tanzpartnersuche : tanzpartnersuche}">{tanzpartnersuche.email}</f:link.action></td>
-                <td><f:link.action action="show" arguments="{tanzpartnersuche : tanzpartnersuche}">{tanzpartnersuche.height}</f:link.action></td>
-                <td><f:link.action action="show" arguments="{tanzpartnersuche : tanzpartnersuche}">{tanzpartnersuche.age}</f:link.action></td>
-                <td><f:link.action action="show" arguments="{tanzpartnersuche : tanzpartnersuche}">{tanzpartnersuche.gender}</f:link.action></td>
-                <td><f:link.action action="show" arguments="{tanzpartnersuche : tanzpartnersuche}">{tanzpartnersuche.picture.originalResource.name}</f:link.action></td>
-                <td><f:link.action action="show" arguments="{tanzpartnersuche : tanzpartnersuche}">{tanzpartnersuche.level}</f:link.action></td>
-                <td><f:link.action action="show" arguments="{tanzpartnersuche : tanzpartnersuche}">{tanzpartnersuche.category}</f:link.action></td>
-                <td><f:link.action action="show" arguments="{tanzpartnersuche : tanzpartnersuche}">{tanzpartnersuche.bio}</f:link.action></td>
-                <td><f:link.action action="show" arguments="{tanzpartnersuche : tanzpartnersuche}">{tanzpartnersuche.role}</f:link.action></td>
-                <td><f:link.action action="show" arguments="{tanzpartnersuche : tanzpartnersuche}">{tanzpartnersuche.verificationcode}</f:link.action></td>
-                <td><f:link.action action="show" arguments="{tanzpartnersuche : tanzpartnersuche}">{tanzpartnersuche.loggedin}</f:link.action></td>
-                <td><f:link.action action="edit" arguments="{tanzpartnersuche : tanzpartnersuche}">Edit</f:link.action></td>
-                <td><f:link.action action="delete" arguments="{tanzpartnersuche : tanzpartnersuche}">Delete</f:link.action></td>
-            </tr>
-        </f:for>
-    </table>
+    <p><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.legal" /></p>
 
-    <f:link.action action="new">New Tanzpartnersuche</f:link.action>
+    <div id="appmenu" class="appmenu">
+      <f:link.action action="login" class="tile">
+          <div class="info"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.login" /></div>
+          <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/login.png" width="50px" height="50px" />
+          <h4 class="fittext"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.logindesc" /></h4>
+      </f:link.action>
+      <f:link.action action="search" arguments="{main : main}" class="tile yellow">
+          <div class="info"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.find" /></div>
+          <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/find.png" width="50px" height="50px" />
+          <h4 class="fittext"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.finddesc" /></h4>
+      </f:link.action>
+      <f:link.action action="new" class="tile">
+          <div class="info"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.registermenu" /></div>
+          <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/signup.png" width="50px" height="50px" />
+          <h4 class="fittext"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.registerdesc" /></h4>
+      </f:link.action>
+      <f:link.action action="help" class="tile">
+          <div class="info"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.help" /></div>
+          <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/docs.png" width="50px" height="50px" />
+          <h4 class="fittext"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.helpdesc" /></h4>
+      </f:link.action>
+    </div>
+
 </f:section>
 </html>

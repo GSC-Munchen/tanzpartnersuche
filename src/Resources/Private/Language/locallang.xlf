@@ -16,34 +16,68 @@
 				<source>Email</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.height" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.height">
-				<source>Height</source>
+				<source>Größe</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.age" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.age">
-				<source>Age</source>
+				<source>Alter</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender">
-				<source>Gender</source>
+				<source>Geschlecht</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.picture" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.picture">
-				<source>Picture</source>
+				<source>Profilbild</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level">
-				<source>Level</source>
+				<source>Niveau</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category">
-				<source>Category</source>
+				<source>Disziplin</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.bio" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.bio">
-				<source>Bio</source>
+				<source>Beschreibung</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.role" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.role">
-				<source>Role</source>
+				<source>Rolle</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.verificationcode" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.verificationcode">
 				<source>Verificationcode</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.loggedin" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.loggedin">
 				<source>Loggedin</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.title" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.title">
+				<source>Auf der Suche nach einer Tanzpartnerin/einem Tanzpartner?</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.intro" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.intro">
+				<source>Herzlich willkommen auf unserer Plattform. Hier können eigene Profile angelegt oder in vorhandenen 
+            			Einträgen gesucht werden. Wir wünschen dabei viel Erfolg!</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.legal" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.legal">
+				<source>Mit Benutzung unserer Tanzpartnersuche, erkläre ich meine Einwilligung in die Nutzungsbestimmungen, sowie die Verarbeitung meiner Angaben. Diese Einwilligung kann ich jederzeit widerrufen, wodurch die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung nicht berührt wird.</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.login" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.login">
+				<source>Login</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.find" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.find">
+				<source>Suche</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.registermenu" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.registermenu">
+				<source>Registrierung</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.help" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.help">
+				<source>Hinweise</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.logindesc" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.logindesc">
+				<source>Ändern/Löschen von Inhalten</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.finddesc" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.finddesc">
+				<source>Suche nach Tanzpartnern</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.registerdesc" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.registerdesc">
+				<source>Anlegen eines eigenen Profils</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.helpdesc" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.helpdesc">
+				<source>Datenschutz und Nutzungshinweise</source>
 			</trans-unit>
 		</body>
 	</file>
