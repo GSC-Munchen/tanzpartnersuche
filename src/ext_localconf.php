@@ -38,6 +38,6 @@ defined('TYPO3_MODE') || die();
     $iconRegistry->registerIcon(
         'tanzpartnersuche-plugin-tanzpartnersuche',
         \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        ['source' => 'EXT:tanzpartnersuche/Resources/Public/Icons/user_plugin_tanzpartnersuche.svg']
+        ['source' => 'EXT:tanzpartnersuche/Resources/Public/Icons/GSClogo.svg']
     );
 })();
