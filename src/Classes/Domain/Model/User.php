@@ -229,6 +229,27 @@ class User extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
+     * Returns the hidden-flag
+     *
+     * @return string $hidden
+     */
+    public function getHidden()
+    {
+        return $this->hidden;
+    }
+
+    /**
+     * Sets the hidden-flag
+     *
+     * @param string $hidden
+     * @return void
+     */
+    public function setHidden(string $hidden)
+    {
+        $this->hidden = $hidden;
+    }
+
+    /**
      * Returns the picture
      *
      * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $picture

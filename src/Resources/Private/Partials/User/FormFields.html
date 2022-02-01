@@ -2,27 +2,27 @@
 <label for="username">
 	<f:translate key="tx_tanzpartnersuche_domain_model_user.username" />
 </label><br />
-	<f:form.textfield property="username" id="username" /><br />
+	<f:form.textfield property="username" name="username" id="username" required="TRUE" /><br />
 <label for="password">
 	<f:translate key="tx_tanzpartnersuche_domain_model_user.password" />
 </label><br />
-	<f:form.password property="password" id="password" /><br />
+	<f:form.password property="password" name="password" id="password" /><br />
 <label for="password2">
 	<f:translate key="tx_tanzpartnersuche_domain_model_user.password2" />
 </label><br />
-	<f:form.password property="password2" id="password2" /><br />
+	<f:form.password name="password2" value="{password2}" /><br />
 <label for="email">
 	<f:translate key="tx_tanzpartnersuche_domain_model_user.email" />
 </label><br />
-	<f:form.textfield type="email" property="email" id="email" /><br />
+	<f:form.textfield type="email" property="email" name="email" id="email" required="TRUE" /><br />
 <label for="height">
 	<f:translate key="tx_tanzpartnersuche_domain_model_user.height" />
 </label><br />
-	<f:form.textfield property="height" id="height" /><br />
+	<f:form.textfield property="height" name="height" id="height" required="TRUE" /><br />
 <label for="age">
 	<f:translate key="tx_tanzpartnersuche_domain_model_user.age" />
 </label><br />
-	<f:form.textfield property="age" id="age" /><br />
+	<f:form.textfield property="age" name="age" id="age" required="TRUE" /><br />
 <label for="gender">
 	<f:translate key="tx_tanzpartnersuche_domain_model_user.gender" />
 </label><br />
