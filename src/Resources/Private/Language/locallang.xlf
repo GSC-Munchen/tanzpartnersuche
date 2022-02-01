@@ -91,6 +91,12 @@
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.backlink" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.backlink">
 				<source>Zurück</source>
 			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.login" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.login">
+				<source>Login</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.loginintro" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.loginintro">
+				<source>Bitte melde Dich an, um Deine Einträge oder Dein Profil ändern zu können:</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
