@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="EXT:tanzpartnersuche/Resources/Private/Language/locallang_csh_tx_tanzpartnersuche_domain_model_tanzpartnersuche.xlf" date="2022-02-01T20:19:03Z" product-name="tanzpartnersuche">
+		<header/>
+		<body>
+			<trans-unit id="username.description" resname="username.description">
+				<source>username</source>
+			</trans-unit>
+			<trans-unit id="password.description" resname="password.description">
+				<source>password</source>
+			</trans-unit>
+			<trans-unit id="email.description" resname="email.description">
+				<source>email</source>
+			</trans-unit>
+			<trans-unit id="height.description" resname="height.description">
+				<source>height</source>
+			</trans-unit>
+			<trans-unit id="age.description" resname="age.description">
+				<source>age</source>
+			</trans-unit>
+			<trans-unit id="gender.description" resname="gender.description">
+				<source>gender</source>
+			</trans-unit>
+			<trans-unit id="picture.description" resname="picture.description">
+				<source>picture</source>
+			</trans-unit>
+			<trans-unit id="level.description" resname="level.description">
+				<source>level</source>
+			</trans-unit>
+			<trans-unit id="category.description" resname="category.description">
+				<source>category</source>
+			</trans-unit>
+			<trans-unit id="bio.description" resname="bio.description">
+				<source>bio</source>
+			</trans-unit>
+			<trans-unit id="role.description" resname="role.description">
+				<source>role</source>
+			</trans-unit>
+			<trans-unit id="verificationcode.description" resname="verificationcode.description">
+				<source>verificationcode</source>
+			</trans-unit>
+			<trans-unit id="loggedin.description" resname="loggedin.description">
+				<source>loggedin</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -3,8 +3,8 @@
         {
             "config": {
                 "position": [
-                    76,
-                    126
+                    128,
+                    88
                 ]
             },
             "name": "New Model Object",
@@ -13,14 +13,18 @@
                     "_default0_index": true,
                     "_default1_list": false,
                     "_default2_show": true,
-                    "_default3_new_create": false,
-                    "_default4_edit_update": false,
-                    "_default5_delete": false,
+                    "_default3_new_create": true,
+                    "_default4_edit_update": true,
+                    "_default5_delete": true,
                     "customActions": [
-                        "help"
+                        "verify",
+                        "search",
+                        "help",
+                        "detail",
+                        "login"
                     ]
                 },
-                "name": "Main",
+                "name": "Tanzpartnersuche",
                 "objectsettings": {
                     "addDeletedField": true,
                     "addHiddenField": true,
@@ -32,61 +36,7 @@
                     "parentClass": "",
                     "sorting": false,
                     "type": "Entity",
-                    "uid": "1476441371463"
-                },
-                "propertyGroup": {
-                    "properties": []
-                },
-                "relationGroup": {
-                    "relations": [
-                        {
-                            "foreignRelationClass": "",
-                            "lazyLoading": false,
-                            "propertyIsExcludeField": true,
-                            "relationDescription": "",
-                            "relationName": "relUser",
-                            "relationType": "zeroToMany",
-                            "relationWire": "[wired]",
-                            "renderType": "inline",
-                            "uid": "1619320807007"
-                        }
-                    ]
-                }
-            }
-        },
-        {
-            "config": {
-                "position": [
-                    475,
-                    8
-                ]
-            },
-            "name": "New Model Object",
-            "value": {
-                "actionGroup": {
-                    "_default0_index": true,
-                    "_default1_list": true,
-                    "_default2_show": true,
-                    "_default3_new_create": true,
-                    "_default4_edit_update": true,
-                    "_default5_delete": true,
-                    "customActions": [
-                        "login"
-                    ]
-                },
-                "name": "User",
-                "objectsettings": {
-                    "addDeletedField": true,
-                    "addHiddenField": true,
-                    "addStarttimeEndtimeFields": true,
-                    "aggregateRoot": true,
-                    "categorizable": false,
-                    "description": "User Domain",
-                    "mapToTable": "",
-                    "parentClass": "",
-                    "sorting": false,
-                    "type": "Entity",
-                    "uid": "618895479942"
+                    "uid": "1439476535600"
                 },
                 "propertyGroup": {
                     "properties": [
@@ -100,7 +50,7 @@
                             "propertyIsRequired": false,
                             "propertyName": "username",
                             "propertyType": "String",
-                            "uid": "62745821433"
+                            "uid": "696466712702"
                         },
                         {
                             "allowedFileTypes": "",
@@ -112,7 +62,7 @@
                             "propertyIsRequired": false,
                             "propertyName": "password",
                             "propertyType": "Password",
-                            "uid": "578161494810"
+                            "uid": "1392378369236"
                         },
                         {
                             "allowedFileTypes": "",
@@ -124,7 +74,7 @@
                             "propertyIsRequired": false,
                             "propertyName": "email",
                             "propertyType": "Email",
-                            "uid": "687670459295"
+                            "uid": "733614221660"
                         },
                         {
                             "allowedFileTypes": "",
@@ -136,7 +86,7 @@
                             "propertyIsRequired": false,
                             "propertyName": "height",
                             "propertyType": "Integer",
-                            "uid": "1436866267897"
+                            "uid": "842009020332"
                         },
                         {
                             "allowedFileTypes": "",
@@ -148,7 +98,7 @@
                             "propertyIsRequired": false,
                             "propertyName": "age",
                             "propertyType": "Integer",
-                            "uid": "605697309636"
+                            "uid": "1520581100716"
                         },
                         {
                             "allowedFileTypes": "",
@@ -160,7 +110,7 @@
                             "propertyIsRequired": false,
                             "propertyName": "gender",
                             "propertyType": "String",
-                            "uid": "1039611642657"
+                            "uid": "544393998757"
                         },
                         {
                             "allowedFileTypes": "",
@@ -172,61 +122,8 @@
                             "propertyIsRequired": false,
                             "propertyName": "picture",
                             "propertyType": "Image",
-                            "uid": "1472108520665"
-                        }
-                    ]
-                },
-                "relationGroup": {
-                    "relations": [
-                        {
-                            "foreignRelationClass": "",
-                            "lazyLoading": false,
-                            "propertyIsExcludeField": true,
-                            "relationDescription": "",
-                            "relationName": "relOffer",
-                            "relationType": "zeroToMany",
-                            "relationWire": "[wired]",
-                            "renderType": "inline",
-                            "uid": "1541021148188"
-                        }
-                    ]
-                }
-            }
-        },
-        {
-            "config": {
-                "position": [
-                    481,
-                    275
-                ]
-            },
-            "name": "New Model Object",
-            "value": {
-                "actionGroup": {
-                    "_default0_index": true,
-                    "_default1_list": true,
-                    "_default2_show": true,
-                    "_default3_new_create": true,
-                    "_default4_edit_update": true,
-                    "_default5_delete": true,
-                    "customActions": []
-                },
-                "name": "Offer",
-                "objectsettings": {
-                    "addDeletedField": true,
-                    "addHiddenField": true,
-                    "addStarttimeEndtimeFields": true,
-                    "aggregateRoot": true,
-                    "categorizable": false,
-                    "description": "Offer Domain",
-                    "mapToTable": "",
-                    "parentClass": "",
-                    "sorting": false,
-                    "type": "Entity",
-                    "uid": "530407132939"
-                },
-                "propertyGroup": {
-                    "properties": [
+                            "uid": "1591522884146"
+                        },
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
@@ -237,7 +134,7 @@
                             "propertyIsRequired": false,
                             "propertyName": "level",
                             "propertyType": "String",
-                            "uid": "1189401968996"
+                            "uid": "989442214966"
                         },
                         {
                             "allowedFileTypes": "",
@@ -249,7 +146,7 @@
                             "propertyIsRequired": false,
                             "propertyName": "category",
                             "propertyType": "String",
-                            "uid": "1426329573325"
+                            "uid": "22207230349"
                         },
                         {
                             "allowedFileTypes": "",
@@ -261,7 +158,7 @@
                             "propertyIsRequired": false,
                             "propertyName": "bio",
                             "propertyType": "Text",
-                            "uid": "146992730809"
+                            "uid": "223989162773"
                         },
                         {
                             "allowedFileTypes": "",
@@ -273,7 +170,31 @@
                             "propertyIsRequired": false,
                             "propertyName": "role",
                             "propertyType": "String",
-                            "uid": "1526077417812"
+                            "uid": "664645272111"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsNullable": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "verificationcode",
+                            "propertyType": "String",
+                            "uid": "1082060820404"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsNullable": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "loggedin",
+                            "propertyType": "String",
+                            "uid": "54392387286"
                         }
                     ]
                 },
@@ -285,33 +206,29 @@
     ],
     "properties": {
         "backendModules": [],
-        "description": "A typo3 extension for our dancing club, used to find a dancing partner.",
+        "description": "Tanzpartnersuche des GSC M\u00fcnchen e.V.",
         "emConf": {
             "category": "plugin",
             "custom_category": "",
-            "dependsOn": "typo3 => 10.4.0-10.4.99\n",
+            "dependsOn": "typo3 => 10.4.0-11.99.99\n",
             "disableLocalization": false,
             "disableVersioning": false,
             "generateDocumentationTemplate": true,
+            "generateEditorConfig": false,
+            "generateEmptyGitRepository": false,
             "sourceLanguage": "de",
             "state": "alpha",
             "targetVersion": "10.4.0-10.4.99",
-            "version": "0.3"
+            "version": "0.0.1"
         },
         "extensionKey": "tanzpartnersuche",
-        "name": "Tanzpartnersuche",
-        "originalExtensionKey": "tanzpartnersuche",
-        "originalVendorName": "GSC",
+        "name": "tanzpartnersuche",
+        "originalExtensionKey": "",
+        "originalVendorName": "",
         "persons": [
             {
                 "company": "GSC M\u00fcnchen e.V.",
-                "email": "ias@gsc-muenchen.de",
-                "name": "Peter-Benedikt von Niebelsch\u00fctz",
-                "role": "Developer"
-            },
-            {
-                "company": "GSC M\u00fcnchen e.V.",
-                "email": "ias@gsc-muenchen.de",
+                "email": "tanzpartnersuche@gsc-muenchen.de",
                 "name": "Martin Arend",
                 "role": "Developer"
             }
@@ -322,43 +239,18 @@
                     "controllerActionCombinations": "",
                     "noncacheableActions": ""
                 },
-                "description": "A typo3 extension for our dancing club, used to find a dancing partner.",
+                "description": "Tanzpartnersuche des GSC M\u00fcnchen e.V.",
                 "key": "tanzpartnersuche",
-                "name": "Tanzpartnersuche"
+                "name": "tanzpartnersuche"
             }
         ],
         "vendorName": "GSC"
     },
-    "wires": [
-        {
-            "src": {
-                "moduleId": 0,
-                "terminal": "relationWire_0",
-                "uid": "1619320807007"
-            },
-            "tgt": {
-                "moduleId": 1,
-                "terminal": "SOURCES",
-                "uid": "618895479942"
-            }
-        },
-        {
-            "src": {
-                "moduleId": 1,
-                "terminal": "relationWire_0",
-                "uid": "1541021148188"
-            },
-            "tgt": {
-                "moduleId": 2,
-                "terminal": "SOURCES",
-                "uid": "530407132939"
-            }
-        }
-    ],
+    "wires": [],
     "storagePath": "\/var\/www\/www.gsc-muenchen.de\/htdocs\/typo3conf\/ext\/",
     "log": {
-        "last_modified": "2021-09-12 02:09",
-        "extension_builder_version": "10.0.1",
+        "last_modified": "2022-02-01 08:19",
+        "extension_builder_version": "10.0.3",
         "be_user": "Martin Arend (2)"
     }
 }

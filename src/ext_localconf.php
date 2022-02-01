@@ -1,20 +1,16 @@
 <?php
 defined('TYPO3_MODE') || die();
 
-call_user_func(static function() {
+(static function() {
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
         'Tanzpartnersuche',
         'Tanzpartnersuche',
         [
-            \GSC\Tanzpartnersuche\Controller\MainController::class => 'index, show, help, search, detail',
-            \GSC\Tanzpartnersuche\Controller\UserController::class => 'index, list, show, new, create, edit, update, delete, login',
-            \GSC\Tanzpartnersuche\Controller\OfferController::class => 'index, list, show, new, create, edit, update, delete'
+            \GSC\Tanzpartnersuche\Controller\TanzpartnersucheController::class => 'index, show, new, create, edit, update, delete, verify, search, help, detail, login'
         ],
         // non-cacheable actions
         [
-            \GSC\Tanzpartnersuche\Controller\MainController::class => 'search, detail',
-            \GSC\Tanzpartnersuche\Controller\UserController::class => 'index, list, show, new, create, edit, update, delete, login',
-            \GSC\Tanzpartnersuche\Controller\OfferController::class => 'index, list, show, new, create, edit, update, delete'
+            \GSC\Tanzpartnersuche\Controller\TanzpartnersucheController::class => 'create, update, delete, '
         ]
     );
 
@@ -44,4 +40,4 @@ call_user_func(static function() {
         \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
         ['source' => 'EXT:tanzpartnersuche/Resources/Public/Icons/user_plugin_tanzpartnersuche.svg']
     );
-});
+})();

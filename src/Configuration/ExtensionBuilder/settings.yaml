@@ -1,6 +1,6 @@
 #
 # Extension Builder settings for extension tanzpartnersuche
-# generated 2021-09-12T13:51:46Z
+# generated 2022-02-01T20:18:45Z
 #
 # See http://www.yaml.org/spec/1.2/spec.html
 #
@@ -69,7 +69,7 @@ overwriteSettings:
 declareStrictTypes: true
 
 ## use static date attribute in xliff files
-#staticDateInXliffFiles: '2021-09-12T13:51:46Z'
+#staticDateInXliffFiles: '2022-02-01T20:18:45Z'
 
 ## skip docComment (license header)
 #skipDocComment: false

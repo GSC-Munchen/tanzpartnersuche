@@ -1,12 +1,8 @@
 {
-    "name": "g-s-c/tanzpartnersuche",
+    "name": "gsc/tanzpartnersuche",
     "type": "typo3-cms-extension",
-    "description": "A typo3 extension for our dancing club, used to find a dancing partner.",
+    "description": "Tanzpartnersuche des GSC M\u00fcnchen e.V.",
     "authors": [
-        {
-            "name": "Peter-Benedikt von Niebelsch\u00fctz",
-            "role": "Developer"
-        },
         {
             "name": "Martin Arend",
             "role": "Developer"

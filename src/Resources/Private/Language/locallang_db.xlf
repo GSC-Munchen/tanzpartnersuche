@@ -1,61 +1,49 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="de" datatype="plaintext" original="EXT:tanzpartnersuche/Resources/Private/Language/locallang_db" date="2021-09-12T14:09:11Z" product-name="tanzpartnersuche">
+	<file source-language="de" datatype="plaintext" original="EXT:tanzpartnersuche/Resources/Private/Language/locallang_db.xlf" date="2022-02-01T20:19:03Z" product-name="tanzpartnersuche">
 		<header/>
 		<body>
-			<trans-unit id="tx_tanzpartnersuche_domain_model_main" resname="tx_tanzpartnersuche_domain_model_main">
-				<source>Main</source>
-			</trans-unit>
-			<trans-unit id="tx_tanzpartnersuche_domain_model_main.rel_user" resname="tx_tanzpartnersuche_domain_model_main.rel_user">
-				<source>Rel User</source>
-			</trans-unit>
-			<trans-unit id="tx_tanzpartnersuche_domain_model_user" resname="tx_tanzpartnersuche_domain_model_user">
-				<source>User</source>
-			</trans-unit>
-			<trans-unit id="tx_tanzpartnersuche_domain_model_user.username" resname="tx_tanzpartnersuche_domain_model_user.username">
-				<source>Username</source>
-			</trans-unit>
-			<trans-unit id="tx_tanzpartnersuche_domain_model_user.password" resname="tx_tanzpartnersuche_domain_model_user.password">
-				<source>Password</source>
-			</trans-unit>
-			<trans-unit id="tx_tanzpartnersuche_domain_model_user.email" resname="tx_tanzpartnersuche_domain_model_user.email">
-				<source>Email</source>
-			</trans-unit>
-			<trans-unit id="tx_tanzpartnersuche_domain_model_user.height" resname="tx_tanzpartnersuche_domain_model_user.height">
-				<source>Height</source>
-			</trans-unit>
-			<trans-unit id="tx_tanzpartnersuche_domain_model_user.age" resname="tx_tanzpartnersuche_domain_model_user.age">
-				<source>Age</source>
-			</trans-unit>
-			<trans-unit id="tx_tanzpartnersuche_domain_model_user.gender" resname="tx_tanzpartnersuche_domain_model_user.gender">
-				<source>Gender</source>
-			</trans-unit>
-			<trans-unit id="tx_tanzpartnersuche_domain_model_user.picture" resname="tx_tanzpartnersuche_domain_model_user.picture">
-				<source>Picture</source>
-			</trans-unit>
-			<trans-unit id="tx_tanzpartnersuche_domain_model_user.rel_offer" resname="tx_tanzpartnersuche_domain_model_user.rel_offer">
-				<source>Rel Offer</source>
-			</trans-unit>
-			<trans-unit id="tx_tanzpartnersuche_domain_model_offer" resname="tx_tanzpartnersuche_domain_model_offer">
-				<source>Offer</source>
-			</trans-unit>
-			<trans-unit id="tx_tanzpartnersuche_domain_model_offer.level" resname="tx_tanzpartnersuche_domain_model_offer.level">
-				<source>Level</source>
-			</trans-unit>
-			<trans-unit id="tx_tanzpartnersuche_domain_model_offer.category" resname="tx_tanzpartnersuche_domain_model_offer.category">
-				<source>Category</source>
-			</trans-unit>
-			<trans-unit id="tx_tanzpartnersuche_domain_model_offer.bio" resname="tx_tanzpartnersuche_domain_model_offer.bio">
-				<source>Bio</source>
-			</trans-unit>
-			<trans-unit id="tx_tanzpartnersuche_domain_model_offer.role" resname="tx_tanzpartnersuche_domain_model_offer.role">
-				<source>Role</source>
-			</trans-unit>
-			<trans-unit id="tx_tanzpartnersuche_tanzpartnersuche.name" resname="tx_tanzpartnersuche_tanzpartnersuche.name">
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche">
 				<source>Tanzpartnersuche</source>
 			</trans-unit>
-			<trans-unit id="tx_tanzpartnersuche_tanzpartnersuche.description" resname="tx_tanzpartnersuche_tanzpartnersuche.description">
-				<source>A typo3 extension for our dancing club, used to find a dancing partner.</source>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.username" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.username">
+				<source>Username</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.password" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.password">
+				<source>Password</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.email" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.height" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.height">
+				<source>Height</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.age" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.age">
+				<source>Age</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender">
+				<source>Gender</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.picture" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.picture">
+				<source>Picture</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level">
+				<source>Level</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.bio" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.bio">
+				<source>Bio</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.role" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.role">
+				<source>Role</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.verificationcode" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.verificationcode">
+				<source>Verificationcode</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.loggedin" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.loggedin">
+				<source>Loggedin</source>
 			</trans-unit>
 		</body>
 	</file>
