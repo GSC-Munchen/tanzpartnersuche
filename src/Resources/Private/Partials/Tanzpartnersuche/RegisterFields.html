@@ -26,14 +26,51 @@
 <label for="gender">
 	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender" />
 </label><br />
-	<f:form.select name="gender">
-		<f:form.select.option value="0">--- bitte wählen ---</f:form.select.option>
+	<f:form.select name="gender" property="gender" id="gender">
+		<f:form.select.option value="0"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.select" /></f:form.select.option>
 		<f:form.select.option value="1"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender-female" /></f:form.select.option>
 		<f:form.select.option value="2"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender-male" /></f:form.select.option>
-	 </f:form.select> <br /><br />
+	 </f:form.select> <br />
+<label for="role">
+	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.role" />
+</label><br />
+	<f:form.select name="role" property="role" id="role">
+		<f:form.select.option value="0"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.select" /></f:form.select.option>
+		<f:form.select.option value="1"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.role-00" /></f:form.select.option>
+		<f:form.select.option value="2"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.role-01" /></f:form.select.option>
+	</f:form.select> <br />
+<label for="category">
+	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category" />
+</label><br />
+	<f:form.select name="category" property="category" id="category">
+		<f:form.select.option value="0"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.select" /></f:form.select.option>
+		<f:form.select.option value="1"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category-00" /></f:form.select.option>
+		<f:form.select.option value="2"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category-01" /></f:form.select.option>
+		<f:form.select.option value="3"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category-02" /></f:form.select.option>
+	</f:form.select> <br />
+<label for="level">
+	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level" />
+</label><br />
+	<f:form.select name="level" property="level" id="level">
+		<f:form.select.option value="0"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.select" /></f:form.select.option>
+		<f:form.select.option value="1"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-00" /></f:form.select.option>
+		<f:form.select.option value="2"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-01" /></f:form.select.option>
+		<f:form.select.option value="3"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-02" /></f:form.select.option>
+		<f:form.select.option value="4"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-03" /></f:form.select.option>
+		<f:form.select.option value="5"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-04" /></f:form.select.option>
+		<f:form.select.option value="6"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-05" /></f:form.select.option>
+		<f:form.select.option value="7"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-06" /></f:form.select.option>
+		<f:form.select.option value="8"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-07" /></f:form.select.option>
+	 </f:form.select> <br />
+<label for="bio">
+	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.bio" />
+</label><br />
+	<f:form.textarea rows="5" cols="83" property="bio" name="bio" id="bio" required="TRUE" /><br /><br />
+
 <!-- <label for="picture">
 	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.picture" />
 </label><br /> -->
+
 <label for="txtprivacy">
 	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.txtprivacy" />
 </label><br /><br />
