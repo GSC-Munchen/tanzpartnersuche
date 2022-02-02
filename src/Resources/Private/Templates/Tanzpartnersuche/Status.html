@@ -1,0 +1,28 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Tanzpartnersuche:
+          Status.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="HeaderAssets">
+    <link rel="stylesheet" href="{f:uri.resource(path: 'Css/custom.css')}"/>
+</f:section>
+
+<f:section name="content">
+    <h2><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.status" /></h2>
+    <p><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.statusdesc" /></p>
+
+    <f:flashMessages />
+    
+    <br/><br/>
+    <f:link.action action="index" class="tpsbutton"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.backlink" /></f:link.action>
+
+</f:section>
+</html>

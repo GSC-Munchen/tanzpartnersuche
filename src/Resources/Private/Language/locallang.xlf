@@ -61,6 +61,12 @@
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.find" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.find">
 				<source>Suche</source>
 			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.status" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.status">
+				<source>Statusmeldung</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.statusdesc" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.statusdesc">
+				<source>Die Aktion wurde mit folgendem Ergebnis abgeschlossen:</source>
+			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.registermenu" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.registermenu">
 				<source>Registrierung</source>
 			</trans-unit>
