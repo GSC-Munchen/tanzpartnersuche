@@ -126,7 +126,7 @@
 
   /* Eingabefelder */
 
-  input[type=text], input[type=password], input[type=email], select {
+  input[type=text], input[type=password], input[type=email], textarea, select {
     border: 0;
     border-bottom: 1px solid #FFC300;
     outline: 0;
@@ -139,6 +139,12 @@
     line-height: clamp(20px,calc(1.25rem + (28 - 20) * ((100vw - 300px) / (1600 - 300))),28px);
     width: 66%;
     height: 28px;
+  }
+
+  textarea {
+    height: 250px;
+    max-height: 250px;
+    max-width: 620px;
   }
 
   .alignright {

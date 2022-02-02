@@ -34,16 +34,19 @@
 				<source>Disziplin</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.bio" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.bio">
-				<source>Beschreibung</source>
+				<source>Über mich</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.role" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.role">
-				<source>Rolle</source>
+				<source>Ich suche</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.verificationcode" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.verificationcode">
 				<source>Verificationcode</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.loggedin" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.loggedin">
 				<source>Loggedin</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.select" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.select">
+				<source>--- bitte wählen ---</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.title" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.title">
 				<source>Auf der Suche nach einer Tanzpartnerin/einem Tanzpartner?</source>
@@ -118,6 +121,46 @@
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender-male" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender-male">
 				<source>Mann</source>
 			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-00" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-00">
+				<source>Jugend</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-01" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-01">
+				<source>Breitensport</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-02" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-02">
+				<source>Vorturnier</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-03" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-03">
+				<source>D-Klasse</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-04" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-04">
+				<source>C-Klasse</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-05" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-05">
+				<source>B-Klasse</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-06" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-06">
+				<source>A-Klasse</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-07" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-07">
+				<source>S-Klasse</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category-00" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category-00">
+				<source>Latein</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category-01" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category-01">
+				<source>Standard</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category-02" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category-02">
+				<source>10 Tänze</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.role-00" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.role-00">
+				<source>eine Tanzdame</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.role-01" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.role-01">
+				<source>einen Tanzherren</source>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>
