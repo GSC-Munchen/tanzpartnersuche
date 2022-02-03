@@ -67,31 +67,70 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
     /**
      * action create
      *
+     * @param string $password2
      * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $newTanzpartnersuche
      * @return string|object|null|void
      */
-    public function createAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $newTanzpartnersuche)
+    public function createAction($password2,\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $newTanzpartnersuche)
     {
         // Form Validations
         
         // Username already in use?
         if ($this->tanzpartnersucheRepository->findUserByUsername($newTanzpartnersuche->getUsername()) != NULL) {
             $this->addFlashMessage('Dieser Benutzername wurde bereits registriert. Bitte einen anderen verwenden oder bestehenden Eintrag editieren/löschen. Ggfs. Passwort vergessen Funktion nutzen.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
-            // $this->forward(addForm,null,null,array('tanzpartnersuche'=>$tanzpartnersuche));
-            $this->redirect('new', null, null, array($this=>$newTanzpartnersuche));
+            $this->forward('new',null,null,array('tanzpartnersuche'=>$newTanzpartnersuche));
+            // $this->redirect('new', null, null, array($this=>$newTanzpartnersuche));
+        }
+
+        // Username < 3 characters?
+        if (strlen($newTanzpartnersuche->getUsername())<3) {
+            $this->addFlashMessage('Username muss mindestens 3 Zeichen lang sein.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
+            $this->forward('new',null,null,array('tanzpartnersuche'=>$newTanzpartnersuche));
+        }
+
+        // Password < 8 characters?
+        if (strlen($newTanzpartnersuche->getPassword())<8) {
+            $this->addFlashMessage('Passwort muss mindestens 8 Zeichen lang sein.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
+            $this->forward('new',null,null,array('tanzpartnersuche'=>$newTanzpartnersuche));
         }
 
         // Password empty?
         if (empty($newTanzpartnersuche->getPassword())) {
             $this->addFlashMessage('Kein Passwort eingegeben. Bitte korrigieren.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
-            $this->redirect('new', null, null, array($this=>$newTanzpartnersuche));
+            $this->forward('new',null,null,array('tanzpartnersuche'=>$newTanzpartnersuche));
           }
         
-        // Passwords are the same?
-        //if ($newTanzpartnersuche->getPassword() != $password2 ) {
-        //    $this->addFlashMessage('Die Passwörter sind unterschiedlich. Bitte korrigieren.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
-        //    // $this->forward('new', null, null, array('tanzpartnersuche'=>$newTanzpartnersuche));
-        //    $this->redirect('new', null, null, array($this=>$newTanzpartnersuche));
+        // Identical passwords?
+        if ($newTanzpartnersuche->getPassword() != $password2 ) {
+            $this->addFlashMessage('Die Passwörter sind unterschiedlich. Bitte korrigieren.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
+            $this->forward('new',null,null,array('tanzpartnersuche'=>$newTanzpartnersuche));
+        }
+
+        // E-Mail already in use?
+        if ($this->tanzpartnersucheRepository->findUserByEmail($newTanzpartnersuche->getEmail()) != NULL) {
+            $this->addFlashMessage('Diese E-Mail wurde bereits registriert. Bitte eine andere verwenden oder bestehenden Eintrag editieren/löschen. Ggfs. Passwort vergessen Funktion nutzen.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
+            $this->forward('new',null,null,array('tanzpartnersuche'=>$newTanzpartnersuche));
+        }
+
+        // Valid format of E-Mail?
+        $s = '/^[A-Z0-9._-]+@[A-Z0-9][A-Z0-9.-]{0,61}[A-Z0-9]\.[A-Z.]{2,6}$/i';
+        if(!preg_match($s, $newTanzpartnersuche->getEmail())) {
+            $this->addFlashMessage('Keine gültige E-Mail. Bitte prüfe das Format.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
+            $this->forward('new',null,null,array('tanzpartnersuche'=>$newTanzpartnersuche));
+        }
+
+        // Age < 18?
+        if ($newTanzpartnersuche->getAge()<18) {
+            $this->addFlashMessage('Du musst mindestens 18 Jahre alt sein um die Tanzpartnersuche nutzen zu können.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
+            $this->forward('new',null,null,array('tanzpartnersuche'=>$newTanzpartnersuche));
+        }
+
+        // Accepting EU-DSGVO?
+
+        // ToDo: in Formular einbauen
+        //if (!$dsgv) {
+        //    $this->addFlashMessage('Du musst den Bestimmungen zur Datenverwendung zustimmen, um Dein Profil anlegen zu können.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
+        //    $this->forward('new',null,null,array('tanzpartnersuche'=>$newTanzpartnersuche));
         //}
 
         // all checks passed - prepare next steps
@@ -105,30 +144,26 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
         // Hide User
         $newTanzpartnersuche->setHidden('1');
         
-
         // Add to database
         $this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/p/friendsoftypo3/extension-builder/master/en-us/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
         $this->tanzpartnersucheRepository->add($newTanzpartnersuche);
 
-        // ToDo: Gender wird nicht eingetragen, weitere Abfragen, Redirekt/Forward mit Übernahme der Daten
-
-        // redirect($actionName, $controllerName = NULL, $extensionName = NULL, array $arguments = NULL, $pageUid = NULL, $delay = 0, $statusCode = 303)
-        // forward($actionName, $controllerName = NULL, $extensionName = NULL,array $arguments = NULL)
-
         // send out verification mail
         $status = $this->tanzpartnersucheRepository->sendVeriMail($newTanzpartnersuche->getEmail(), $verCode, $newTanzpartnersuche->getUsername());
+        
+        //ToDo: Move Code to repository
         if ($status = '1') {
             $this->addFlashMessage('Mail erfolgreich verschickt.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
 
             // Mail an Admin versenden
-            //$mailSubject = "Tanzpartnersuche des GSC München e.V. - Neuer Eintrag: ".$tanzpartnersuche->getUsername();
+            $mailSubject = "Tanzpartnersuche des GSC München e.V. - Neuer Eintrag: ".$newTanzpartnersuche->getUsername();
             $emailBody = "Ein neuer Eintrag wurde angelegt. \n";
             $emailBody .= "\n";
-            //$emailBody .= "Der Nutzer ".$tanzpartnersuche->getUsername()." hat seinen Eintrag in der Tanzpartnersuche angelegt und den Freischaltungslink erhalten.\n";
+            $emailBody .= "Der Nutzer ".$newTanzpartnersuche->getUsername()." hat seinen Eintrag in der Tanzpartnersuche angelegt und den Freischaltungslink erhalten.\n";
             $emailBody .= "\n";
-            //$emailBody .= "Nutzername: ".$tanzpartnersuche->getUsername()." \n";
-            //$emailBody .= "E-Mail:     ".$tanzpartnersuche->getEmail()." \n";
-            //$emailBody .= "Profil:     ".$tanzpartnersuche->getProfile()." \n";
+            $emailBody .= "Nutzername: ".$newTanzpartnersuche->getUsername()." \n";
+            $emailBody .= "E-Mail:     ".$newTanzpartnersuche->getEmail()." \n";
+            $emailBody .= "Profil:     ".$newTanzpartnersuche->getBio()." \n";
             $emailBody .= "\n";
             $emailBody .= "Ende der Nachricht\n";
 
@@ -139,11 +174,9 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
 
             //$message->setBody($emailBody, 'text/plain');
             //$message->send();
-
         }
         
-        
-        
+        // Display overall result on status page
         $this->redirect('status');
     }
 

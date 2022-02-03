@@ -47,6 +47,31 @@ class TanzpartnersucheRepository extends \TYPO3\CMS\Extbase\Persistence\Reposito
 
     /**
      * 
+     * @param string $checkmail
+     */
+    public function findUserByEmail($checkmail) 
+    {
+        // Query aufbauen
+        $query = $this->createQuery();
+        $query->getQuerySettings()->setIgnoreEnableFields(true)->setIncludeDeleted(true);
+        $query->matching(
+            $query->logicalAnd(
+                $query->like('email',$checkmail),
+                $query->like('deleted','0')
+                )
+            );
+
+        $result = $query->execute();
+
+        // Wenn Suche ohne Treffer, Ergebniswert auf NULL setzen
+        if (count($result)=='0') 
+            $result = NULL;
+
+        return $result;
+    }
+
+    /**
+     * 
      * @param string $mailRecipient
      * @param string $mailCode
      * @param string $mailName

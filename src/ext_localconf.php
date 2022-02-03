@@ -10,7 +10,7 @@ defined('TYPO3_MODE') || die();
         ],
         // non-cacheable actions
         [
-            \GSC\Tanzpartnersuche\Controller\TanzpartnersucheController::class => 'create, update, delete, status'
+            \GSC\Tanzpartnersuche\Controller\TanzpartnersucheController::class => 'new, create, update, delete, status'
         ]
     );
 
