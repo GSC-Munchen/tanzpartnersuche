@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace GSC\Tanzpartnersuche\Controller;
 
+use TYPO3\CMS\Core\Mail\MailMessage;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 
 /**
  * This file is part of the "tanzpartnersuche" Extension for TYPO3 CMS.
@@ -58,9 +61,40 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
     /**
      * action new
      *
+     * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $newTanzpartnersuche
      * @return string|object|null|void
      */
-    public function newAction()
+    public function newAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $newTanzpartnersuche = NULL)
+    {
+    }
+
+    /**
+     * action new_step1
+     *
+     * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $newTanzpartnersuche
+     * @return string|object|null|void
+     */
+    public function new_step1Action(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $newTanzpartnersuche = NULL)
+    {
+    }
+
+    /**
+     * action new_step2
+     *
+     * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $newTanzpartnersuche
+     * @return string|object|null|void
+     */
+    public function new_step2Action(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $newTanzpartnersuche = NULL)
+    {
+    }
+
+    /**
+     * action new_step3
+     *
+     * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $newTanzpartnersuche
+     * @return string|object|null|void
+     */
+    public function new_step3Action(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $newTanzpartnersuche = NULL)
     {
     }
 
@@ -167,13 +201,13 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
             $emailBody .= "\n";
             $emailBody .= "Ende der Nachricht\n";
 
-            //$message = $this->objectManager->get('TYPO3\\CMS\\Core\\Mail\\MailMessage');
-            //$message->setTo("tanzpartner@gsc-muenchen.de")
-            //        ->setFrom("tanzpartner@gsc-muenchen.de")
-            //        ->setSubject($mailSubject);
+            $message = GeneralUtility::makeInstance(MailMessage::class);
+            $message->setTo("tanzpartner@gsc-muenchen.de")
+                    ->setFrom("tanzpartner@gsc-muenchen.de")
+                    ->setSubject($mailSubject);
 
-            //$message->setBody($emailBody, 'text/plain');
-            //$message->send();
+            $message->html($emailBody);
+            
         }
         
         // Display overall result on status page
