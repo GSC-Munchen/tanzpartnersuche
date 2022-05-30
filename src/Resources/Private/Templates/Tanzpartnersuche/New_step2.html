@@ -18,20 +18,27 @@
     </f:section>
     
     <f:section name="content">
-        <h2>Bitte Validierungscode eingeben</h2>
+        <h2>Bitte Passwort eingeben</h2>
     
         <f:flashMessages />  
     
-        <p> <f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.register" /> </p>
+        <p> Bitte gebe ein Passwort ein: Mindestlänge 8 Zeichen, davon mindestens jeweils einen Groß- und einen Kleinbuchstaben sowie eine Ziffer.</p>
     
+        <!-- progress bar -->
+        <ul id="progressbar">
+          <li>Nutzername/E-Mail</li>
+          <li class="active">Passwort</li>
+          <li>Persönliches Profil</li>
+        </ul>
+
         <f:render partial="FormErrors" />
     
         <f:form action="create" name="newTanzpartnersuche" object="{newTanzpartnersuche}" additionalAttributes="{role:'form'}">   <!-- create -->
-          <f:render partial="Tanzpartnersuche/New_step1Fields" />
-          <f:form.submit value="Absenden" />
+          <f:render partial="Tanzpartnersuche/New_step2Fields" />
+          <f:form.submit value="Weiter" />
         </f:form>
     
-        <f:link.action action="index" class="tpsbutton alignright"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.backlink" /></f:link.action>
+        <f:link.action action="index" class="tpsbutton alignright">Abbruch</f:link.action>
     </f:section>
     </html>
     

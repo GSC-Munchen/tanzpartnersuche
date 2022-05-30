@@ -113,7 +113,6 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
         // To-Do E-Mail versenden!
 
         // Add to database
-        $this->addFlashMessage('Neuer Benutzer erfolgreich angelegt. E-Mail mit Verifikationscode wurde verschickt.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
         //$this->tanzpartnersucheRepository->add($newTanzpartnersuche);
 
     }
