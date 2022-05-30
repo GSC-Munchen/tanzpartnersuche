@@ -71,21 +71,51 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
     /**
      * action new_step1
      *
-     * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $newTanzpartnersuche
      * @return string|object|null|void
      */
-    public function new_step1Action(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $newTanzpartnersuche = NULL)
+    public function new_step1Action()
     {
     }
 
     /**
      * action new_step2
      *
-     * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $newTanzpartnersuche
+     * @param string $username
+     * @param string $email
      * @return string|object|null|void
      */
-    public function new_step2Action(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $newTanzpartnersuche = NULL)
+    public function new_step2Action($username,$email)
     {
+        // Form Validations
+        
+        // E-Mail already in use?
+        if ($this->tanzpartnersucheRepository->findUserByEmail($email) != NULL) {
+            $this->addFlashMessage('Diese E-Mail wurde bereits registriert. Bitte eine andere verwenden oder bestehenden Eintrag editieren/löschen. Ggfs. Passwort vergessen Funktion nutzen.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
+            $this->forward('new_step1',null,null,null);
+        }
+
+        // Valid format of E-Mail?
+        $s = '/^[A-Z0-9._-]+@[A-Z0-9][A-Z0-9.-]{0,61}[A-Z0-9]\.[A-Z.]{2,6}$/i';
+        if(!preg_match($s, $email)) {
+            $this->addFlashMessage('Keine gültige E-Mail. Bitte prüfe das Format.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
+            $this->forward('new_step1',null,null,null);
+        }
+
+        // all checks passed - prepare next steps
+        // generate verification code
+        $verCode = date('y').rand(10,99).date('m').rand(10,99).date('d').rand(10,99).date('h').rand(10,99).date('i').rand(10,99).date('s').rand(10,99);
+        //$newTanzpartnersuche->setVerificationcode($verCode);
+
+        // Initalise new User
+        //$newTanzpartnersuche->setHidden('1');
+
+        // send out verification mail
+        // To-Do E-Mail versenden!
+
+        // Add to database
+        $this->addFlashMessage('Neuer Benutzer erfolgreich angelegt. E-Mail mit Verifikationscode wurde verschickt.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+        //$this->tanzpartnersucheRepository->add($newTanzpartnersuche);
+
     }
 
     /**

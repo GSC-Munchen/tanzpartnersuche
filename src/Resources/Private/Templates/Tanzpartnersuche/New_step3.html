@@ -9,7 +9,7 @@
         Private:
           Templates:
             Tanzpartnersuche:
-              Reg_step1.html: keep
+              New_step1.html: keep
     
     Otherwise your changes will be overwritten the next time you save the extension in the extension builder
     
@@ -27,7 +27,7 @@
         <f:render partial="FormErrors" />
     
         <f:form action="create" name="newTanzpartnersuche" object="{newTanzpartnersuche}" additionalAttributes="{role:'form'}">   <!-- create -->
-          <f:render partial="Tanzpartnersuche/Reg_step1Fields" />
+          <f:render partial="Tanzpartnersuche/New_step1Fields" />
           <f:form.submit value="Absenden" />
         </f:form>
     

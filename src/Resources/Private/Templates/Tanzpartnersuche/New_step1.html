@@ -24,14 +24,22 @@
     
         <p> <f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.register" /> </p>
     
+        <!-- progress bar -->
+        <ul id="progressbar">
+          <li class="active">Nutzername/E-Mail</li>
+          <li>Passwort</li>
+          <li>Persönliches Profil</li>
+        </ul>
+
         <f:render partial="FormErrors" />
     
-        <f:form action="create" name="newTanzpartnersuche" object="{newTanzpartnersuche}" additionalAttributes="{role:'form'}">   <!-- create -->
+        <f:form action="new_step2" name="newTanzpartnersuche" object="{newTanzpartnersuche}" additionalAttributes="{role:'form'}">   <!-- step2 -->
           <f:render partial="Tanzpartnersuche/New_step1Fields" />
-          <f:form.submit value="Absenden" />
+          <f:form.submit value="Weiter" />
         </f:form>
     
-        <f:link.action action="index" class="tpsbutton alignright"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.backlink" /></f:link.action>
+        <f:link.action action="index" class="tpsbutton alignright">Abbruch</f:link.action>
+
     </f:section>
-    </html>
+  </html>
     
