@@ -6,6 +6,7 @@ namespace GSC\Tanzpartnersuche\Controller;
 
 use TYPO3\CMS\Core\Mail\MailMessage;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche;
 
 
 /**
@@ -63,67 +64,9 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
      *
      * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $newTanzpartnersuche
      * @return string|object|null|void
+     * 
      */
     public function newAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $newTanzpartnersuche = NULL)
-    {
-    }
-
-    /**
-     * action new_step1
-     *
-     * @return string|object|null|void
-     */
-    public function new_step1Action()
-    {
-    }
-
-    /**
-     * action new_step2
-     *
-     * @param string $username
-     * @param string $email
-     * @return string|object|null|void
-     */
-    public function new_step2Action($username,$email)
-    {
-        // Form Validations
-        
-        // E-Mail already in use?
-        if ($this->tanzpartnersucheRepository->findUserByEmail($email) != NULL) {
-            $this->addFlashMessage('Diese E-Mail wurde bereits registriert. Bitte eine andere verwenden oder bestehenden Eintrag editieren/löschen. Ggfs. Passwort vergessen Funktion nutzen.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
-            $this->forward('new_step1',null,null,null);
-        }
-
-        // Valid format of E-Mail?
-        $s = '/^[A-Z0-9._-]+@[A-Z0-9][A-Z0-9.-]{0,61}[A-Z0-9]\.[A-Z.]{2,6}$/i';
-        if(!preg_match($s, $email)) {
-            $this->addFlashMessage('Keine gültige E-Mail. Bitte prüfe das Format.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
-            $this->forward('new_step1',null,null,null);
-        }
-
-        // all checks passed - prepare next steps
-        // generate verification code
-        $verCode = date('y').rand(10,99).date('m').rand(10,99).date('d').rand(10,99).date('h').rand(10,99).date('i').rand(10,99).date('s').rand(10,99);
-        //$newTanzpartnersuche->setVerificationcode($verCode);
-
-        // Initalise new User
-        //$newTanzpartnersuche->setHidden('1');
-
-        // send out verification mail
-        // To-Do E-Mail versenden!
-
-        // Add to database
-        //$this->tanzpartnersucheRepository->add($newTanzpartnersuche);
-
-    }
-
-    /**
-     * action new_step3
-     *
-     * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $newTanzpartnersuche
-     * @return string|object|null|void
-     */
-    public function new_step3Action(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $newTanzpartnersuche = NULL)
     {
     }
 
@@ -138,6 +81,7 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
     {
         // Form Validations
         
+        /**
         // Username already in use?
         if ($this->tanzpartnersucheRepository->findUserByUsername($newTanzpartnersuche->getUsername()) != NULL) {
             $this->addFlashMessage('Dieser Benutzername wurde bereits registriert. Bitte einen anderen verwenden oder bestehenden Eintrag editieren/löschen. Ggfs. Passwort vergessen Funktion nutzen.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
@@ -195,6 +139,7 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
         //    $this->addFlashMessage('Du musst den Bestimmungen zur Datenverwendung zustimmen, um Dein Profil anlegen zu können.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
         //    $this->forward('new',null,null,array('tanzpartnersuche'=>$newTanzpartnersuche));
         //}
+        **/
 
         // all checks passed - prepare next steps
         // generate verification code
@@ -211,6 +156,7 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
         $this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/p/friendsoftypo3/extension-builder/master/en-us/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
         $this->tanzpartnersucheRepository->add($newTanzpartnersuche);
 
+        /**
         // send out verification mail
         $status = $this->tanzpartnersucheRepository->sendVeriMail($newTanzpartnersuche->getEmail(), $verCode, $newTanzpartnersuche->getUsername());
         
@@ -238,6 +184,7 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
             $message->html($emailBody);
             
         }
+        */
         
         // Display overall result on status page
         $this->redirect('status');

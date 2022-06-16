@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace GSC\Tanzpartnersuche\Domain\Repository;
+use TYPO3\CMS\Extbase\Persistence\Repository;
 
 
 /**
@@ -23,6 +24,8 @@ class TanzpartnersucheRepository extends \TYPO3\CMS\Extbase\Persistence\Reposito
 /**
      * 
      * @param string $checkUsername
+     * @return QueryResultInterface|array
+     * @api
      */
     public function findUserByUsername($checkUsername) 
     {
@@ -48,6 +51,8 @@ class TanzpartnersucheRepository extends \TYPO3\CMS\Extbase\Persistence\Reposito
     /**
      * 
      * @param string $checkmail
+     * @return QueryResultInterface|array
+     * @api
      */
     public function findUserByEmail($checkmail) 
     {
