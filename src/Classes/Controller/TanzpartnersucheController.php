@@ -153,10 +153,6 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
 
         // Hide User
         $newTanzpartnersuche->setHidden('1');
-        
-        // Add to database
-        $this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/p/friendsoftypo3/extension-builder/master/en-us/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
-        $this->tanzpartnersucheRepository->add($newTanzpartnersuche);
 
         // send out verification mail
         // assemble message
@@ -165,12 +161,11 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
         $emailBody .= "Es wurde erfolgreich ein neuer Eintrag unter Verwendung dieser Mailadresse in unserer Tanzpartnersuche angelegt. \n";
         $emailBody .= "\n";
         $emailBody .= "Bitte bestätige Deine Email-Adresse in unserem System, indem Du auf \n";
-        $emailBody .= "https://neu.gsc-muenchen.de/neu-hier/tanzpartnersuche?tx_tanzpartnersuche_tanzpartnersuche%5Baction%5D=verification&tx_tanzpartnersuche_tanzpartnersuche%5Bcontroller%5D=Tanzpartnersuche \n";
+        $emailBody .= "https://neu.gsc-muenchen.de/neu-hier/demo?tx_tanzpartnersuche_tanzpartnersuche%5Baction%5D=verify&tx_tanzpartnersuche_tanzpartnersuche%5Bcontroller%5D=Tanzpartnersuche&cHash=705d903e5c7fdef24a1077d0d6a9ee45 \n";
         $emailBody .= "klickst. \n";
         $emailBody .= "\n";
         $emailBody .= "Bitte gib dann Deinen Nutzernamen mit dem Du Dich registriert hast sowie den Verifikationscode ein. ";
         $emailBody .= "Erst danach wird Dein Eintrag in der Tanzpartnersuche sichtbar. \n";
-        $emailBody .= "\n";
         $emailBody .= "\n";
         $emailBody .= "Dein Verifikationscode lautet: \n";
         $emailBody .= $newTanzpartnersuche->getVerificationcode()." \n";
@@ -183,6 +178,7 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
         $emailBody .= "Vielen Dank für die Nutzung unserer Tanzpartnersuche und viel Erfolg dabei! \n";
         $emailBody .= "Dein Gelb-Schwarz Casino München e.V. \n";
         $emailBody .= "\n";
+        $emailBody .= "---\n";
         $emailBody .= "Vertreten durch den Präsidenten Stefan Göttlinger \n";
         $emailBody .= "Registergericht: München \n";
         $emailBody .= "Registernummer: VR 4385\n";
@@ -195,17 +191,12 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
         $mail->text($emailBody);
         $mail->send();
         
-        // Display overall result on verification page
-        $this->redirect('verification');
-    }
+        // Add to database
+        $this->addFlashMessage('Der Eintrag wurde erfolgreich angelegt und die Mail mit dem Verifikationscode versendet.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+        $this->tanzpartnersucheRepository->add($newTanzpartnersuche);
 
-    /**
-     * action verification
-     *
-     * @return string|object|null|void
-     */
-    public function verificationAction()
-    {
+        // Display overall result on verification page
+        $this->redirect('verify');
     }
 
     /**

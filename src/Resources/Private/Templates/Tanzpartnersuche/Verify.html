@@ -11,7 +11,31 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
+<f:section name="HeaderAssets">
+    <link rel="stylesheet" href="{f:uri.resource(path: 'Css/custom.css')}"/>
+</f:section>
+
 <f:section name="content">
-    <h1>Template for verify action</h1>
+  <h2><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.verificationmenu" /></h2>
+
+  <f:flashMessages />  
+
+  <p> <f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.verificationdesc" /> </p>
+
+  <!-- progress bar -->
+  <ul id="progressbar">
+    <li>Profil</li>
+    <li class="active">Verfifikation</li>
+    <li>Fertig</li>
+  </ul>
+
+  <f:render partial="FormErrors" />
+
+  <f:form action="status" name="newTanzpartnersuche" object="{newTanzpartnersuche}" additionalAttributes="{role:'form'}">   <!-- status -->
+      <f:render partial="Tanzpartnersuche/VerificationFields" />
+      <f:form.submit value="Absenden" />
+    </f:form>
+
+    <f:link.action action="index" class="tpsbutton alignright"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.backlink" /></f:link.action>
 </f:section>
 </html>

@@ -73,6 +73,9 @@
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.registermenu" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.registermenu">
 				<source>Registrierung</source>
 			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.verificationmenu" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.verificationmenu">
+				<source>Verifikation</source>
+			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.help" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.help">
 				<source>Hinweise</source>
 			</trans-unit>
@@ -111,6 +114,12 @@
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.registermenu" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.registermenu">
 				<source>Registrierung</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.verificationdesc" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.verificationdesc">
+				<source>Bitte bestätige Deine Anmeldung durch Eingabe des registrierten Nutzernamens und des Verfikationscodes, den Du an Deine angegebene Mail geschickt bekommen hast. Bitte schaue ggfs. in Deinem Spam-Ordner nach. Der Code ist max. 48h Stunden gültig. Danach musst Du Dich erneut registrieren.</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.verification" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.verification">
+				<source>Verfikationscode</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.password2" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.password2">
 				<source>Passwort (Wdh.)</source>
