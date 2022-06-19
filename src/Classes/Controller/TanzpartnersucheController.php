@@ -6,6 +6,7 @@ namespace GSC\Tanzpartnersuche\Controller;
 
 use TYPO3\CMS\Core\Mail\MailMessage;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Annotation as Extbase;
 use GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche;
 
 
@@ -23,7 +24,6 @@ use GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche;
  */
 class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
-
     /**
      * tanzpartnersucheRepository
      *
@@ -75,7 +75,8 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
      *
      * @param string $password2
      * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $newTanzpartnersuche
-     * @return string|object|null|void
+     * @Extbase\Validate(param="newTanzpartnersuche" , validator="GSC\Tanzpartnersuche\Domain\Validator\NewTanzpartnersucheValidator")
+     * @return void
      */
     public function createAction($password2,\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $newTanzpartnersuche)
     {

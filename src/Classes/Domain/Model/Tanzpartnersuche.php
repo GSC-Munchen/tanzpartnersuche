@@ -42,7 +42,6 @@ class Tanzpartnersuche extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      *
      * @var string
      * @TYPO3\CMS\Extbase\Annotation\Validate("EmailAddress")
-     * @TYPO3\CMS\Extbase\Annotation\Validate("GSC\Tanzpartnersuche\Domain\Validator\NewProfileValidator")
      */
     protected $email = '';
 
