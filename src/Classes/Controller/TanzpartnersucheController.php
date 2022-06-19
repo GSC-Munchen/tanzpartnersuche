@@ -7,6 +7,7 @@ namespace GSC\Tanzpartnersuche\Controller;
 use TYPO3\CMS\Core\Mail\MailMessage;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Annotation as Extbase;
+use Symfony\Component\Mime\Address;
 use GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche;
 
 
@@ -157,46 +158,53 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
         $this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/p/friendsoftypo3/extension-builder/master/en-us/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
         $this->tanzpartnersucheRepository->add($newTanzpartnersuche);
 
-        /**
         // send out verification mail
-        $status = $this->tanzpartnersucheRepository->sendVeriMail($newTanzpartnersuche->getEmail(), $verCode, $newTanzpartnersuche->getUsername());
+        // assemble message
+        $emailBody = "Hallo vom Gelb-Schwarz-Casino, \n";
+        $emailBody .= "\n";
+        $emailBody .= "Es wurde erfolgreich ein neuer Eintrag unter Verwendung dieser Mailadresse in unserer Tanzpartnersuche angelegt. \n";
+        $emailBody .= "\n";
+        $emailBody .= "Bitte bestätige Deine Email-Adresse in unserem System, indem Du auf \n";
+        $emailBody .= "https://neu.gsc-muenchen.de/neu-hier/tanzpartnersuche?tx_tanzpartnersuche_tanzpartnersuche%5Baction%5D=verification&tx_tanzpartnersuche_tanzpartnersuche%5Bcontroller%5D=Tanzpartnersuche \n";
+        $emailBody .= "klickst. \n";
+        $emailBody .= "\n";
+        $emailBody .= "Bitte gib dann Deinen Nutzernamen mit dem Du Dich registriert hast sowie den Verifikationscode ein. ";
+        $emailBody .= "Erst danach wird Dein Eintrag in der Tanzpartnersuche sichtbar. \n";
+        $emailBody .= "\n";
+        $emailBody .= "\n";
+        $emailBody .= "Dein Verifikationscode lautet: \n";
+        $emailBody .= $newTanzpartnersuche->getVerificationcode()." \n";
+        $emailBody .= "\n";
+        $emailBody .= "Solltest Du diese Registrierung nicht mehr wünschen oder sie nicht durchgeführt haben, so brauchst Du nichts weiter zu tun. ";
+        $emailBody .= "Der Code ist maximal 48 Stunden gültig. Danach werden die eingegebenen Daten vollständig gelöscht und es ist eine neue Registrierung notwendig. \n";
+        $emailBody .= "\n";
+        $emailBody .= "Falls Du Fragen hast, kannst Du Dich gerne an tanzpartner@gsc-muenchen.de wenden. Wir versuchen diese so schnell wie möglich zu beantworten. \n";
+        $emailBody .= "\n";
+        $emailBody .= "Vielen Dank für die Nutzung unserer Tanzpartnersuche und viel Erfolg dabei! \n";
+        $emailBody .= "Dein Gelb-Schwarz Casino München e.V. \n";
+        $emailBody .= "\n";
+        $emailBody .= "Vertreten durch den Präsidenten Stefan Göttlinger \n";
+        $emailBody .= "Registergericht: München \n";
+        $emailBody .= "Registernummer: VR 4385\n";
+        $emailBody .= "https://www.gsc-muenchen.de/impressum";
+
+        $mail = GeneralUtility::makeInstance(MailMessage::class);
+        $mail->from(new \Symfony\Component\Mime\Address('tanzpartner@gsc-muenchen.de', 'Tanzpartnersuche des Gelb-Schwarz Casino München e.V.'));
+        $mail->to(new Address($newTanzpartnersuche->getEmail(), $newTanzpartnersuche->getEmail()));
+        $mail->subject('Bitte verifiziere Deinen Eintrag in der Tanzpartnersuche des Gelb-Schwarz Casino München e.V.');
+        $mail->text($emailBody);
+        $mail->send();
         
-        //ToDo: Move Code to repository
-        if ($status = '1') {
-            $this->addFlashMessage('Mail erfolgreich verschickt.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
-
-            // Mail an Admin versenden
-            $mailSubject = "Tanzpartnersuche des GSC München e.V. - Neuer Eintrag: ".$newTanzpartnersuche->getUsername();
-            $emailBody = "Ein neuer Eintrag wurde angelegt. \n";
-            $emailBody .= "\n";
-            $emailBody .= "Der Nutzer ".$newTanzpartnersuche->getUsername()." hat seinen Eintrag in der Tanzpartnersuche angelegt und den Freischaltungslink erhalten.\n";
-            $emailBody .= "\n";
-            $emailBody .= "Nutzername: ".$newTanzpartnersuche->getUsername()." \n";
-            $emailBody .= "E-Mail:     ".$newTanzpartnersuche->getEmail()." \n";
-            $emailBody .= "Profil:     ".$newTanzpartnersuche->getBio()." \n";
-            $emailBody .= "\n";
-            $emailBody .= "Ende der Nachricht\n";
-
-            $message = GeneralUtility::makeInstance(MailMessage::class);
-            $message->setTo("tanzpartner@gsc-muenchen.de")
-                    ->setFrom("tanzpartner@gsc-muenchen.de")
-                    ->setSubject($mailSubject);
-
-            $message->html($emailBody);
-            
-        }
-        */
-        
-        // Display overall result on status page
-        $this->redirect('status');
+        // Display overall result on verification page
+        $this->redirect('verification');
     }
 
     /**
-     * action status
+     * action verification
      *
      * @return string|object|null|void
      */
-    public function statusAction()
+    public function verificationAction()
     {
     }
 
