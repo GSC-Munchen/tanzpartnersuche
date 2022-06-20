@@ -74,66 +74,13 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
     /**
      * action create
      *
-     * @param string $password2
      * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $newTanzpartnersuche
      * @Extbase\Validate(param="newTanzpartnersuche" , validator="GSC\Tanzpartnersuche\Domain\Validator\NewTanzpartnersucheValidator")
      * @return void
      */
-    public function createAction($password2,\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $newTanzpartnersuche)
+    public function createAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $newTanzpartnersuche)
     {
-        // Form Validations
         
-        /**
-        // Username already in use?
-        if ($this->tanzpartnersucheRepository->findUserByUsername($newTanzpartnersuche->getUsername()) != NULL) {
-            $this->addFlashMessage('Dieser Benutzername wurde bereits registriert. Bitte einen anderen verwenden oder bestehenden Eintrag editieren/löschen. Ggfs. Passwort vergessen Funktion nutzen.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
-            $this->forward('new',null,null,array('tanzpartnersuche'=>$newTanzpartnersuche));
-            // $this->redirect('new', null, null, array($this=>$newTanzpartnersuche));
-        }
-
-        // Username < 3 characters?
-        if (strlen($newTanzpartnersuche->getUsername())<3) {
-            $this->addFlashMessage('Username muss mindestens 3 Zeichen lang sein.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
-            $this->forward('new',null,null,array('tanzpartnersuche'=>$newTanzpartnersuche));
-        }
-
-        // Password < 8 characters?
-        if (strlen($newTanzpartnersuche->getPassword())<8) {
-            $this->addFlashMessage('Passwort muss mindestens 8 Zeichen lang sein.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
-            $this->forward('new',null,null,array('tanzpartnersuche'=>$newTanzpartnersuche));
-        }
-
-        // Password empty?
-        if (empty($newTanzpartnersuche->getPassword())) {
-            $this->addFlashMessage('Kein Passwort eingegeben. Bitte korrigieren.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
-            $this->forward('new',null,null,array('tanzpartnersuche'=>$newTanzpartnersuche));
-          }
-        
-        // Identical passwords?
-        if ($newTanzpartnersuche->getPassword() != $password2 ) {
-            $this->addFlashMessage('Die Passwörter sind unterschiedlich. Bitte korrigieren.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
-            $this->forward('new',null,null,array('tanzpartnersuche'=>$newTanzpartnersuche));
-        }
-
-        // E-Mail already in use?
-        if ($this->tanzpartnersucheRepository->findUserByEmail($newTanzpartnersuche->getEmail()) != NULL) {
-            $this->addFlashMessage('Diese E-Mail wurde bereits registriert. Bitte eine andere verwenden oder bestehenden Eintrag editieren/löschen. Ggfs. Passwort vergessen Funktion nutzen.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
-            $this->forward('new',null,null,array('tanzpartnersuche'=>$newTanzpartnersuche));
-        }
-
-        // Valid format of E-Mail?
-        $s = '/^[A-Z0-9._-]+@[A-Z0-9][A-Z0-9.-]{0,61}[A-Z0-9]\.[A-Z.]{2,6}$/i';
-        if(!preg_match($s, $newTanzpartnersuche->getEmail())) {
-            $this->addFlashMessage('Keine gültige E-Mail. Bitte prüfe das Format.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
-            $this->forward('new',null,null,array('tanzpartnersuche'=>$newTanzpartnersuche));
-        }
-
-        // Age < 18?
-        if ($newTanzpartnersuche->getAge()<18) {
-            $this->addFlashMessage('Du musst mindestens 18 Jahre alt sein um die Tanzpartnersuche nutzen zu können.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
-            $this->forward('new',null,null,array('tanzpartnersuche'=>$newTanzpartnersuche));
-        }
-
         // Accepting EU-DSGVO?
 
         // ToDo: in Formular einbauen
@@ -141,7 +88,6 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
         //    $this->addFlashMessage('Du musst den Bestimmungen zur Datenverwendung zustimmen, um Dein Profil anlegen zu können.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
         //    $this->forward('new',null,null,array('tanzpartnersuche'=>$newTanzpartnersuche));
         //}
-        **/
 
         // all checks passed - prepare next steps
         // generate verification code

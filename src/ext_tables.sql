@@ -1,6 +1,7 @@
 CREATE TABLE tx_tanzpartnersuche_domain_model_tanzpartnersuche (
 	username varchar(255) NOT NULL DEFAULT '',
 	password varchar(255) NOT NULL DEFAULT '',
+	passwordconfirmation varchar(255) NOT NULL DEFAULT '',
 	email varchar(255) NOT NULL DEFAULT '',
 	height int(11) NOT NULL DEFAULT '0',
 	age int(11) NOT NULL DEFAULT '0',

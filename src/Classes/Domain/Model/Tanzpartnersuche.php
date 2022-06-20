@@ -38,6 +38,14 @@ class Tanzpartnersuche extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $password = '';
 
     /**
+     * passwordconfirmation
+     *
+     * @var string
+     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
+     */
+    protected $passwordconfirmation = '';
+
+    /**
      * email
      *
      * @var string
@@ -159,6 +167,27 @@ class Tanzpartnersuche extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setPassword(string $password)
     {
         $this->password = $password;
+    }
+
+    /**
+     * Returns the passwordconfirmation
+     *
+     * @return string $passwordconfirmation
+     */
+    public function getPasswordconfirmation()
+    {
+        return $this->passwordconfirmation;
+    }
+
+    /**
+     * Sets the passwordconfirmation
+     *
+     * @param string $passwordconfirmation
+     * @return void
+     */
+    public function setPasswordconfirmation(string $passwordconfirmation)
+    {
+        $this->passwordconfirmation = $passwordconfirmation;
     }
 
     /**
