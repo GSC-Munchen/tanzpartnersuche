@@ -24,14 +24,14 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
   <!-- progress bar -->
   <ul id="progressbar">
-    <li>Profil</li>
+    <li class="active">Profil</li>
     <li class="active">Verfifikation</li>
     <li>Fertig</li>
   </ul>
 
   <f:render partial="FormErrors" />
 
-  <f:form action="status" name="newTanzpartnersuche" object="{newTanzpartnersuche}" additionalAttributes="{role:'form'}">   <!-- status -->
+  <f:form action="status" name="verifyTanzpartnersuche" object="{verifyTanzpartnersuche}" additionalAttributes="{role:'form'}">   <!-- status -->
       <f:render partial="Tanzpartnersuche/VerificationFields" />
       <f:form.submit value="Absenden" />
     </f:form>

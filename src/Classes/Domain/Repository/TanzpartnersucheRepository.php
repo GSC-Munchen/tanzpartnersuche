@@ -77,6 +77,35 @@ class TanzpartnersucheRepository extends \TYPO3\CMS\Extbase\Persistence\Reposito
 
     /**
      * 
+     * @param string $checkVerification
+     * @param string $checkUsername
+     * @return QueryResultInterface|array
+     * @api
+     */
+    public function findUserByValidation($checkUsername, $checkVerification) 
+    {
+        // Query aufbauen
+        $query = $this->createQuery();
+        $query->getQuerySettings()->setIgnoreEnableFields(true)->setIncludeDeleted(true);
+        $query->matching(
+            $query->logicalAnd(
+                $query->like('username',$checkUsername),
+                $query->like('verificationcode',$checkVerification),
+                $query->like('deleted','0')
+                )
+            );
+
+        $result = $query->execute();
+
+        // Wenn Suche ohne Treffer, Ergebniswert auf NULL setzen
+        if (count($result)=='0') 
+            $result = NULL;
+
+        return $result;
+    }
+
+    /**
+     * 
      * @param string $mailRecipient
      * @param string $mailCode
      * @param string $mailName

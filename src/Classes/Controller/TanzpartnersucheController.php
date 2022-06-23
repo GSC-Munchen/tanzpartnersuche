@@ -130,6 +130,7 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
         $emailBody .= "Registernummer: VR 4385\n";
         $emailBody .= "https://www.gsc-muenchen.de/impressum";
 
+        // send mail
         $mail = GeneralUtility::makeInstance(MailMessage::class);
         $mail->from(new \Symfony\Component\Mime\Address('tanzpartner@gsc-muenchen.de', 'Tanzpartnersuche des Gelb-Schwarz Casino München e.V.'));
         $mail->to(new Address($newTanzpartnersuche->getEmail(), $newTanzpartnersuche->getEmail()));
@@ -137,12 +138,35 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
         $mail->text($emailBody);
         $mail->send();
         
-        // Add to database
+        // Add new profile to database
         $this->addFlashMessage('Der Eintrag wurde erfolgreich angelegt und die Mail mit dem Verifikationscode versendet.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
         $this->tanzpartnersucheRepository->add($newTanzpartnersuche);
 
         // Display overall result on verification page
         $this->redirect('verify');
+    }
+
+    /**
+     * action verify
+     * 
+     * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $verifyTanzpartnersuche
+     * @return string|object|null|void
+     */
+    public function verifyAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $verifyTanzpartnersuche = NULL)
+    {
+    }
+
+    /**
+     * action status
+     *
+     * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $verifyTanzpartnersuche
+     * @Extbase\Validate(param="verifyTanzpartnersuche" , validator="GSC\Tanzpartnersuche\Domain\Validator\VerifyTanzpartnersucheValidator")
+     * @return void
+     * 
+     */
+    public function statusAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $verifyTanzpartnersuche)
+    {
+        $this->addFlashMessage('Der Eintrag wurde erfolgreich freigeschaltet. Viel Erfolg bei Deiner Tanzpartnersuche!', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
     }
 
     /**
@@ -181,15 +205,6 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
         $this->addFlashMessage('The object was deleted. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/p/friendsoftypo3/extension-builder/master/en-us/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
         $this->tanzpartnersucheRepository->remove($tanzpartnersuche);
         $this->redirect('list');
-    }
-
-    /**
-     * action verify
-     *
-     * @return string|object|null|void
-     */
-    public function verifyAction()
-    {
     }
 
     /**
