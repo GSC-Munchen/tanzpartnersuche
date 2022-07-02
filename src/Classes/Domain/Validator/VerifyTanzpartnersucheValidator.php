@@ -1,6 +1,9 @@
 <?php
 namespace GSC\Tanzpartnersuche\Domain\Validator;
 
+/**
+ * Verification of all Inputs and crosscheck with database
+ */
 class VerifyTanzpartnersucheValidator extends \TYPO3\CMS\Extbase\Validation\Validator\AbstractValidator
 {
     /**
@@ -20,15 +23,30 @@ class VerifyTanzpartnersucheValidator extends \TYPO3\CMS\Extbase\Validation\Vali
     
     protected function isValid($verifyTanzpartnersuche)
     {
-        // check if username is already in database
-        if ($this->tanzpartnersucheRepository->findUserByUsername($verifyTanzpartnersuche->getUsername()) == NULL) {
-            $this->addError('Der eingegebene Username ist ungültig.', 1655746851);
-        }        
+        // check if verification code is a 24digit number
+        if (!is_numeric($verifyTanzpartnersuche->getVerificationcode()) || (strlen((string)$verifyTanzpartnersuche->getVerificationcode()) !== 24)) {
+            $this->addError('Der Validierungscode ist ungültig. Bitte überprüfen.', 1455746854);
+            return;
+        }
 
-        // ToDo: check if validation code is matching to username
+        // check if verification was already done
+        if ($this->tanzpartnersucheRepository->UserValidationCheck($verifyTanzpartnersuche->getUsername(), $verifyTanzpartnersuche->getVerificationcode()) !== NULL) {
+            $this->addError('Der Eintrag wurde bereits erfolgreich freigeschaltet.', 1655746852);
+            return;
+        }
 
-        // ToDo: check if verification was already done
+        // check if verification code is still valid (max 48hours) - could only happen if expires earlier than database was cleaned up
+        $vc = $verifyTanzpartnersuche->getVerificationcode();
+        $timestamp = mktime (substr($vc,12,2), substr($vc,16,2), substr($vc,20,2), substr($vc,4,2), substr($vc,8,2), substr($vc,0,2)) + 172800;  // +172800 adds 48h
+        if ($timestamp <= time()) {
+            $this->addError('Der Validierungscode ist nicht mehr gültig. Bitte erneut registrieren.', 1455746853);
+            return;
+        }
 
-        // ToDo: check if verification code is still valid (max 48hours)
+        // check if username/password combination is in database
+        if ($this->tanzpartnersucheRepository->findUserByValidation($verifyTanzpartnersuche->getUsername(), $verifyTanzpartnersuche->getVerificationcode()) == NULL) {
+            $this->addError('Die eingegebenen Daten sind ungültig. Bitte überprüfen.', 1655746851);
+            return;
+        }
     }
 }

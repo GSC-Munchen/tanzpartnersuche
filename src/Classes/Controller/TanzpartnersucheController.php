@@ -96,6 +96,7 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
 
         // Password: salting and hashing
         $newTanzpartnersuche->setPassword(password_hash(($newTanzpartnersuche->getPassword()),PASSWORD_DEFAULT, array('cost' => 9)));
+        $newTanzpartnersuche->setPasswordconfirmation('verified');
 
         // Hide User
         $newTanzpartnersuche->setHidden('1');
