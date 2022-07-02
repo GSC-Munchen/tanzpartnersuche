@@ -25,7 +25,7 @@ class VerifyTanzpartnersucheValidator extends \TYPO3\CMS\Extbase\Validation\Vali
     {
         // check if verification code is a 24digit number
         if (!is_numeric($verifyTanzpartnersuche->getVerificationcode()) || (strlen((string)$verifyTanzpartnersuche->getVerificationcode()) !== 24)) {
-            $this->addError('Der Validierungscode ist ungültig. Bitte überprüfen.', 1455746854);
+            $this->result->forProperty('verificationcode')->addError(new \TYPO3\CMS\Extbase\Error\Error('Der Validierungscode ist ungültig. Bitte überprüfen.', 1455746854));
             return;
         }
 
@@ -39,7 +39,7 @@ class VerifyTanzpartnersucheValidator extends \TYPO3\CMS\Extbase\Validation\Vali
         $vc = $verifyTanzpartnersuche->getVerificationcode();
         $timestamp = mktime (substr($vc,12,2), substr($vc,16,2), substr($vc,20,2), substr($vc,4,2), substr($vc,8,2), substr($vc,0,2)) + 172800;  // +172800 adds 48h
         if ($timestamp <= time()) {
-            $this->addError('Der Validierungscode ist nicht mehr gültig. Bitte erneut registrieren.', 1455746853);
+            $this->result->forProperty('verificationcode')->addError(new \TYPO3\CMS\Extbase\Error\Error('Der Validierungscode ist nicht mehr gültig. Bitte erneut registrieren.', 1455746853));
             return;
         }
 
