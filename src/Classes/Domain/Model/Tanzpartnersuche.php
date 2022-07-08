@@ -25,6 +25,7 @@ class Tanzpartnersuche extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      *
      * @var string
      * @TYPO3\CMS\Extbase\Annotation\Validate("StringLength", options={"minimum": 3, "maximum": 50})
+     * @TYPO3\CMS\Extbase\Annotation\Validate("Text")
      */
     protected $username = '';
 
@@ -32,6 +33,7 @@ class Tanzpartnersuche extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * password
      *
      * @var string
+     * @TYPO3\CMS\Extbase\Annotation\Validate("Text")
      */
     protected $password = '';
 
@@ -39,6 +41,7 @@ class Tanzpartnersuche extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * passwordconfirmation
      *
      * @var string
+     * @TYPO3\CMS\Extbase\Annotation\Validate("Text")
      */
     protected $passwordconfirmation = '';
 
@@ -46,6 +49,7 @@ class Tanzpartnersuche extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * email
      *
      * @var string
+     * @TYPO3\CMS\Extbase\Annotation\Validate("Text")
      */
     protected $email = '';
 
