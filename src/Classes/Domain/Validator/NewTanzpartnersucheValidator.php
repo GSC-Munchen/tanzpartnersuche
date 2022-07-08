@@ -22,7 +22,6 @@ class NewTanzpartnersucheValidator extends \TYPO3\CMS\Extbase\Validation\Validat
     {
         // if mail is already registered, throw error
         if ($this->tanzpartnersucheRepository->findUserByEmail($newTanzpartnersuche->getEmail()) !== NULL) {
-            // $this->addError('Diese Mailadresse wurde bereits registriert. Bitte eine andere verwenden oder bestehenden Eintrag editieren/löschen. Ggfs. Passwort vergessen Funktion nutzen.', 1655749851);
             $this->result->forProperty('email')->addError(new \TYPO3\CMS\Extbase\Error\Error('Diese Mailadresse wurde bereits registriert. Bitte eine andere verwenden oder bestehenden Eintrag editieren/löschen. Ggfs. Passwort vergessen Funktion nutzen.', 1655749851));
         }
 

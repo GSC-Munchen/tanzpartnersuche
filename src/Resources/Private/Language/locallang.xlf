@@ -7,37 +7,37 @@
 				<source>Tanzpartnersuche</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.username" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.username">
-				<source>Username</source>
+				<source>Benutzername</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.password" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.password">
-				<source>Password</source>
+				<source>Password (8-50 Zeichen)</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.email" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.email">
 				<source>Email</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.height" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.height">
-				<source>Größe</source>
+				<source>Größe (in cm)</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.age" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.age">
-				<source>Alter</source>
+				<source>Alter (zwischen 18 und 99 Jahren)</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender">
-				<source>Geschlecht</source>
+				<source>Geschlecht (bitte auswählen)</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.picture" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.picture">
 				<source>Bild/Avatar</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level">
-				<source>Niveau</source>
+				<source>Niveau (bitte auswählen)</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category">
-				<source>Disziplin</source>
+				<source>Disziplin (bitte auswählen)</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.bio" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.bio">
 				<source>Über mich</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.role" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.role">
-				<source>Ich suche</source>
+				<source>Ich suche (bitte auswählen)</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.verificationcode" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.verificationcode">
 				<source>Verificationcode</source>
@@ -102,6 +102,9 @@
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.backlink" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.backlink">
 				<source>Zurück</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.cancel" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.cancel">
+				<source>Abbruch</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.login" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.login">
 				<source>Login</source>
@@ -169,7 +172,6 @@
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.role-01" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.role-01">
 				<source>einen Tanzherren</source>
 			</trans-unit>
-
 		</body>
 	</file>
 </xliff>
