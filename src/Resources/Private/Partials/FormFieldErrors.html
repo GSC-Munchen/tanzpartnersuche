@@ -1,0 +1,10 @@
+<f:form.validationResults for="{field}">
+    <f:if condition="{validationResults.flattenedErrors}">
+            <f:for each="{validationResults.errors}" as="error" iteration="i">
+                <f:if condition="{i.isFirst}">
+                    <span class="validationError">{error} </span> <br/>
+                    <br/>
+                </f:if>
+            </f:for>
+    </f:if>
+</f:form.validationResults>

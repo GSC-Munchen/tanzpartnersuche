@@ -20,8 +20,6 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <f:section name="content">
     <h2><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.registermenu" /></h2>
 
-    <f:flashMessages />  
-
     <p> <f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.register" /> </p>
 
     <!-- progress bar -->
@@ -30,8 +28,6 @@ Otherwise your changes will be overwritten the next time you save the extension 
       <li>Verfifikation</li>
       <li>Fertig</li>
     </ul>
-
-    <f:render partial="FormErrors" />
 
     <f:form action="create" name="newTanzpartnersuche" object="{newTanzpartnersuche}" additionalAttributes="{role:'form'}">   <!-- create -->
       <f:render partial="Tanzpartnersuche/RegisterFields" />
