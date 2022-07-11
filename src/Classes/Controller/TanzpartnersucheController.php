@@ -80,15 +80,6 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
      */
     public function createAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $newTanzpartnersuche)
     {
-        
-        // Accepting EU-DSGVO?
-
-        // ToDo: in Formular einbauen
-        //if (!$dsgv) {
-        //    $this->addFlashMessage('Du musst den Bestimmungen zur Datenverwendung zustimmen, um Dein Profil anlegen zu können.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
-        //    $this->forward('new',null,null,array('tanzpartnersuche'=>$newTanzpartnersuche));
-        //}
-
         // all checks passed - prepare next steps
         // generate verification code
         $verCode = date('y').rand(10,99).date('m').rand(10,99).date('d').rand(10,99).date('h').rand(10,99).date('i').rand(10,99).date('s').rand(10,99);
@@ -167,7 +158,18 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
      */
     public function statusAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $verifyTanzpartnersuche)
     {
+        // read full array from database
+        $verifyTanzpartnersuche = $this->tanzpartnersucheRepository->findTanzpartnerByValidation($verifyTanzpartnersuche->getVerificationcode(),$verifyTanzpartnersuche->getUsername());
+        
+        // unhide dataset
+        $verifyTanzpartnersuche->setHidden('0');
+
+        // update database
+        $this->tanzpartnersucheRepository->update($verifyTanzpartnersuche);
+
+        // all done, display message to user
         $this->addFlashMessage('Der Eintrag wurde erfolgreich freigeschaltet. Viel Erfolg bei Deiner Tanzpartnersuche!', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+
     }
 
     /**

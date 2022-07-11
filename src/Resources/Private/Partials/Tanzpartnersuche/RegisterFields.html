@@ -79,13 +79,14 @@
 </label><br />
 	<f:form.textarea rows="5" cols="83" property="bio" name="bio" id="bio" required="TRUE" /> <br/>
 	<f:render partial="FormFieldErrors" arguments="{field: 'newTanzpartnersuche.bio'}" />
-	<br /><br />
+	<br />
 
 <!-- <label for="picture">
 	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.picture" />
 </label><br /> -->
 
-<label for="txtprivacy">
-	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.txtprivacy" />
-</label><br /><br />
+<!-- <f:form.checkbox name="gdpr" value="consent" /> --> <f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.register-gdpr" />
+<br />
+<f:render partial="FormFieldErrors" arguments="{field: 'newTanzpartnersuche.consent'}" />
+<br /><br />
 </html>

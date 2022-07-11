@@ -133,4 +133,25 @@ class TanzpartnersucheRepository extends \TYPO3\CMS\Extbase\Persistence\Reposito
 
         return $result;
     }
+
+    /**
+     *
+     * @param string $authCode
+     * @param string $authUsername
+     * @return \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche|null
+     */
+    public function findTanzpartnerByValidation($authCode, $authUsername): ?\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche
+    {
+        // create Query
+        $query = $this->createQuery();
+        $query->getQuerySettings()->setIgnoreEnableFields(true)->setIncludeDeleted(true);
+
+        return $query->matching(
+            $query->logicalAnd(
+                $query->like('verificationcode',$authCode),
+                $query->like('username',$authUsername),
+                $query->like('deleted','0')
+            )
+        )->execute()->getFirst();
+    }
 }

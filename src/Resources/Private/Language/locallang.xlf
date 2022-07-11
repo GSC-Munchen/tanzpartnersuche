@@ -172,6 +172,23 @@
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.role-01" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.role-01">
 				<source>einen Tanzherren</source>
 			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.register-gdpr" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.register-gdpr">
+				<source>
+					Ich willige ein, dass das Gelb-Schwarz-Casino München e.V. als verantwortliche Stelle die
+					in der Tanzpartnersuche erhobenen personenbezogenen Daten wie E-Mail und Alter, darüberhinaus die weiteren
+					eingegebenen Daten wie Geschlecht, Selbstbeschreibung, Tanzniveau usw. im Klartext ausschließlich zum Zwecke der Bereitstellung 
+					der Tanzpartnersuche verarbeitet und nutzt. Mir ist bekannt, dass ich ein Pseudonym verwenden kann und meinen Klarnamen
+					nicht angeben muss, lediglich eine E-Mail Adresse unter der mich die Kontaktanfragen auf mein eigenen Profil hin erreichen.
+					Mir ist weiter bekannt, dass meine E-Mail Adresse seitens des Gelb-Schwarz-Casino München e.V. als verantwortliche 
+					Stelle auch bei einer Kontaktanfrage nicht weitergegeben wird. Eine Antwort auf diese Anfragen finden über normalen
+					E-Mail Verkehr außerhalb der von uns bereitgestellten Plattform statt.
+					Das angebene Passwort wird verschlüsselt in der Datenbank abgelegt.
+					Eine Datenübermittlung an Dritte über diesen Zweck hinaus findet nicht statt. Eine Datennutzung für Werbezwecke findet ebenfalls nicht statt. 
+					Bei Löschung meines Profils werden meine personenbezogenen Daten gelöscht, soweit sie nicht entsprechend der gesetzlichen 
+					Vorgaben aufbewahrt werden müssen.
+					Des weiteren stimme ich den Nutzungsbedingungen der Plattform zu.
+				</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
