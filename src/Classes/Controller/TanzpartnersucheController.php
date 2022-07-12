@@ -217,6 +217,8 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
      */
     public function searchAction()
     {
+        $tanzpartnersuches = $this->tanzpartnersucheRepository->findAll();
+        $this->view->assign('tanzpartnersuches', $tanzpartnersuches);
     }
 
     /**
