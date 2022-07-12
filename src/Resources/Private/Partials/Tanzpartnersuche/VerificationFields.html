@@ -3,9 +3,11 @@
 	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.username" />
 </label><br />
 	<f:form.textfield property="username" name="username" id="username" required="TRUE"/><br />
+	<f:render partial="FormFieldErrors" arguments="{field: 'verifyTanzpartnersuche.username'}" />
 <label for="verificationcode">
 	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.verificationcode" />
 </label><br />
 	<f:form.textfield property="verificationcode" name="verificationcode" id="verificationcode" required="TRUE"/><br />
+	<f:render partial="FormFieldErrors" arguments="{field: 'verifyTanzpartnersuche.verificationcode'}" />
 <br /><br />
 </html>
