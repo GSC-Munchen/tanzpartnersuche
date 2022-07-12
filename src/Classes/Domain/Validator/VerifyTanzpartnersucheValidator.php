@@ -31,7 +31,7 @@ class VerifyTanzpartnersucheValidator extends \TYPO3\CMS\Extbase\Validation\Vali
 
         // check if verification was already done
         if ($this->tanzpartnersucheRepository->UserValidationCheck($verifyTanzpartnersuche->getUsername(), $verifyTanzpartnersuche->getVerificationcode()) !== NULL) {
-            $this->addError('Der Eintrag wurde bereits erfolgreich freigeschaltet.', 1655746852);
+            $this->result->forProperty('username')->addError(new \TYPO3\CMS\Extbase\Error\Error('Der Eintrag wurde bereits erfolgreich freigeschaltet.', 1655746852));
             return;
         }
 
@@ -45,7 +45,8 @@ class VerifyTanzpartnersucheValidator extends \TYPO3\CMS\Extbase\Validation\Vali
 
         // check if username/password combination is in database
         if ($this->tanzpartnersucheRepository->findUserByValidation($verifyTanzpartnersuche->getUsername(), $verifyTanzpartnersuche->getVerificationcode()) == NULL) {
-            $this->addError('Die eingegebenen Daten sind ungültig. Bitte überprüfen.', 1655746851);
+            $this->result->forProperty('username')->addError(new \TYPO3\CMS\Extbase\Error\Error('Die eingegebene Kombination aus Benutzername und Verificationscode ist ungültig. Bitte überprüfen.', 1655746851));
+            $this->result->forProperty('verificationcode')->addError(new \TYPO3\CMS\Extbase\Error\Error('Die eingegebene Kombination aus Benutzername und Verificationscode ist ungültig. Bitte überprüfen.', 1655746858));
             return;
         }
     }
