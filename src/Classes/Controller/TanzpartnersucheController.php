@@ -131,7 +131,7 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
         $mail->send();
         
         // Add new profile to database
-        $this->addFlashMessage('Der Eintrag wurde erfolgreich angelegt und die Mail mit dem Verifikationscode versendet.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+        // $this->addFlashMessage('Der Eintrag wurde erfolgreich angelegt und die Mail mit dem Verifikationscode versendet.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
         $this->tanzpartnersucheRepository->add($newTanzpartnersuche);
 
         // Display overall result on verification page

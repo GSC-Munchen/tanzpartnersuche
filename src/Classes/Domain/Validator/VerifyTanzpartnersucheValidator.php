@@ -1,6 +1,7 @@
 <?php
 namespace GSC\Tanzpartnersuche\Domain\Validator;
 
+
 /**
  * Verification of all Inputs and crosscheck with database
  */
