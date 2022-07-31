@@ -28,8 +28,8 @@
           <f:for each="{tanzpartnersuches}" as="tanzpartnersuche">
             <div class="row">
                 <div class="cell" data-title="Name">
-                    <f:link.action action="detail">{tanzpartnersuche.username}</f:link.action>
-                </div>
+                    <f:link.action action="detail" arguments="{tanzpartnersuche:tanzpartnersuche}">{tanzpartnersuche.username}</f:link.action>
+                  </div>
                 <div class="cell" data-title="Größe">{tanzpartnersuche.height}</div>
                 <div class="cell" data-title="Alter">{tanzpartnersuche.age}</div>
                 <div class="cell" data-title="Geschlecht">{tanzpartnersuche.gender}</div>

@@ -232,11 +232,13 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
 
     /**
      * action detail
-     *
+     * 
+     * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $tanzpartnersuche
      * @return string|object|null|void
      */
-    public function detailAction()
+    public function detailAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $tanzpartnersuche)
     {
+        $this->view->assign('tanzpartnersuche', $tanzpartnersuche);
     }
 
     /**
