@@ -126,6 +126,20 @@ class Tanzpartnersuche extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $loggedin = '';
 
     /**
+     * hidden
+     *
+     * @var int
+     */
+    protected $hidden = '';
+
+    /**
+     * tstamp
+     *
+     * @var \DateTime
+     */
+    protected $tstamp = null;
+
+    /**
      * Returns the username
      *
      * @return string $username
@@ -438,5 +452,26 @@ class Tanzpartnersuche extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setHidden(string $hidden)
     {
         $this->hidden = $hidden;
+    }
+
+    /**
+     * Returns the tstamp
+     *
+     * @return \DateTime $tstamp
+     */
+    public function getTstamp()
+    {
+        return $this->tstamp;
+    }
+
+    /**
+     * Sets the tstamp
+     *
+     * @param \DateTime $tstamp
+     * @return void
+     */
+    public function setTstamp(\DateTime $tstamp)
+    {
+        $this->tstamp = $tstamp;
     }
 }

@@ -16,156 +16,111 @@ Otherwise your changes will be overwritten the next time you save the extension 
 </f:section>
 
 <f:section name="content">    
-    <div class="container profil">       
-        <div class="row justify-content-start">
-            <div class="col-xs-12">
-                <f:if condition="{tanzpartnersuche.category} == 1">
-                    <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/profil_latein.png" />      
-                </f:if>
-                <f:if condition="{tanzpartnersuche.category} == 2">
-                    <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/profil_standard.png" />
-                </f:if>
-                <f:if condition="{tanzpartnersuche.category} == 3">
-                    <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/profil_latein+standard.png" />
-                </f:if>
-            </div>
-        </div>
-        <div class="row justify-content-start">
-            <div class="col-xs-12 col-sm-6 pborder">
-                <div class="row" style="margin-top: 20px; margin-left: 0px; margin-right: 0px;">
-                    <div class="col spacer-bottom30">
-                        {tanzpartnersuche.bio}
-                    </div>
-                    <div class="w-100"></div>
-                    <div class="col-sm-1 spacer10">
-                        <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/age.png" />
-                    </div>
-                    <div class="col-sm-5 spacer10">
-                        Alter: {tanzpartnersuche.age} Jahre
-                    </div>
-                    <div class="w-100"></div>
-                    <div class="col-sm-1 spacer10">
-                        <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/age.png" />
-                    </div>
-                    <div class="col-sm-5 spacer10">
-                        Alter: {tanzpartnersuche.age} Jahre
-                    </div>
-                    <div class="w-100"></div>
-                    <div class="col-sm-1 spacer10">
-                        <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/age.png" />
-                    </div>
-                    <div class="col-sm-5 spacer10">
-                        Alter: {tanzpartnersuche.age} Jahre
-                    </div>
-                    <div class="w-100"></div>
-                    <div class="col-sm-1 spacer10">
-                        <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/age.png" />
-                    </div>
-                    <div class="col-sm-5 spacer10">
-                        Alter: {tanzpartnersuche.age} Jahre
-                    </div>
-                    <div class="w-100"></div>
-                    <div class="col-sm-1 spacer10">
-                        <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/age.png" />
-                    </div>
-                    <div class="col-sm-5 spacer10">
-                        Alter: {tanzpartnersuche.age} Jahre
-                    </div>
-                    <div class="w-100"></div>
-                    <div class="col-sm-1 spacer10">
-                        <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/age.png" />
-                    </div>
-                    <div class="col-sm-5 spacer10">
-                        Alter: {tanzpartnersuche.age} Jahre
-                    </div>
-                    <div class="w-100"></div>
-                    
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 pborder">
-                <h3>Mail</h3>
-            </div>
-        </div>
-    </div>
 
-
-
-
-
-
-
-    <h1>Profilansicht {tanzpartnersuche.username}</h1>
+    <h1>Profilansicht "{tanzpartnersuche.username}"</h1>
 
     <div class="tanzpartnersuche">
-      <div class="tps_entry">
-          <div class="tps_header">
-              <f:if condition="{tanzpartnersuche.category} == 1">
-                <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/profil_latein.png" />
-              </f:if>
-              <f:if condition="{tanzpartnersuche.category} == 2">
-                <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/profil_standard.png" />
-              </f:if>
-              <f:if condition="{tanzpartnersuche.category} == 3">
-                <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/profil_latein+standard.png" />
-              </f:if>
-              <div class="tps_user-profile">
-                  <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/avatar-GSC.png" />
-                  <div class="tps_user-details">
-                    {tanzpartnersuche.username}
-                  </div>
-              </div>
-          </div>
+        <div class="container profil">       
+            <div class="row justify-content-start">
+                <div class="col-xs-12">
+                    <f:if condition="{tanzpartnersuche.category} == 1">
+                        <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/profil_latein.png" class="img-fluid" width="999" />      
+                    </f:if>
+                    <f:if condition="{tanzpartnersuche.category} == 2">
+                        <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/profil_standard.png" class="img-fluid" width="999" />
+                    </f:if>
+                    <f:if condition="{tanzpartnersuche.category} == 3">
+                        <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/profil_latein+standard.png" class="img-fluid" width="999" />
+                    </f:if>
+                    <div class="tps_user-profile">
+                        <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/avatar-GSC.png" />
+                        <div class="tps_user-details">
+                        {tanzpartnersuche.username}
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="w-100"></div>
+                <div class="col-xs-12 tps_action justify-content-end">
+                    <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/mail.png" />
+                </div> -->
+            </div>
 
-          
+            <div class="row justify-content-start">
+                <div class="col-xs-12 col-sm-6 pborder">
+                    <div class="row" style="margin-top: 20px; margin-left: 0px; margin-right: 0px;">
+                        <div class="col spacer-bottom30">
+                            {tanzpartnersuche.bio}
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-sm-1 spacer10">
+                            <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/age.png" />
+                        </div>
+                        <div class="col-sm-5 spacer10">
+                            Alter: {tanzpartnersuche.age} Jahre
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-sm-1 spacer10">
+                            <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/height.png" />
+                            
+                        </div>
+                        <div class="col-sm-5 spacer10">
+                            Größe: {tanzpartnersuche.height} cm
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-sm-1 spacer10">
+                            <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/level.png" />  
+                        </div>
+                        <div class="col-sm-5 spacer10">
+                            Niveau: {tanzpartnersuche.level}
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-sm-1 spacer10">
+                            <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/discipline.png" />
+                        </div>
+                        <div class="col-sm-5 spacer10">
+                            Disziplin: {tanzpartnersuche.category}
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-sm-1 spacer10">
+                            <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/search.png" />
+                        </div>
+                        <div class="col-sm-5 spacer10">
+                            Ich suche: {tanzpartnersuche.role}
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-sm-1 spacer10">
+                            <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/clock.png" />
+                        </div>
+                        <div class="col-sm-5 spacer10">
+                            Eintragsdatum: <f:format.date format="d.m.Y">{tanzpartnersuche.tstamp}</f:format.date>
+                        </div>
+                        <div class="w-100"></div>
+                        
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 pborder mailbox">
+                    <div style="margin-top: 20px; margin-left: 0px; margin-right: 0px;">
+                        <f:form action="mail" name="tanzpartnersuche" object="{tanzpartnersuche}">
+                            <f:render partial="Tanzpartnersuche/MailFields" />
+                            <p>Mir ist bekannt, dass das Gelb-Schwarz-Casino München e.V. die hier eingegebenen Daten, insbesondere die personenbezogenen,
+							nicht verarbeitet, sondern lediglich die Plattform zur Versendung der Kontaktanfrage an das hier hinterlegte Profil zur 
+							Verfügung stellt. <br /><br />
 
+							Alle weitere Kommunikation und Antworten auf deine Anfrage finden über normalen E-Mail Verkehr außerhalb der von uns 
+							bereitgestellten Plattform statt. <br /><br />
 
-          <div class="tps_action">
-            <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/mail.png" />
-          </div>
+							Des weiteren ist mir bekannt, dass die Anfrage per E-Mail an das hier hinterlegte Profil erfolgen wird. Die 
+							E-Mail Kommunikation findet unverschlüsselt statt und liegt außerhalb unseres Einflussbereiches. <br /><br />
 
-          <div class="tps_profil">
-            <p>
-              {tanzpartnersuche.bio}
-            </p>
-          </div>
-          <div class="tps_steckbrief">
-              <br />
-              <div class="steckbriefPartial">
-                  <table>
-                      <tr>
-                          <td><f:image src="EXT:tanzpartnersuche/Resources/Public/Images/age.png" /></td>
-                          <td>Alter: {tanzpartnersuche.age} Jahre</td>
-                      </tr>
-                      <tr>
-                          <td><f:image src="EXT:tanzpartnersuche/Resources/Public/Images/height.png" /></td>
-                          <td>Größe: {tanzpartnersuche.height} cm</td>
-                      </tr>
-                      <tr>
-                          <td><f:image src="EXT:tanzpartnersuche/Resources/Public/Images/level.png" /></td>
-                          <td>Niveau: {tanzpartnersuche.level}</td>
-                      </tr>
-                  </table>
-              </div>
-              <div class="steckbriefPartial">
-                  <table>
-                      <tr>
-                          <td><f:image src="EXT:tanzpartnersuche/Resources/Public/Images/discipline.png" /></td>
-                          <td>Disziplin: {tanzpartnersuche.category}</td>
-                      </tr>
-                      <tr>
-                          <td><f:image src="EXT:tanzpartnersuche/Resources/Public/Images/search.png" /></td>
-                          <td>Ich suche: {tanzpartnersuche.role}</td>
-                      </tr>
-                      <tr>
-                          <td><f:image src="EXT:tanzpartnersuche/Resources/Public/Images/clock.png" /></td>
-                          <td>Eintragsdatum: {tanzpartnersuche.crdate}</td>
-                      </tr>
-                  </table>
-              </div>
-              <br />
-          </div>
-      </div>
+							Mit dem Versenden erkenne ich die  Einhaltung unserer Nutzungsbediungen ausdrücklich an.
+							Unsere Datenschutzbestimmungen sind über den Link unten rechts auf jeder Webseite abrufbar.<br /><br />
+                            </p>
+                            <f:form.submit value="Senden" />
+                        </f:form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
 </f:section>
 </html>

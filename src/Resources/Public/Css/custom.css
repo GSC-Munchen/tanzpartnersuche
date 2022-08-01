@@ -136,7 +136,7 @@
     text-decoration: underline;
   }
 
-  /* Eingabefelder */
+  /* input fields */
 
   input[type=text], input[type=password], input[type=email], textarea, select {
     border: 0;
@@ -151,6 +151,16 @@
     line-height: clamp(20px,calc(1.25rem + (28 - 20) * ((100vw - 300px) / (1600 - 300))),28px);
     width: 66%;
     height: 28px;
+  }
+
+  /* größeres Eingabefeld in der Mailbox */
+  .mailbox input[type=text], .mailbox input[type=email], .mailbox textarea {
+    width: 95%;
+  }
+
+  /* readonly input fields */
+  .mailbox input[type=text] {
+    background: #eeeeee !important;
   }
 
   textarea {
