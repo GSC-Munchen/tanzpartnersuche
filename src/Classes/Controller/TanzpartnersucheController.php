@@ -249,4 +249,13 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
     public function loginAction()
     {
     }
+
+    /**
+     * action mail
+     *
+     * @return string|object|null|void
+     */
+    public function mailAction()
+    {
+    }
 }
