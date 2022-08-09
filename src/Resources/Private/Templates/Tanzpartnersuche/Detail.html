@@ -39,10 +39,6 @@ Otherwise your changes will be overwritten the next time you save the extension 
                         </div>
                     </div>
                 </div>
-                <!-- <div class="w-100"></div>
-                <div class="col-xs-12 tps_action justify-content-end">
-                    <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/mail.png" />
-                </div> -->
             </div>
 
             <div class="row justify-content-start">
@@ -100,8 +96,36 @@ Otherwise your changes will be overwritten the next time you save the extension 
                 </div>
                 <div class="col-xs-12 col-sm-6 pborder mailbox">
                     <div style="margin-top: 20px; margin-left: 0px; margin-right: 0px;">
-                        <f:form action="mail" name="tanzpartnersuche" object="{tanzpartnersuche}">
-                            <f:render partial="Tanzpartnersuche/MailFields" />
+                        
+                        <f:form action="mail">
+                        
+                            <label for="sender">
+                                Name des Absenders
+                            </label><br />
+                            <f:form.textfield name="sender" value="{sender}" required="TRUE" /><br />
+
+                            <label for="sendermail">
+                                E-Mail des Absenders
+                            </label><br />
+                            <f:form.textfield type="email" name="sendermail" value="{sendermail}" required="TRUE" /><br />
+                        
+                            <label for="username">
+                                Empfänger
+                            </label><br />
+                            <f:form.textfield property="username" id="username" value="{tanzpartnersuche.username}" readonly="TRUE" /><br />
+                        
+                            <label for="subject">
+                                Betreff
+                            </label><br />
+                            <f:form.textfield property="subject" id="subject" value="Tanzpartnersuche des GSC München: Kontaktanfrage" readonly="TRUE" /><br />
+                        
+                            <label for="message">
+                                Nachricht
+                            </label><br />
+                            <f:form.textarea rows="5" cols="83" name="message" value="{message}" required="TRUE" /> <br/>
+
+                            <f:form.hidden name="tanzpartnersuche" value="{tanzpartnersuche}" /><br />
+
                             <p>Mir ist bekannt, dass das Gelb-Schwarz-Casino München e.V. die hier eingegebenen Daten, insbesondere die personenbezogenen,
 							nicht verarbeitet, sondern lediglich die Plattform zur Versendung der Kontaktanfrage an das hier hinterlegte Profil zur 
 							Verfügung stellt. <br /><br />

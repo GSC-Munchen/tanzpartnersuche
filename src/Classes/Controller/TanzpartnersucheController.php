@@ -253,9 +253,53 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
     /**
      * action mail
      *
+     * @param string $sender
+     * @param string $sendermail
+     * @param string $message
+     * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $tanzpartnersuche
      * @return string|object|null|void
      */
-    public function mailAction()
+    public function mailAction($sender, $sendermail, $message, \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $tanzpartnersuche)
     {
+        // send out contact mail to selected profile
+        // assemble message
+        $emailBody = "Hallo ".$tanzpartnersuche->getUsername().", \n";
+        $emailBody .= "\n";
+        $emailBody .= "Du hast eine Kontaktanfrage über die Tanzpartnersuche des Gelb-Schwarz-Casino München erhalten. \n";
+        $emailBody .= "\n";
+        $emailBody .= $sender." hat auf Dein Profil in der Tanzpartnersuche des GSC München e.V. geantwortet.\n";
+        $emailBody .= "\n";
+        $emailBody .= "--------------------------------------------------------------------------------------------------------------\n";
+        $emailBody .= "Name: ".$sender."\n";
+        $emailBody .= "E-Mail: ".$sendermail."\n";
+        $emailBody .= "Nachricht: ".$message."\n";
+        $emailBody .= "--------------------------------------------------------------------------------------------------------------\n";
+        $emailBody .= "\n";
+        $emailBody .= "Bitte beachte, dass jede weitere Kontaktaufnahme Deinerseits nun nicht mehr anonymisiert über unsere Plattform, sondern direkt über Deinen E-Mail Account erfolgt. ";
+        $emailBody .= "Daher antworte bitte ".$sender." auch direkt per Mail. Du kannst dies direkt über die Antworten-Funktion Deines Mailclients tun.\n";
+        $emailBody .= "\n";
+        $emailBody .= "Besten Dank für die Nutzung der Tanzpartnersuche und viel Erfolg!\n";
+        $emailBody .= "\n";
+        $emailBody .= "Gelb-Schwarz-Casino München e.V.\n";
+        $emailBody .= "Sonnenstraße 12a / II\n";
+        $emailBody .= "D-80331 München\n";
+        $emailBody .= "\n";
+        $emailBody .= "---\n";
+        $emailBody .= "Vertreten durch den Präsidenten Stefan Göttlinger \n";
+        $emailBody .= "Registergericht: München \n";
+        $emailBody .= "Registernummer: VR 4385\n";
+        $emailBody .= "https://www.gsc-muenchen.de/impressum";
+
+        // send mail
+        $mail = GeneralUtility::makeInstance(MailMessage::class);
+        $mail->from(new \Symfony\Component\Mime\Address('tanzpartner@gsc-muenchen.de', 'Tanzpartnersuche des Gelb-Schwarz Casino München e.V.'));
+        $mail->to(new Address($tanzpartnersuche->getEmail(), $tanzpartnersuche->getEmail()));
+        $mail->replyTo($sendermail);
+        $mail->subject('Kontaktanfrage über die Tanzpartnersuche des Gelb-Schwarz Casino München e.V.');
+        $mail->text($emailBody);
+        $mail->send();
+
+        // show confirmation on frontend
+        $this->addFlashMessage('Deine Anfrage an "'.$tanzpartnersuche->getUsername().'" wurde erfolgeich verschickt. Wir wünschen viel Erfolg bei der weiteren Kontaktaufnahme.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
     }
 }
