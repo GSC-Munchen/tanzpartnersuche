@@ -159,7 +159,7 @@
   }
 
   /* readonly input fields */
-  .mailbox input[type=text] {
+  .freadonly {
     background: #eeeeee !important;
   }
 
