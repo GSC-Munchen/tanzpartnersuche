@@ -244,10 +244,48 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
     /**
      * action login
      *
+     * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche
      * @return string|object|null|void
      */
-    public function loginAction()
+    public function loginAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche = NULL)
     {
+    }
+
+    /**
+     * action loggedin
+     *
+     * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche
+     * @Extbase\Validate(param="loginTanzpartnersuche" , validator="GSC\Tanzpartnersuche\Domain\Validator\LoginTanzpartnersucheValidator")
+     * @return void
+     * 
+     */
+    public function loggedinAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche)
+    {
+        // read full array from database
+        $loginTanzpartnersuche = $this->tanzpartnersucheRepository->findTanzpartnerByUsername($loginTanzpartnersuche->getUsername());
+
+        // all done, display message to user
+        $this->addFlashMessage('Du bist erfolgreich eingeloggt', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+
+        $this->view->assign('loginTanzpartnersuche', $loginTanzpartnersuche);
+    }
+
+    /**
+     * action logout
+     *
+     * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche
+     * @return string|object|null|void
+     */
+    public function logoutAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche = NULL)
+    {
+        // ToDo: Datenbank aufräumen
+
+        // reset 
+        $loginTanzpartnersuche = NULL;
+        
+        // all done, display message to user
+        $this->addFlashMessage('Du bist erfolgreich ausgeloggt', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+        
     }
 
     /**

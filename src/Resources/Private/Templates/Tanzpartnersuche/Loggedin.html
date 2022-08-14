@@ -1,0 +1,55 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+This template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Tanzpartnersuche:
+          Loggedin.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="HeaderAssets">
+    <link rel="stylesheet" href="{f:uri.resource(path: 'Css/custom.css')}"/>
+</f:section>
+
+<f:section name="content">
+    <h2><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.title" /></h2>
+
+    <f:flashMessages />
+
+    <p>Hallo {loginTanzpartnersuche.username},</p>
+
+    <p><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.intro" /></p>
+
+    <p><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.legal" /></p>
+
+    <div id="appmenu" class="appmenu">
+      <f:link.action action="login" class="tile">
+          <div class="info">Editieren</div>
+          <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/docs.png" width="50px" height="50px" />
+          <h4 class="fittext">Ändern der Profilinhalte</h4>
+      </f:link.action>
+      <f:link.action action="new" class="tile">
+          <div class="info">Passwort</div>
+          <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/login.png" width="50px" height="50px" />
+          <h4 class="fittext">Vergabe eines neuen Passwortes</h4>
+      </f:link.action>
+      <f:link.action action="help" class="tile lightred">
+          <div class="info">Löschen</div>
+          <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/delete.png" width="50px" height="50px" />
+          <h4 class="fittext">Entfernen des Accounts</h4>
+      </f:link.action>
+      <f:link.action action="logout" arguments="{tanzpartnersuche:tanzpartnersuche}" class="tile yellow">
+          <div class="info">Ausloggen</div>
+          <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/logout.png" width="50px" height="50px" />
+          <h4 class="fittext">Abmeldung von der Plattform</h4>
+      </f:link.action>
+    </div>
+
+</f:section>
+</html>

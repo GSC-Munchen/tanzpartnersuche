@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace GSC\Tanzpartnersuche\Domain\Repository;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
-
 /**
  * This file is part of the "tanzpartnersuche" Extension for TYPO3 CMS.
  *
@@ -35,6 +34,7 @@ class TanzpartnersucheRepository extends \TYPO3\CMS\Extbase\Persistence\Reposito
         $query->matching(
             $query->logicalAnd(
                 $query->like('username',$checkUsername),
+                $query->like('hidden','0'),
                 $query->like('deleted','0')
                 )
             );
@@ -106,6 +106,40 @@ class TanzpartnersucheRepository extends \TYPO3\CMS\Extbase\Persistence\Reposito
 
     /**
      * 
+     * @param string $checkPassword
+     * @param string $checkUsername
+     * @return QueryResultInterface|array
+     * @api
+     */
+    public function verifyUserCredentials($checkUsername, $checkPassword) 
+    {
+        // create Query to read out password hash for corresponding $checkUsername
+        $query = $this->createQuery();
+        $query->getQuerySettings()->setIgnoreEnableFields(true)->setIncludeDeleted(true);
+        $query->matching(
+            $query->logicalAnd(
+                $query->like('username',$checkUsername),
+                $query->like('hidden','0'),
+                $query->like('deleted','0')
+                )
+            );
+
+        $result = $query->execute()->getFirst();
+
+        // Return NULL, if there is no match
+        if ($result == NULL)
+            return NULL;
+        
+        // verify password from user submitted input and hash from database
+        if (password_verify($checkPassword, $result->getPassword())) {
+            return $result; // succesful match of credentials
+        } else {
+            return NULL;    // no match of credentials
+        }
+    }
+
+    /**
+     * 
      * @param string $checkVerification
      * @param string $checkUsername
      * @return QueryResultInterface|array
@@ -150,6 +184,26 @@ class TanzpartnersucheRepository extends \TYPO3\CMS\Extbase\Persistence\Reposito
             $query->logicalAnd(
                 $query->like('verificationcode',$authCode),
                 $query->like('username',$authUsername),
+                $query->like('deleted','0')
+            )
+        )->execute()->getFirst();
+    }
+
+    /**
+     *
+     * @param string $username
+     * @return \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche|null
+     */
+    public function findTanzpartnerByUsername($username): ?\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche
+    {
+        // create Query
+        $query = $this->createQuery();
+        $query->getQuerySettings()->setIgnoreEnableFields(true)->setIncludeDeleted(true);
+
+        return $query->matching(
+            $query->logicalAnd(
+                $query->like('username',$username),
+                $query->like('hidden','0'),
                 $query->like('deleted','0')
             )
         )->execute()->getFirst();
