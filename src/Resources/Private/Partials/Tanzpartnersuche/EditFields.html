@@ -1,0 +1,82 @@
+{namespace gsc = GSC\Tanzpartnersuche\ViewHelpers}
+
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<label for="username">
+	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.username" />
+</label><br />
+	<f:form.textfield property="username" name="username" id="username" required="TRUE" readonly="TRUE" class="freadonly" /><br />
+	<f:render partial="FormFieldErrors" arguments="{field: 'loginTanzpartnersuche.username'}" />
+<label for="email">
+	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.email" />
+</label><br />
+	<f:form.textfield type="email" property="email" name="email" id="email" required="TRUE" readonly="TRUE" class="freadonly" /><br />
+	<f:render partial="FormFieldErrors" arguments="{field: 'loginTanzpartnersuche.email'}" />
+<label for="height">
+	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.height" />
+</label><br />
+	<f:form.textfield property="height" name="height" id="height" required="TRUE" /><br />
+	<f:render partial="FormFieldErrors" arguments="{field: 'loginTanzpartnersuche.height'}" />
+<label for="age">
+	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.age" />
+</label><br />
+	<f:form.textfield property="age" name="age" id="age" required="TRUE" /><br />
+	<f:render partial="FormFieldErrors" arguments="{field: 'loginTanzpartnersuche.age'}" />
+<label for="gender">
+	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender" />
+</label><br />
+	<f:form.select name="gender" property="gender" id="gender">
+		<f:form.select.option value="0"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.select" /></f:form.select.option>
+		<f:form.select.option value="1"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender-female" /></f:form.select.option>
+		<f:form.select.option value="2"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender-male" /></f:form.select.option>
+	 </f:form.select> <br/>
+	 <f:render partial="FormFieldErrors" arguments="{field: 'loginTanzpartnersuche.gender'}" />
+<label for="role">
+	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.role" />
+</label><br />
+	<f:form.select name="role" property="role" id="role">
+		<f:form.select.option value="0"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.select" /></f:form.select.option>
+		<f:form.select.option value="1"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.role-00" /></f:form.select.option>
+		<f:form.select.option value="2"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.role-01" /></f:form.select.option>
+	</f:form.select> <br/>
+	<f:render partial="FormFieldErrors" arguments="{field: 'loginTanzpartnersuche.role'}" />
+<label for="category">
+	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category" />
+</label><br />
+	<f:form.select name="category" property="category" id="category">
+		<f:form.select.option value="0"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.select" /></f:form.select.option>
+		<f:form.select.option value="1"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category-00" /></f:form.select.option>
+		<f:form.select.option value="2"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category-01" /></f:form.select.option>
+		<f:form.select.option value="3"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category-02" /></f:form.select.option>
+	</f:form.select> <br/>
+	<f:render partial="FormFieldErrors" arguments="{field: 'loginTanzpartnersuche.category'}" />
+<label for="level">
+	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level" />
+</label><br />
+	<f:form.select name="level" property="level" id="level">
+		<f:form.select.option value="0"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.select" /></f:form.select.option>
+		<f:form.select.option value="1"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-00" /></f:form.select.option>
+		<f:form.select.option value="2"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-01" /></f:form.select.option>
+		<f:form.select.option value="3"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-02" /></f:form.select.option>
+		<f:form.select.option value="4"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-03" /></f:form.select.option>
+		<f:form.select.option value="5"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-04" /></f:form.select.option>
+		<f:form.select.option value="6"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-05" /></f:form.select.option>
+		<f:form.select.option value="7"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-06" /></f:form.select.option>
+		<f:form.select.option value="8"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-07" /></f:form.select.option>
+	 </f:form.select> <br/>
+	 <f:render partial="FormFieldErrors" arguments="{field: 'loginTanzpartnersuche.level'}" />
+<label for="bio">
+	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.bio" />
+</label><br />
+	<f:form.textarea rows="5" cols="83" property="bio" name="bio" id="bio" required="TRUE" /> <br/>
+	<f:render partial="FormFieldErrors" arguments="{field: 'loginTanzpartnersuche.bio'}" />
+	<br />
+
+<!-- <label for="picture">
+	<f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.picture" />
+</label><br /> -->
+
+<!-- <f:form.checkbox name="gdpr" value="consent" /> --> <f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.register-gdpr" />
+<br />
+<f:render partial="FormFieldErrors" arguments="{field: 'loginTanzpartnersuche.consent'}" />
+<br /><br />
+</html>
