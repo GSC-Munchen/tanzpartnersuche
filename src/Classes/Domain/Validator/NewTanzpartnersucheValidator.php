@@ -20,6 +20,11 @@ class NewTanzpartnersucheValidator extends \TYPO3\CMS\Extbase\Validation\Validat
     
     protected function isValid($newTanzpartnersuche)
     {
+        // if username is already registered, throw error
+        if ($this->tanzpartnersucheRepository->findUserByUsername($newTanzpartnersuche->getUsername()) !== NULL) {
+            $this->result->forProperty('username')->addError(new \TYPO3\CMS\Extbase\Error\Error('Dieser Benutzername wurde bereits registriert. Bitte einen anderen verwenden oder bestehenden Eintrag editieren/löschen.', 1655749342));
+        }
+        
         // if mail is already registered, throw error
         if ($this->tanzpartnersucheRepository->findUserByEmail($newTanzpartnersuche->getEmail()) !== NULL) {
             $this->result->forProperty('email')->addError(new \TYPO3\CMS\Extbase\Error\Error('Diese Mailadresse wurde bereits registriert. Bitte eine andere verwenden oder bestehenden Eintrag editieren/löschen. Ggfs. Passwort vergessen Funktion nutzen.', 1655749851));

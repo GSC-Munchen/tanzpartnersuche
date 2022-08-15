@@ -34,7 +34,6 @@ class TanzpartnersucheRepository extends \TYPO3\CMS\Extbase\Persistence\Reposito
         $query->matching(
             $query->logicalAnd(
                 $query->like('username',$checkUsername),
-                $query->like('hidden','0'),
                 $query->like('deleted','0')
                 )
             );
