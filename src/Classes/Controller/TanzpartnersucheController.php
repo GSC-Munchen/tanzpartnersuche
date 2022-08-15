@@ -131,7 +131,6 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
         $mail->send();
         
         // Add new profile to database
-        // $this->addFlashMessage('Der Eintrag wurde erfolgreich angelegt und die Mail mit dem Verifikationscode versendet.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
         $this->tanzpartnersucheRepository->add($newTanzpartnersuche);
 
         // Display overall result on verification page
@@ -175,26 +174,28 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
     /**
      * action edit
      *
-     * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $tanzpartnersuche
-     * @TYPO3\CMS\Extbase\Annotation\IgnoreValidation("tanzpartnersuche")
+     * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche
      * @return string|object|null|void
      */
-    public function editAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $tanzpartnersuche)
+    public function editAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche)
     {
-        $this->view->assign('tanzpartnersuche', $tanzpartnersuche);
+        $this->view->assign('loginTanzpartnersuche', $loginTanzpartnersuche);
     }
 
     /**
      * action update
      *
-     * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $tanzpartnersuche
+     * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche
      * @return string|object|null|void
      */
-    public function updateAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $tanzpartnersuche)
+    public function updateAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche)
     {
-        $this->addFlashMessage('The object was updated. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/p/friendsoftypo3/extension-builder/master/en-us/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
-        $this->tanzpartnersucheRepository->update($tanzpartnersuche);
-        $this->redirect('list');
+        // update profile in database
+        $this->tanzpartnersucheRepository->update($loginTanzpartnersuche);
+        
+        // forward to loginMenu
+        $this->view->assign('loginTanzpartnersuche', $loginTanzpartnersuche);
+        $this->forward('loginMenu', NULL, NULL, ['loginTanzpartnersuche' => $loginTanzpartnersuche]);
     }
 
     /**
@@ -264,8 +265,23 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
         // read full array from database
         $loginTanzpartnersuche = $this->tanzpartnersucheRepository->findTanzpartnerByUsername($loginTanzpartnersuche->getUsername());
 
-        // all done, display message to user
-        $this->addFlashMessage('Du bist erfolgreich eingeloggt', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+        // forward to loginMenu
+        $this->view->assign('loginTanzpartnersuche', $loginTanzpartnersuche);
+        $this->forward('loginMenu', NULL, NULL, ['loginTanzpartnersuche' => $loginTanzpartnersuche]);
+        
+    }
+
+    /**
+     * action loginMenu
+     *
+     * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche
+     * @return void
+     * 
+     */
+    public function loginMenuAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche)
+    {
+        // read full array from database
+        $loginTanzpartnersuche = $this->tanzpartnersucheRepository->findTanzpartnerByUsername($loginTanzpartnersuche->getUsername());
 
         $this->view->assign('loginTanzpartnersuche', $loginTanzpartnersuche);
     }
@@ -276,7 +292,7 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
      * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche
      * @return string|object|null|void
      */
-    public function logoutAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche = NULL)
+    public function logoutAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche)
     {
         // ToDo: Datenbank aufräumen
 
