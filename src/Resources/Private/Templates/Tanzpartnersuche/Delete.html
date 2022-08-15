@@ -1,0 +1,39 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Tanzpartnersuche:
+          Delete.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="HeaderAssets">
+    <link rel="stylesheet" href="{f:uri.resource(path: 'Css/custom.css')}"/>
+</f:section>
+
+<f:section name="content">
+  <h2>Eintrag löschen</h2>
+
+  <f:flashMessages />  
+
+  <f:render partial="FormErrors" />
+
+  <p>Hallo {loginTanzpartnersuche.username},</p>
+  
+  <p>Möchtest Du Deinen Eintrag wirklich löschen? Wenn du die folgende Abfrage bestätigst, werden Deine Daten unwiderruflich aus unserer
+     Datenbank entfernt. Möchtest Du Dein Profil weiter online sehen, klicke bitte auf "Zurück".
+  </p>
+  <br />
+
+  <f:form action="deleted" name="loginTanzpartnersuche" object="{loginTanzpartnersuche}" >
+    <f:form.submit value="Eintrag löschen" class="lightred" />
+  </f:form>
+
+  <f:link.action action="loginMenu" arguments="{loginTanzpartnersuche:loginTanzpartnersuche}" class="tpsbutton alignright">Zurück, ohne Daten zu löschen</f:link.action>
+  <br />
+</f:section>
+</html>

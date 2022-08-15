@@ -201,14 +201,27 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
     /**
      * action delete
      *
-     * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $tanzpartnersuche
+     * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche
      * @return string|object|null|void
      */
-    public function deleteAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $tanzpartnersuche)
+    public function deleteAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche)
     {
-        $this->addFlashMessage('The object was deleted. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/p/friendsoftypo3/extension-builder/master/en-us/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
-        $this->tanzpartnersucheRepository->remove($tanzpartnersuche);
-        $this->redirect('list');
+        $this->view->assign('loginTanzpartnersuche', $loginTanzpartnersuche);
+    }
+
+    /**
+     * action deleted
+     *
+     * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche
+     * @return string|object|null|void
+     */
+    public function deletedAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche)
+    {        
+        // delete entry
+        $this->tanzpartnersucheRepository->remove($loginTanzpartnersuche);
+
+        // reset 
+        $loginTanzpartnersuche = NULL;
     }
 
     /**

@@ -1,0 +1,29 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Tanzpartnersuche:
+          Deleted.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="HeaderAssets">
+    <link rel="stylesheet" href="{f:uri.resource(path: 'Css/custom.css')}"/>
+</f:section>
+
+<f:section name="content">
+  <h2>Eintrag gelöscht</h2>
+  
+  <p>Danke für die Nutzung unserer Tanzpartnersuche. Dein Eintrag ist nun gelöscht. Du bist aus unserem System ausgeloggt.
+     Wir hoffen, Dich bei Deiner Suche unterstützt zu haben und wünschen Dir weiterhin viel Freude mit einem der schönsten Hobbys der Welt!
+  </p>
+  <br />
+
+  <f:link.action action="index" class="tpsbutton alignright"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.backlink" /></f:link.action>
+  <br />
+</f:section>
+</html>
