@@ -51,44 +51,77 @@ Otherwise your changes will be overwritten the next time you save the extension 
                         <div class="col-sm-1 spacer10">
                             <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/age.png" />
                         </div>
-                        <div class="col-sm-5 spacer10">
-                            Alter: {tanzpartnersuche.age} Jahre
+                        <div class="col-sm-3 spacer10">Alter:</div>
+                        <div class="col-sm-7 spacer10">
+                            {tanzpartnersuche.age} Jahre
                         </div>
                         <div class="w-100"></div>
                         <div class="col-sm-1 spacer10">
                             <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/height.png" />
                             
                         </div>
-                        <div class="col-sm-5 spacer10">
-                            Größe: {tanzpartnersuche.height} cm
+                        <div class="col-sm-3 spacer10">Größe:</div>
+                        <div class="col-sm-7 spacer10">
+                            {tanzpartnersuche.height} cm
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-sm-1 spacer10">
+                            <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/age.png" />
+                        </div>
+                        <div class="col-sm-3 spacer10">Geschlecht:</div>
+                        <div class="col-sm-7 spacer10">
+                            <f:form.select name="gender" value="{tanzpartnersuche.gender}" id="gender" class="selreadonly" disabled="TRUE">
+                                <f:form.select.option value="1"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender-female" />&nbsp;&nbsp;</f:form.select.option>
+                                <f:form.select.option value="2"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender-male" />&nbsp;&nbsp;</f:form.select.option>
+                            </f:form.select>
                         </div>
                         <div class="w-100"></div>
                         <div class="col-sm-1 spacer10">
                             <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/level.png" />  
                         </div>
-                        <div class="col-sm-5 spacer10">
-                            Niveau: {tanzpartnersuche.level}
+                        <div class="col-sm-3 spacer10">Niveau:</div>
+                        <div class="col-sm-7 spacer10">
+                            <f:form.select name="level" value="{tanzpartnersuche.level}" id="level" class="selreadonly" disabled="TRUE">
+                                <f:form.select.option value="1"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-00" />&nbsp;&nbsp;</f:form.select.option>
+                                <f:form.select.option value="2"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-01" />&nbsp;&nbsp;</f:form.select.option>
+                                <f:form.select.option value="3"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-02" />&nbsp;&nbsp;</f:form.select.option>
+                                <f:form.select.option value="4"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-03" />&nbsp;&nbsp;</f:form.select.option>
+                                <f:form.select.option value="5"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-04" />&nbsp;&nbsp;</f:form.select.option>
+                                <f:form.select.option value="6"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-05" />&nbsp;&nbsp;</f:form.select.option>
+                                <f:form.select.option value="7"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-06" />&nbsp;&nbsp;</f:form.select.option>
+                                <f:form.select.option value="8"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-07" />&nbsp;&nbsp;</f:form.select.option>
+	                        </f:form.select>
                         </div>
                         <div class="w-100"></div>
                         <div class="col-sm-1 spacer10">
                             <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/discipline.png" />
                         </div>
-                        <div class="col-sm-5 spacer10">
-                            Disziplin: {tanzpartnersuche.category}
+                        <div class="col-sm-3 spacer10">Diszplin:</div>
+                        <div class="col-sm-7 spacer10">
+                            <f:form.select name="category" value="{tanzpartnersuche.category}" id="category" class="selreadonly" disabled="TRUE">
+                                <f:form.select.option value="1"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category-00" />&nbsp;&nbsp;</f:form.select.option>
+                                <f:form.select.option value="2"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category-01" />&nbsp;&nbsp;</f:form.select.option>
+                                <f:form.select.option value="3"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category-02" />&nbsp;&nbsp;</f:form.select.option>
+                            </f:form.select>
                         </div>
                         <div class="w-100"></div>
                         <div class="col-sm-1 spacer10">
                             <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/search.png" />
                         </div>
-                        <div class="col-sm-5 spacer10">
-                            Ich suche: {tanzpartnersuche.role}
+                        <div class="col-sm-3 spacer10">Suche:</div>
+                        <div class="col-sm-7 spacer10">
+                            <f:form.select name="role" value="{tanzpartnersuche.role}" id="role" class="selreadonly" disabled="TRUE">
+                                <f:form.select.option value="1"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.role-00" />&nbsp;&nbsp;</f:form.select.option>
+                                <f:form.select.option value="2"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.role-01" />&nbsp;&nbsp;</f:form.select.option>
+                            </f:form.select>
                         </div>
                         <div class="w-100"></div>
                         <div class="col-sm-1 spacer10">
                             <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/clock.png" />
                         </div>
-                        <div class="col-sm-5 spacer10">
-                            Eintragsdatum: <f:format.date format="d.m.Y">{tanzpartnersuche.tstamp}</f:format.date>
+                        <div class="col-sm-3 spacer10">Datum:</div>
+                        <div class="col-sm-7 spacer10">
+                            <f:format.date format="d.m.Y">{tanzpartnersuche.tstamp}</f:format.date>
                         </div>
                         <div class="w-100"></div>
                         

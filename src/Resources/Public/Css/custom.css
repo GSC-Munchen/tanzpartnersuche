@@ -184,6 +184,16 @@
     margin-bottom: 20px;
   }
 
+  .selreadonly {
+    font-family: 'SourceSansPro-Light';
+    color: #000000;
+    background-color: transparent;
+    border-bottom: none;
+    margin-bottom: 0px;
+    margin-top: -1px;
+    appearance: none;
+  }
+
   /* Filter Suchmaske */
   #wrapper ul, #wrapper li {
     margin: 0;

@@ -32,9 +32,31 @@
                   </div>
                 <div class="cell" data-title="Größe">{tanzpartnersuche.height}</div>
                 <div class="cell" data-title="Alter">{tanzpartnersuche.age}</div>
-                <div class="cell" data-title="Geschlecht">{tanzpartnersuche.gender}</div>
-                <div class="cell" data-title="Disziplin">{tanzpartnersuche.category}</div>
-                <div class="cell" data-title="Niveau">{tanzpartnersuche.level}</div>
+                <div class="cell" data-title="Geschlecht">
+                  <f:form.select name="gender" value="{tanzpartnersuche.gender}" id="gender" class="selreadonly" disabled="TRUE">
+                    <f:form.select.option value="1"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender-female" /></f:form.select.option>
+                    <f:form.select.option value="2"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender-male" /></f:form.select.option>
+                  </f:form.select>
+                </div>
+                <div class="cell" data-title="Disziplin">
+                  <f:form.select name="category" value="{tanzpartnersuche.category}" id="category" class="selreadonly" disabled="TRUE">
+                    <f:form.select.option value="1"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category-00" />&nbsp;&nbsp;</f:form.select.option>
+                    <f:form.select.option value="2"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category-01" />&nbsp;&nbsp;</f:form.select.option>
+                    <f:form.select.option value="3"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category-02" />&nbsp;&nbsp;</f:form.select.option>
+                  </f:form.select>
+                </div>
+                <div class="cell" data-title="Niveau">
+                  <f:form.select name="level" value="{tanzpartnersuche.level}" id="level" class="selreadonly" disabled="TRUE">
+                    <f:form.select.option value="1"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-00" />&nbsp;&nbsp;</f:form.select.option>
+                    <f:form.select.option value="2"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-01" />&nbsp;&nbsp;</f:form.select.option>
+                    <f:form.select.option value="3"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-02" />&nbsp;&nbsp;</f:form.select.option>
+                    <f:form.select.option value="4"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-03" />&nbsp;&nbsp;</f:form.select.option>
+                    <f:form.select.option value="5"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-04" />&nbsp;&nbsp;</f:form.select.option>
+                    <f:form.select.option value="6"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-05" />&nbsp;&nbsp;</f:form.select.option>
+                    <f:form.select.option value="7"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-06" />&nbsp;&nbsp;</f:form.select.option>
+                    <f:form.select.option value="8"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.level-07" />&nbsp;&nbsp;</f:form.select.option>
+	                </f:form.select>
+                </div>
             </div>
           </f:for>
         </div>
