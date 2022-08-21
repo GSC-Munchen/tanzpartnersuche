@@ -1,0 +1,32 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+This template displays a EDIT form for the current domain object.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Tanzpartnersuche:
+          Updatepw.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="HeaderAssets">
+    <link rel="stylesheet" href="{f:uri.resource(path: 'Css/custom.css')}"/>
+</f:section>
+
+<f:section name="content">
+    <h2>Passwort erfolgreich geändert</h2>
+
+    <p>{loginTanzpartnersuche.username}, Dein Passwort wurde geändert. Bitte ab jetzt nur noch das neue benutzen.
+    </p>
+
+    <f:render partial="FormErrors" />
+
+    <f:link.action action="loginMenu" arguments="{loginTanzpartnersuche:loginTanzpartnersuche}" class="tpsbutton alignright"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.backlink" /></f:link.action>
+
+    <br /><br />
+</f:section>
+</html>

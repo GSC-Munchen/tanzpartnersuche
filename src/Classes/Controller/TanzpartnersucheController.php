@@ -225,6 +225,36 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
     }
 
     /**
+     * action changepw
+     *
+     * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche
+     * @return string|object|null|void
+     */
+    public function changepwAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche)
+    {
+        $loginTanzpartnersuche->setPassword('');
+        $this->view->assign('loginTanzpartnersuche', $loginTanzpartnersuche);
+    }
+
+    /**
+     * action updatepw
+     *
+     * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche
+     * @Extbase\Validate(param="loginTanzpartnersuche" , validator="GSC\Tanzpartnersuche\Domain\Validator\PasswordTanzpartnersucheValidator")
+     * @return string|object|null|void
+     */
+    public function updatepwAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche)
+    {
+        // update profile in database
+        
+        // Todo: wieder aktivieren und vorher das Passwort hashen
+        // $this->tanzpartnersucheRepository->update($loginTanzpartnersuche);
+        
+        // forward to loginMenu
+        $this->view->assign('loginTanzpartnersuche', $loginTanzpartnersuche);
+    }
+
+    /**
      * action search
      *
      * @return string|object|null|void
