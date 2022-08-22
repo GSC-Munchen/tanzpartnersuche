@@ -207,4 +207,31 @@ class TanzpartnersucheRepository extends \TYPO3\CMS\Extbase\Persistence\Reposito
             )
         )->execute()->getFirst();
     }
+
+    /**
+     * 
+     * @return QueryResultInterface|array
+     * @api
+     */
+    public function findAllActiveProfiles() 
+    {
+        // set up query
+        $query = $this->createQuery();
+        $query->getQuerySettings()->setIgnoreEnableFields(true)->setIncludeDeleted(true);
+        $query->matching(
+            $query->logicalAnd(
+                $query->like('hidden','0'),
+                $query->like('deleted','0'),
+                $query->greaterThanOrEqual('created', strtotime("-6 month"))
+                )
+            );
+
+        $result = $query->execute();
+
+        // Return NULL, if there is no match
+        if (count($result)=='0') 
+            $result = NULL;
+
+        return $result;
+    }
 }
