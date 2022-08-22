@@ -15,8 +15,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
     <link rel="stylesheet" href="{f:uri.resource(path: 'Css/custom.css')}"/>
 </f:section>
 
-<f:section name="content">    
-
+<f:section name="content">
     <h1>Profilansicht "{tanzpartnersuche.username}"</h1>
 
     <div class="tanzpartnersuche">
@@ -119,9 +118,9 @@ Otherwise your changes will be overwritten the next time you save the extension 
                         <div class="col-sm-1 spacer10">
                             <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/clock.png" />
                         </div>
-                        <div class="col-sm-3 spacer10">Datum:</div>
+                        <div class="col-sm-3 spacer10">Eintrag:</div>
                         <div class="col-sm-7 spacer10">
-                            <f:format.date format="d.m.Y">{tanzpartnersuche.tstamp}</f:format.date>
+                            <f:format.date format="d.m.Y">{tanzpartnersuche.created}</f:format.date>
                         </div>
                         <div class="w-100"></div>
                         

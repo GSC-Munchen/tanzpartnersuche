@@ -133,11 +133,11 @@ class Tanzpartnersuche extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $hidden = '';
 
     /**
-     * tstamp
+     * created
      *
-     * @var \DateTime
+     * @var int
      */
-    protected $tstamp = null;
+    protected $created = '';
 
     /**
      * Returns the username
@@ -455,23 +455,23 @@ class Tanzpartnersuche extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Returns the tstamp
+     * Returns the created
      *
-     * @return \DateTime $tstamp
+     * @return int $created
      */
-    public function getTstamp()
+    public function getCreated()
     {
-        return $this->tstamp;
+        return $this->created;
     }
 
     /**
-     * Sets the tstamp
+     * Sets the created
      *
-     * @param \DateTime $tstamp
+     * @param int $created
      * @return void
      */
-    public function setTstamp(\DateTime $tstamp)
+    public function setCreated(int $created)
     {
-        $this->tstamp = $tstamp;
+        $this->created = $created;
     }
 }

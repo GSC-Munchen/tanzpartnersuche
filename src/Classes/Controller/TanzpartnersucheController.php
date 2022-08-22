@@ -92,6 +92,9 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
         // Hide User
         $newTanzpartnersuche->setHidden('1');
 
+        // set created date
+        $newTanzpartnersuche->setCreated(time());
+
         // send out verification mail
         // assemble message
         $emailBody = "Hallo vom Gelb-Schwarz-Casino, \n";

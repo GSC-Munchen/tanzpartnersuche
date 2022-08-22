@@ -16,11 +16,11 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'username,email,gender,level,category,bio,role,verificationcode,loggedin',
+        'searchFields' => 'username,email,gender,level,category,bio,role,verificationcode,loggedin,passwordconfirmation,created',
         'iconfile' => 'EXT:tanzpartnersuche/Resources/Public/Icons/tx_tanzpartnersuche_domain_model_tanzpartnersuche.gif'
     ],
     'types' => [
-        '1' => ['showitem' => 'username, password, email, height, age, gender, picture, level, category, bio, role, verificationcode, loggedin, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, sys_language_uid, l10n_parent, l10n_diffsource, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, hidden, starttime, endtime'],
+        '1' => ['showitem' => 'username, password, email, height, age, gender, picture, level, category, bio, role, verificationcode, loggedin, passwordconfirmation, created --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, sys_language_uid, l10n_parent, l10n_diffsource, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, hidden, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -117,6 +117,16 @@ return [
         'password' => [
             'exclude' => true,
             'label' => 'LLL:EXT:tanzpartnersuche/Resources/Private/Language/locallang_db.xlf:tx_tanzpartnersuche_domain_model_tanzpartnersuche.password',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'nospace,password',
+                'default' => ''
+            ]
+        ],
+        'passwordconfirmation' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:tanzpartnersuche/Resources/Private/Language/locallang_db.xlf:tx_tanzpartnersuche_domain_model_tanzpartnersuche.passwordconfirmation',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -276,6 +286,16 @@ return [
                 'eval' => 'trim',
                 'default' => ''
             ],
+        ],
+        'created' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:tanzpartnersuche/Resources/Private/Language/locallang_db.xlf:tx_tanzpartnersuche_domain_model_tanzpartnersuche.created',
+            'config' => [
+                'type' => 'input',
+                'size' => 10,
+                'eval' => 'int',
+                'default' => 0
+            ]
         ],
     
     ],
