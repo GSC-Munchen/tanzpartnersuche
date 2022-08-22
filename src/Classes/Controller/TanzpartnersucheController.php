@@ -245,12 +245,11 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
      */
     public function updatepwAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche)
     {
-        // update profile in database
+        // hash password and update profile in database
+        $loginTanzpartnersuche->setPassword(password_hash(($loginTanzpartnersuche->getPassword()),PASSWORD_DEFAULT, array('cost' => 9)));
+        $this->tanzpartnersucheRepository->update($loginTanzpartnersuche);
         
-        // Todo: wieder aktivieren und vorher das Passwort hashen
-        // $this->tanzpartnersucheRepository->update($loginTanzpartnersuche);
-        
-        // forward to loginMenu
+        // show results
         $this->view->assign('loginTanzpartnersuche', $loginTanzpartnersuche);
     }
 
