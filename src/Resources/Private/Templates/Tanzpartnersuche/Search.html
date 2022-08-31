@@ -1,3 +1,5 @@
+{namespace gsc = GSC\Tanzpartnersuche\ViewHelpers} 
+
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:layout name="Default" />
 
@@ -19,7 +21,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
     <h1>Suche</h1>
     <p>Bitte beginne hier mit Deiner Suche.</p>
 
-    <div id="wrapper">
+<!--    <div id="wrapper">
       <div id="left-side">
         <div id="gender" class="active">Ich bin</div> 
         <div id="gender2">Ich suche</div>
@@ -60,15 +62,12 @@ Otherwise your changes will be overwritten the next time you save the extension 
         <div id="third">
           <div id="appmenu" class="appmenu">
             <div id="btnLatin" class="tile-mini">
-                <!-- <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/iconWoman.png" width="50px" height="50px" /> -->
                 <h4 class="fittext">Latein</h4>
             </div>
             <div id="btnStandard" class="tile-mini">
-                <!-- <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/iconMan.png" width="50px" height="50px" /> -->
                 <h4 class="fittext">Standard</h4>
             </div>
             <div id="btn10dance" class="tile-mini">
-                <!-- <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/iconMan.png" width="50px" height="50px" /> -->
                 <h4 class="fittext">10 Tänze</h4>
             </div>
           </div>
@@ -132,6 +131,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
       <div id="bcStartAgeIntro" class="is-hidden"> im Alter zwischen </div><div id="bcStartAge" class="filter is-hidden">18</div>
       <div id="bcEndAgeIntro" class="is-hidden"> und </div><div id="bcEndAge" class="filter is-hidden">99</div>
     </div>
+  -->
 
     <div id="searchlist">
       <f:render partial="Tanzpartnersuche/Searchlist" arguments="{tanzpartnersuches:tanzpartnersuches}" />
