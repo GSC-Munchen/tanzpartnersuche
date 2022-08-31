@@ -158,6 +158,12 @@
     height: 28px;
   }
 
+  @media only screen and (max-width: 600px) {
+    input[type=text], input[type=password], input[type=email], textarea, select { 
+      width: 98%;
+    }
+  }
+
   /* größeres Eingabefeld in der Mailbox */
   .mailbox input[type=text], .mailbox input[type=email], .mailbox textarea {
     width: 95%;
@@ -412,7 +418,7 @@
     /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); */
     display: table; 
   }
-    @media screen and (max-width: 580px) {
+    @media screen and (max-width: 600px) {
       .table {
         display: block; } 
     }
@@ -429,7 +435,7 @@
       color: #ffffff;
       background: #FFC300; 
     }
-    @media screen and (max-width: 580px) {
+    @media screen and (max-width: 600px) {
       .row {
         padding: 14px 10px 7px;
         display: block; 
@@ -460,7 +466,7 @@
     padding: 6px 12px;
     display: table-cell; 
   }
-    @media screen and (max-width: 580px) {
+    @media screen and (max-width: 600px) {
       .cell {
         padding: 2px 16px;
         display: block; } 
@@ -512,9 +518,15 @@
 }
 /*marking active/completed steps*/
 /*The number of the step and the connector before it*/
-#progressbar li.active:before,  #progressbar li.active:after{
+#progressbar li.active:before,  #progressbar li.active:after {
 	background: #FFC300;
 	color: #000000;
+}
+
+@media screen and (max-width: 600px) {
+  #progressbar li {
+  width: 27%;
+  }
 }
 
 /* Detail View of Profile */
