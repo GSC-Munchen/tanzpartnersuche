@@ -18,11 +18,20 @@
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.height" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.height">
 				<source>Größe (in cm)</source>
 			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.heightshort" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.heightshort">
+				<source>Größe</source>
+			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.age" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.age">
 				<source>Alter (zwischen 18 und 99 Jahren)</source>
 			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.ageshort" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.ageshort">
+				<source>Alter</source>
+			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender">
 				<source>Geschlecht (bitte auswählen)</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gendershort" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gendershort">
+				<source>Geschlecht</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.picture" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.picture">
 				<source>Bild/Avatar</source>
@@ -32,6 +41,12 @@
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.category">
 				<source>Disziplin (bitte auswählen)</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.levelshort" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.levelshort">
+				<source>Niveau</source>
+			</trans-unit>
+			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.categoryshort" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.categoryshort">
+				<source>Disziplin</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.bio" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.bio">
 				<source>Über mich</source>
