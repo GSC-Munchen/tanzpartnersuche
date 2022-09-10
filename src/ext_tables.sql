@@ -13,5 +13,5 @@ CREATE TABLE tx_tanzpartnersuche_domain_model_tanzpartnersuche (
 	role varchar(255) NOT NULL DEFAULT '',
 	verificationcode varchar(255) NOT NULL DEFAULT '',
 	loggedin varchar(255) NOT NULL DEFAULT '',
-	created int(10) NOT NULL DEFAULT ''
+	created int(10) NOT NULL DEFAULT '0'
 );
