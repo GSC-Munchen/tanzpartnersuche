@@ -20,118 +20,106 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <f:section name="content">
     <h1>Suche</h1>
     <p>Bitte beginne hier mit Deiner Suche.</p>
-
-<!--    <div id="wrapper">
-      <div id="left-side">
-        <div id="gender" class="active">Ich bin</div> 
-        <div id="gender2">Ich suche</div>
-        <div id="discipline">Disziplin</div>
-        <div id="level">Niveau</div>
-        <div id="age">Alter</div>
-      </div>
-    
-      <div id="border">
-        <div id="line" class="one"></div>
-      </div>
-    
-      <div id="right-side">
-        <div id="first" class="active">
-          <div id="appmenu" class="appmenu">
-              <div id="btnwoman" class="tile-mini">
-                  <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/iconWoman.png" width="50px" height="50px" />
-                  <h4 class="fittext">eine Dame</h4>
+    <div id="searchform">
+      <f:form action="search" additionalAttributes="{role:'form'}">
+        <div class="radio-mini">
+          <div class="radio-tile-group">
+            <div class="input-container">
+              <f:form.radio name="searchGender" property="searchGender" value="1" checked="{searchGender} == 1" class="radio-button" />
+              <div class="radio-tile">
+                <label for="woman" class="radio-tile-label">Tanzpartnerin</label>
               </div>
-              <div id="btnman" class="tile-mini">
-                  <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/iconMan.png" width="50px" height="50px" />
-                  <h4 class="fittext">ein Herr</h4>
+            </div>       
+            <div class="input-container">
+              <f:form.radio name="searchGender" property="searchGender" value="2" checked="{searchGender} == 2" class="radio-button" />
+              <div class="radio-tile">
+                <label for="man" class="radio-tile-label">Tanzpartner</label>
               </div>
-          </div>
-        </div>
-        <div id="second">
-          <div id="appmenu" class="appmenu">
-            <div id="btnwoman2" class="tile-mini">
-              <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/iconWoman.png" width="50px" height="50px" />
-              <h4 class="fittext">Tanzdame</h4>
-          </div>
-          <div id="btnman2" class="tile-mini">
-            <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/iconMan.png" width="50px" height="50px" />
-            <h4 class="fittext">Tanzherren</h4>
-        </div>
-          </div>
-        </div>
-        <div id="third">
-          <div id="appmenu" class="appmenu">
-            <div id="btnLatin" class="tile-mini">
-                <h4 class="fittext">Latein</h4>
-            </div>
-            <div id="btnStandard" class="tile-mini">
-                <h4 class="fittext">Standard</h4>
-            </div>
-            <div id="btn10dance" class="tile-mini">
-                <h4 class="fittext">10 Tänze</h4>
             </div>
           </div>
         </div>
-        <div id="fourth">
-          <div id="appmenu" class="appmenu">
-            <div id="btnJugend" class="tile-micro">
-              <span class="microtext">Jugend</span>
+<hr />
+        <div class="radio-mini">
+          <div class="radio-tile-group">
+            <div class="input-container">
+              <f:form.radio name="searchCategory" property="searchCategory" value="1" checked="{searchCategory} == 1" class="radio-button" />
+              <div class="radio-tile">
+                <label for="latin" class="radio-tile-label">Latein</label>
+              </div>
+            </div>       
+            <div class="input-container">
+              <f:form.radio name="searchCategory" property="searchCategory" value="2" checked="{searchCategory} == 2" class="radio-button" />
+              <div class="radio-tile">
+                <label for="standard" class="radio-tile-label">Standard</label>
+              </div>
             </div>
-            <div id="btnBreitensport" class="tile-micro">
-              <span class="microtext">Breitensport</span>
-            </div>
-            <div id="btnVorturnier" class="tile-micro">
-              <span class="microtext">Vorturnier</span>
-            </div>
-            <div id="btnD" class="tile-micro">
-              <span class="microtext">D-Klasse</span>
-            </div>
-            <div id="btnC" class="tile-micro">
-              <span class="microtext">C-Klasse</span>
-            </div>
-            <div id="btnB" class="tile-micro">
-              <span class="microtext">B-Klasse</span>
-            </div>
-            <div id="btnA" class="tile-micro">
-              <span class="microtext">A-Klasse</span>
-            </div>
-            <div id="btnS" class="tile-micro">
-              <span class="microtext">S-Klasse</span>
-            </div>
-            <span class="microtext">Mehrfachauswahl möglich</span>
-          </div>
-        </div>
-        <div id="fifth">
-          <div id="appmenu" class="appmenu">
-            <div class="range-slider tile-mini">
-              <h4 class="sliderval range-value_start">18</h4>
-              <input class="range-slider" type="range" id="range-value_start" value="18" min="18" max="98">
-            </div>
-            <div class="range-slider tile-mini">
-              <h4 class="sliderval range-value_end">99</h4>
-              <input class="range-slider" type="range" id="range-value_end" value="100" min="19" max="99">
+            <div class="input-container">
+              <f:form.radio name="searchCategory" property="searchCategory" value="3" checked="{searchCategory} == 3" class="radio-button" />
+              <div class="radio-tile">
+                <label for="10dance" class="radio-tile-label">10 Tänze</label>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+<hr />
+        <div class="radio-mini">
+          <div class="radio-tile-group">
+            <div class="input-container">
+              <f:form.radio name="searchLevel" property="searchLevel" value="1" checked="{searchLevel} == 1" class="radio-button" />
+              <div class="radio-tile">
+                <label for="jugend" class="radio-tile-label">Jugend</label>
+              </div>
+            </div>
+            <div class="input-container">
+              <f:form.radio name="searchLevel" property="searchLevel" value="2" checked="{searchLevel} == 2" class="radio-button" />
+              <div class="radio-tile">
+                <label for="breitensport" class="radio-tile-label">Breitensport</label>
+              </div>
+            </div>
+            <div class="input-container">
+              <f:form.radio name="searchLevel" property="searchLevel" value="3" checked="{searchLevel} == 3" class="radio-button" />
+              <div class="radio-tile">
+                <label for="vorturnier" class="radio-tile-label">Vorturnier</label>
+              </div>
+            </div>
+            <div class="input-container">
+              <f:form.radio name="searchLevel" property="searchLevel" value="4" checked="{searchLevel} == 4" class="radio-button" />
+              <div class="radio-tile">
+                <label for="d-class" class="radio-tile-label">D-Klasse</label>
+              </div>
+            </div>
+            <div class="input-container">
+              <f:form.radio name="searchLevel" property="searchLevel" value="5" checked="{searchLevel} == 5" class="radio-button" />
+              <div class="radio-tile">
+                <label for="c-class" class="radio-tile-label">C-Klasse</label>
+              </div>
+            </div>
+            <div class="input-container">
+              <f:form.radio name="searchLevel" property="searchLevel" value="6" checked="{searchLevel} == 6" class="radio-button" />
+              <div class="radio-tile">
+                <label for="b-class" class="radio-tile-label">B-Klasse</label>
+              </div>
+            </div>
+            <div class="input-container">
+              <f:form.radio name="searchLevel" property="searchLevel" value="7" checked="{searchLevel} == 7" class="radio-button" />
+              <div class="radio-tile">
+                <label for="a-class" class="radio-tile-label">A-Klasse</label>
+              </div>
+            </div>
+            <div class="input-container">
+              <f:form.radio name="searchLevel" property="searchLevel" value="8" checked="{searchLevel} == 8" class="radio-button" />
+              <div class="radio-tile">
+                <label for="s-class" class="radio-tile-label">S-Klasse</label>
+              </div>
+            </div>
+          </div>
+        </div>
+<hr />
+        <f:form.submit value="Suche starten" class="justify-center" />
+      </f:form>
     </div>
-
-    <div id="breadcrumb" class="spacer10 breadcrumb-search">
-      <div id="1st" class="filter is-hidden"></div><div id="2nd" class="is-hidden"> sucht </div>
-      <div id="3rd" class="filter is-hidden">Herr</div><div id="4th" class="is-hidden"> für </div>
-      <div id="5th" class="filter is-hidden">Standard</div> <div id="6th" class="filter is-hidden">Latein</div>
-      <div id="bcJugend" class="filter is-hidden">Jugend</div>
-      <div id="bcBreitensport" class="filter is-hidden">Breitensport</div>
-      <div id="bcVorturnier" class="filter is-hidden">Vorturnier</div>
-      <div id="bcD" class="filter is-hidden">D-Klasse</div>
-      <div id="bcC" class="filter is-hidden">C-Klasse</div>
-      <div id="bcB" class="filter is-hidden">B-Klasse</div>
-      <div id="bcA" class="filter is-hidden">A-Klasse</div>
-      <div id="bcS" class="filter is-hidden">S-Klasse</div>
-      <div id="bcStartAgeIntro" class="is-hidden"> im Alter zwischen </div><div id="bcStartAge" class="filter is-hidden">18</div>
-      <div id="bcEndAgeIntro" class="is-hidden"> und </div><div id="bcEndAge" class="filter is-hidden">99</div>
-    </div>
-  -->
+<hr />
+    <!-- <f:de bug title="all">{_all}</f:de bug> -->
 
     <div id="searchlist">
       <f:render partial="Tanzpartnersuche/Searchlist" arguments="{tanzpartnersuches:tanzpartnersuches}" />

@@ -234,4 +234,24 @@ class TanzpartnersucheRepository extends \TYPO3\CMS\Extbase\Persistence\Reposito
 
         return $result;
     }
+
+    /**
+     * 
+     * @return QueryResultInterface|array
+     * @api
+     */
+    public function filterProfiles($gender = '', $category = '', $level = '') {
+        $query = $this->createQuery();
+        $query->getQuerySettings()->setIgnoreEnableFields(true)->setIncludeDeleted(true);
+        $query->matching(
+            $query->logicalAnd(
+                $query->like('hidden','0'),
+                $query->like('deleted','0'),
+                $query->like('gender', '%'.$gender.'%'),
+                $query->like('category', '%'.$category.'%'),
+                $query->like('level', '%'.$level.'%')
+                )
+            );
+        return $query->execute();
+    }
 }

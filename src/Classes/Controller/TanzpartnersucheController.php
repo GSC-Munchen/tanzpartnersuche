@@ -265,6 +265,20 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
     {
         $tanzpartnersuches = $this->tanzpartnersucheRepository->findAllActiveProfiles();
         $this->view->assign('tanzpartnersuches', $tanzpartnersuches);
+
+        if (($this->request->hasArgument('searchGender')) || ($this->request->hasArgument('searchCategory')) || ($this->request->hasArgument('searchLevel'))) {
+            if ($this->request->hasArgument('searchGender')) {
+                $gender = $this->request->getArgument('searchGender');
+            }
+            if ($this->request->hasArgument('searchCategory')) {
+                $category = $this->request->getArgument('searchCategory');
+            }
+            if ($this->request->hasArgument('searchLevel')) {
+                $level = $this->request->getArgument('searchLevel');
+            }
+            $tanzpartnersuches = $this->tanzpartnersucheRepository->filterProfiles($gender, $category, $level);
+            $this->view->assign('tanzpartnersuches', $tanzpartnersuches);
+        }
     }
 
     /**
