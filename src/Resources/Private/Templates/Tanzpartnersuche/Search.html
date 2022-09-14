@@ -119,15 +119,17 @@ Otherwise your changes will be overwritten the next time you save the extension 
       </f:form>
     </div>
 <hr />
-    <!-- <f:de bug title="all">{_all}</f:de bug> -->
 
     <div id="searchlist">
       <f:render partial="Tanzpartnersuche/Searchlist" arguments="{tanzpartnersuches:tanzpartnersuches}" />
     </div>
+    <f:if condition="{tanzpartnersuches}">
+      <f:then></f:then>
+      <f:else>Keine zur Suche passenden Einträge gefunden.</f:else>
+    </f:if>
 
     <f:link.action action="index" class="tpsbutton alignright spacer-bottom30">Zurück</f:link.action><br /><br />
 
     <script src="{f:uri.resource(path: 'Js/search.js')}"></script>
-
 </f:section>
 </html>
