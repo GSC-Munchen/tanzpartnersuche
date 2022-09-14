@@ -269,12 +269,15 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
         if (($this->request->hasArgument('searchGender')) || ($this->request->hasArgument('searchCategory')) || ($this->request->hasArgument('searchLevel'))) {
             if ($this->request->hasArgument('searchGender')) {
                 $gender = $this->request->getArgument('searchGender');
+                $this->view->assign('searchGender', $gender);
             }
             if ($this->request->hasArgument('searchCategory')) {
                 $category = $this->request->getArgument('searchCategory');
+                $this->view->assign('searchCategory', $category);
             }
             if ($this->request->hasArgument('searchLevel')) {
                 $level = $this->request->getArgument('searchLevel');
+                $this->view->assign('searchLevel', $level);
             }
             $tanzpartnersuches = $this->tanzpartnersucheRepository->filterProfiles($gender, $category, $level);
             $this->view->assign('tanzpartnersuches', $tanzpartnersuches);
