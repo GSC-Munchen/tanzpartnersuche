@@ -297,15 +297,20 @@
   
   .row {
     display: table-row;
-    background: #FFEFC6; 
+    background: #FFFFFF; 
   }
     .row:nth-of-type(odd) {
-      background: #FFFFFF; 
+      background: #FFEFC6; 
     }
     .row.header {
       font-weight: 900;
       color: #ffffff;
       background: #FFC300; 
+    }
+    .row.header-light {
+      font-weight: 900;
+      color: #000000;
+      background: #FFEFC6; 
     }
     @media screen and (max-width: 600px) {
       .row {
