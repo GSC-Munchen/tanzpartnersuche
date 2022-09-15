@@ -123,6 +123,8 @@ Otherwise your changes will be overwritten the next time you save the extension 
     <div id="searchlist">
       <f:render partial="Tanzpartnersuche/Searchlist" arguments="{tanzpartnersuches:tanzpartnersuches}" />
     </div>
+    
+    <!-- if no match between database and filter criterias, notice user accordingly -->
     <f:if condition="{tanzpartnersuches}">
       <f:then></f:then>
       <f:else>Keine zur Suche passenden Einträge gefunden.</f:else>
@@ -130,6 +132,9 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
     <f:link.action action="index" class="tpsbutton alignright spacer-bottom30">Zurück</f:link.action><br /><br />
 
-    <script src="{f:uri.resource(path: 'Js/search.js')}"></script>
-</f:section>
+    <!-- if a selection via radio button was already done, scroll to result list via javascript -->
+    <f:if condition="{searchGender} || {searchCategory} || {searchLevel}">
+      <script src="{f:uri.resource(path: 'Js/search.js')}"></script>
+    </f:if>
+  </f:section>
 </html>
