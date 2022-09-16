@@ -18,18 +18,16 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <f:section name="content">
   <h2>Eintrag löschen</h2>
 
-  <f:flashMessages />  
-
   <f:render partial="FormErrors" />
 
   <p>Hallo {loginTanzpartnersuche.username},</p>
   
-  <p>Möchtest Du Deinen Eintrag wirklich löschen? Wenn du die folgende Abfrage bestätigst, werden Deine Daten unwiderruflich aus unserer
+  <p>Wenn du auf "Eintrag löschen" klickst, werden Deine Daten aus unserer
      Datenbank entfernt. Möchtest Du Dein Profil weiter online sehen, klicke bitte auf "Zurück".
   </p>
   <br />
 
-  <f:form action="deleted" name="loginTanzpartnersuche" object="{loginTanzpartnersuche}" >
+  <f:form action="deleted" name="loginTanzpartnersuche" object="{loginTanzpartnersuche}">
     <f:form.submit value="Eintrag löschen" class="lightred" />
   </f:form>
 

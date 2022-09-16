@@ -23,6 +23,26 @@ Otherwise your changes will be overwritten the next time you save the extension 
   </p>
   <br />
 
+  <h2>Freiwillige Umfrage</h2>
+  <p>Bevor Du gehst, möchten wir Dich noch um ein kurzes Feedback bitten. Bitte nenne uns den Grund, warum Du Dein Profil gelöscht hast:</p>
+  <f:form action="feedback" additionalAttributes="{role:'form'}">
+    <f:form.select name="reason" property="reason" id="reason">
+      <f:form.select.option value="0">Keine Auswahl</f:form.select.option>
+      <f:form.select.option value="1">Habe erfolgreich eine(n) Tanzpartner(in) über die Tanzpartnersuche gefunden</f:form.select.option>
+      <f:form.select.option value="2">Habe erfolgreich eine(n) Tanzpartner(in) durch die Vermittlung eines Trainers gefunden</f:form.select.option>
+      <f:form.select.option value="3">Habe erfolgreich eine(n) Tanzpartner(in) durch die Vermittlung eines Mitglieds gefunden</f:form.select.option>
+      <f:form.select.option value="4">Habe erfolgreich eine(n) Tanzpartner(in) außerhalb des Clubs gefunden</f:form.select.option>
+      <f:form.select.option value="5">Habe leider keine Tanzpartner(in) gefunden</f:form.select.option>
+      <f:form.select.option value="6">Komme mit dem System nicht zurecht/finde es unübersichtlich</f:form.select.option>
+    </f:form.select> <br/>
+    <label for="comment">
+      Hast Du noch einen Kommentar/Lob/Anregungen/Kritik für uns?
+    </label><br />
+    <f:form.textarea rows="5" cols="83" property="comment" name="comment" id="comment" /> <br/>
+    <label>Herzlichen Dank!</label><br />
+    <f:form.submit value="Feedback senden" />
+  </f:form>
+
   <f:link.action action="index" class="tpsbutton alignright"><f:translate key="tx_tanzpartnersuche_domain_model_tanzpartnersuche.backlink" /></f:link.action>
   <br />
 </f:section>

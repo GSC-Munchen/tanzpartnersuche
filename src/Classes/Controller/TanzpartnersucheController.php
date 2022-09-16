@@ -246,6 +246,67 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
     }
 
     /**
+     * action feedback
+     *
+     * @return string|object|null|void
+     */
+    public function feedbackAction()
+    {        
+        // if there is feedback, send mail to admin
+        if (($this->request->hasArgument('reason')) || ($this->request->hasArgument('comment'))) {
+            if ($this->request->hasArgument('reason')) {
+                $reason = $this->request->getArgument('reason');
+            }
+            if ($this->request->hasArgument('comment')) {
+                $comment = $this->request->getArgument('comment');
+            }
+            // decode feedback
+            switch ($reason) {
+                case 0:
+                    $reason = "Keine Auswahl";
+                    break;
+                case 1:
+                    $reason = "Habe erfolgreich eine(n) Tanzpartner(in) über die Tanzpartnersuche gefunden";
+                    break;
+                case 2:
+                    $reason = "Habe erfolgreich eine(n) Tanzpartner(in) durch die Vermittlung eines Trainers gefunden";
+                    break;
+                case 3:
+                    $reason = "Habe erfolgreich eine(n) Tanzpartner(in) durch die Vermittlung eines Mitglieds gefunden";
+                    break;
+                case 4:
+                    $reason = "Habe erfolgreich eine(n) Tanzpartner(in) außerhalb des Clubs gefunden";
+                    break;
+                case 5:
+                    $reason = "Habe leider keine Tanzpartner(in) gefunden";
+                    break;
+                case 6:
+                    $reason = "Komme mit dem System nicht zurecht/finde es unübersichtlich";
+                    break;
+            }
+            
+            // assemble message
+            $emailBody = "Feedback zur Löschung eines Profils \n";
+            $emailBody .= "\n";
+            $emailBody .= "------------------------------------------------------------\n";
+            $emailBody .= "Grund:     ".$reason."\n";
+            $emailBody .= "Kommentar: ".$comment."\n";
+            $emailBody .= "------------------------------------------------------------\n";
+            $emailBody .= "Ende der Nachricht \n";
+
+            // send mail
+            $mail = GeneralUtility::makeInstance(MailMessage::class);
+            $mail->from(new \Symfony\Component\Mime\Address('tanzpartner@gsc-muenchen.de', 'Tanzpartnersuche des Gelb-Schwarz Casino München e.V.'));
+            $mail->to(new Address('tanzpartner@gsc-muenchen.de', 'tanzpartner@gsc-muenchen.de'));
+            $mail->subject('Feedback zur Tanzpartnersuche des Gelb-Schwarz Casino München e.V.');
+            $mail->text($emailBody);
+            $mail->send();
+
+        }
+
+    }
+
+    /**
      * action changepw
      *
      * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche
