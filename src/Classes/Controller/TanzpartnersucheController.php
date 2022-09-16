@@ -409,6 +409,10 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
         // read full array from database
         $loginTanzpartnersuche = $this->tanzpartnersucheRepository->findTanzpartnerByUsername($loginTanzpartnersuche->getUsername());
 
+        // add login timestamp to database to time-limit changes
+        $loginTanzpartnersuche->setLoggedin(strval(time()));
+        $this->tanzpartnersucheRepository->update($loginTanzpartnersuche);
+
         // forward to loginMenu
         $this->view->assign('loginTanzpartnersuche', $loginTanzpartnersuche);
         $this->forward('loginMenu', NULL, NULL, ['loginTanzpartnersuche' => $loginTanzpartnersuche]);
@@ -438,7 +442,9 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
      */
     public function logoutAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche)
     {
-        // ToDo: Datenbank aufräumen
+        // remove timestamp from database as logout was successful
+        $loginTanzpartnersuche->setLoggedin('');
+        $this->tanzpartnersucheRepository->update($loginTanzpartnersuche);
 
         // reset 
         $loginTanzpartnersuche = NULL;
