@@ -17,7 +17,7 @@ use GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche;
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- * (c) 2022 Martin Arend <tanzpartnersuche@gsc-muenchen.de>, GSC München e.V.
+ * (c) 2022 Martin Arend <tanzpartner@gsc-muenchen.de>, GSC München e.V.
  */
 
 /**
@@ -133,6 +133,24 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
         $mail->text($emailBody);
         $mail->send();
         
+
+        // send out mail to admin
+        // assemble message
+        $emailBody = "Es wurde erfolgreich ein neuer Eintrag in der Tanzpartnersuche angelegt. \n";
+        $emailBody .= "\n";
+        $emailBody .= "Name:".$newTanzpartnersuche->getUsername()."\n";
+        $emailBody .= "Bio:".$newTanzpartnersuche->getBio()."\n";
+        $emailBody .= "Der Verifikationscode wurde verschickt. \n";
+        $emailBody .= "-- Ende der Nachricht -- \n";
+
+        // send mail
+        $mail = GeneralUtility::makeInstance(MailMessage::class);
+        $mail->from(new \Symfony\Component\Mime\Address('tanzpartner@gsc-muenchen.de', 'Tanzpartnersuche des Gelb-Schwarz Casino München e.V.'));
+        $mail->to(new Address('tanzpartner@gsc-muenchen.de', 'tanzpartner@gsc-muenchen.de'));
+        $mail->subject('Neuer Eintrag in der Tanzpartnersuche des Gelb-Schwarz Casino München e.V.');
+        $mail->text($emailBody);
+        $mail->send();
+
         // Add new profile to database
         $this->tanzpartnersucheRepository->add($newTanzpartnersuche);
 
@@ -236,6 +254,7 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
     public function changepwAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche)
     {
         $loginTanzpartnersuche->setPassword('');
+        $loginTanzpartnersuche->setPasswordconfirmation('');
         $this->view->assign('loginTanzpartnersuche', $loginTanzpartnersuche);
     }
 
@@ -250,6 +269,7 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
     {
         // hash password and update profile in database
         $loginTanzpartnersuche->setPassword(password_hash(($loginTanzpartnersuche->getPassword()),PASSWORD_DEFAULT, array('cost' => 9)));
+        $loginTanzpartnersuche->setPasswordconfirmation('changed');
         $this->tanzpartnersucheRepository->update($loginTanzpartnersuche);
         
         // show results
@@ -266,6 +286,7 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
         $tanzpartnersuches = $this->tanzpartnersucheRepository->findAllActiveProfiles();
         $this->view->assign('tanzpartnersuches', $tanzpartnersuches);
 
+        // if radio buttons have been set, keep state if search form was submitted (again) und filter accordingly
         if (($this->request->hasArgument('searchGender')) || ($this->request->hasArgument('searchCategory')) || ($this->request->hasArgument('searchLevel'))) {
             if ($this->request->hasArgument('searchGender')) {
                 $gender = $this->request->getArgument('searchGender');
