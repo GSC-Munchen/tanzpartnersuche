@@ -200,6 +200,18 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
      */
     public function editAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche)
     {
+        // validate whether session is authorized
+        if ($loginTanzpartnersuche->getLoggedin() == '') {    
+            $this->addFlashMessage('Fehler: die Sitzung ist nicht autorisiert!', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+            $this->forward('logout', NULL, NULL, ['loginTanzpartnersuche' => $loginTanzpartnersuche]);
+        }
+
+        // validate whether session is not expired
+        if (($loginTanzpartnersuche->getLoggedin() + 1800) < time()) {
+            $this->addFlashMessage('Deine Sitzung ist abgelaufen.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+            $this->forward('logout', NULL, NULL, ['loginTanzpartnersuche' => $loginTanzpartnersuche]);
+        }
+        
         $this->view->assign('loginTanzpartnersuche', $loginTanzpartnersuche);
     }
 
@@ -211,6 +223,18 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
      */
     public function updateAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche)
     {
+        // validate whether session is authorized
+        if ($loginTanzpartnersuche->getLoggedin() == '') {    
+            $this->addFlashMessage('Fehler: die Sitzung ist nicht autorisiert!', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+            $this->forward('logout', NULL, NULL, ['loginTanzpartnersuche' => $loginTanzpartnersuche]);
+        }
+
+        // validate whether session is not expired
+        if (($loginTanzpartnersuche->getLoggedin() + 1800) < time()) {
+            $this->addFlashMessage('Deine Sitzung ist abgelaufen.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+            $this->forward('logout', NULL, NULL, ['loginTanzpartnersuche' => $loginTanzpartnersuche]);
+        }
+        
         // update profile in database
         $this->tanzpartnersucheRepository->update($loginTanzpartnersuche);
         
@@ -227,6 +251,18 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
      */
     public function deleteAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche)
     {
+        // validate whether session is authorized
+        if ($loginTanzpartnersuche->getLoggedin() == '') {    
+            $this->addFlashMessage('Fehler: die Sitzung ist nicht autorisiert!', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+            $this->forward('logout', NULL, NULL, ['loginTanzpartnersuche' => $loginTanzpartnersuche]);
+        }
+
+        // validate whether session is not expired
+        if (($loginTanzpartnersuche->getLoggedin() + 1800) < time()) {
+            $this->addFlashMessage('Deine Sitzung ist abgelaufen.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+            $this->forward('logout', NULL, NULL, ['loginTanzpartnersuche' => $loginTanzpartnersuche]);
+        }
+        
         $this->view->assign('loginTanzpartnersuche', $loginTanzpartnersuche);
     }
 
@@ -238,6 +274,18 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
      */
     public function deletedAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche)
     {        
+        // validate whether session is authorized
+        if ($loginTanzpartnersuche->getLoggedin() == '') {    
+            $this->addFlashMessage('Fehler: die Sitzung ist nicht autorisiert!', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+            $this->forward('logout', NULL, NULL, ['loginTanzpartnersuche' => $loginTanzpartnersuche]);
+        }
+
+        // validate whether session is not expired
+        if (($loginTanzpartnersuche->getLoggedin() + 1800) < time()) {
+            $this->addFlashMessage('Deine Sitzung ist abgelaufen.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+            $this->forward('logout', NULL, NULL, ['loginTanzpartnersuche' => $loginTanzpartnersuche]);
+        }
+        
         // delete entry
         $this->tanzpartnersucheRepository->remove($loginTanzpartnersuche);
 
@@ -314,6 +362,18 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
      */
     public function changepwAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche)
     {
+        // validate whether session is authorized
+        if ($loginTanzpartnersuche->getLoggedin() == '') {    
+            $this->addFlashMessage('Fehler: die Sitzung ist nicht autorisiert!', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+            $this->forward('logout', NULL, NULL, ['loginTanzpartnersuche' => $loginTanzpartnersuche]);
+        }
+
+        // validate whether session is not expired
+        if (($loginTanzpartnersuche->getLoggedin() + 1800) < time()) {
+            $this->addFlashMessage('Deine Sitzung ist abgelaufen.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+            $this->forward('logout', NULL, NULL, ['loginTanzpartnersuche' => $loginTanzpartnersuche]);
+        }
+        
         $loginTanzpartnersuche->setPassword('');
         $loginTanzpartnersuche->setPasswordconfirmation('');
         $this->view->assign('loginTanzpartnersuche', $loginTanzpartnersuche);
@@ -328,6 +388,18 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
      */
     public function updatepwAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche)
     {
+        // validate whether session is authorized
+        if ($loginTanzpartnersuche->getLoggedin() == '') {    
+            $this->addFlashMessage('Fehler: die Sitzung ist nicht autorisiert!', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+            $this->forward('logout', NULL, NULL, ['loginTanzpartnersuche' => $loginTanzpartnersuche]);
+        }
+
+        // validate whether session is not expired
+        if (($loginTanzpartnersuche->getLoggedin() + 1800) < time()) {
+            $this->addFlashMessage('Deine Sitzung ist abgelaufen.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+            $this->forward('logout', NULL, NULL, ['loginTanzpartnersuche' => $loginTanzpartnersuche]);
+        }
+        
         // hash password and update profile in database
         $loginTanzpartnersuche->setPassword(password_hash(($loginTanzpartnersuche->getPassword()),PASSWORD_DEFAULT, array('cost' => 9)));
         $loginTanzpartnersuche->setPasswordconfirmation('changed');
@@ -409,9 +481,11 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
         // read full array from database
         $loginTanzpartnersuche = $this->tanzpartnersucheRepository->findTanzpartnerByUsername($loginTanzpartnersuche->getUsername());
 
-        // add login timestamp to database to time-limit changes
-        $loginTanzpartnersuche->setLoggedin(strval(time()));
-        $this->tanzpartnersucheRepository->update($loginTanzpartnersuche);
+        // add login timestamp to database to time-limit changes, check if empty before to avoid renewal
+        if ($loginTanzpartnersuche->getLoggedin() == '') {
+            $loginTanzpartnersuche->setLoggedin(strval(time()));
+            $this->tanzpartnersucheRepository->update($loginTanzpartnersuche);
+        }
 
         // forward to loginMenu
         $this->view->assign('loginTanzpartnersuche', $loginTanzpartnersuche);
@@ -430,6 +504,18 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
     {
         // read full array from database
         $loginTanzpartnersuche = $this->tanzpartnersucheRepository->findTanzpartnerByUsername($loginTanzpartnersuche->getUsername());
+
+        // validate whether session is authorized
+        if ($loginTanzpartnersuche->getLoggedin() == '') {    
+            $this->addFlashMessage('Fehler: die Sitzung ist nicht autorisiert!', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+            $this->forward('logout', NULL, NULL, ['loginTanzpartnersuche' => $loginTanzpartnersuche]);
+        }
+
+        // validate whether session is not expired
+        if (($loginTanzpartnersuche->getLoggedin() + 1800) < time()) {
+            $this->addFlashMessage('Deine Sitzung ist abgelaufen.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+            $this->forward('logout', NULL, NULL, ['loginTanzpartnersuche' => $loginTanzpartnersuche]);
+        }
 
         $this->view->assign('loginTanzpartnersuche', $loginTanzpartnersuche);
     }
@@ -450,7 +536,7 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
         $loginTanzpartnersuche = NULL;
         
         // all done, display message to user
-        $this->addFlashMessage('Du bist erfolgreich ausgeloggt', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+        $this->addFlashMessage('Du bist erfolgreich ausgeloggt.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
         
     }
 
