@@ -497,7 +497,11 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
         $this->view->assign('tanzpartnersuches', $tanzpartnersuches);
 
         // if radio buttons have been set, keep state if search form was submitted (again) und filter accordingly
-        if (($this->request->hasArgument('searchGender')) || ($this->request->hasArgument('searchCategory')) || ($this->request->hasArgument('searchLevel'))) {
+        if (($this->request->hasArgument('myGender')) || ($this->request->hasArgument('searchGender')) || ($this->request->hasArgument('searchCategory')) || ($this->request->hasArgument('searchLevel'))) {
+            if ($this->request->hasArgument('myGender')) {
+                $gender = $this->request->getArgument('myGender');
+                $this->view->assign('myGender', $gender);
+            }
             if ($this->request->hasArgument('searchGender')) {
                 $gender = $this->request->getArgument('searchGender');
                 $this->view->assign('searchGender', $gender);

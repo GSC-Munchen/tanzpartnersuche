@@ -22,6 +22,25 @@ Otherwise your changes will be overwritten the next time you save the extension 
     <p>Bitte beginne hier mit Deiner Suche.</p>
     <div id="searchform">
       <f:form action="search" additionalAttributes="{role:'form'}">
+        Ich bin
+        <div class="radio-mini">
+          <div class="radio-tile-group">
+            <div class="input-container">
+              <f:form.radio name="myGender" property="myGender" value="1" checked="{myGender} == 1" class="radio-button" />
+              <div class="radio-tile">
+                <label for="woman" class="radio-tile-label">Dame</label>
+              </div>
+            </div>       
+            <div class="input-container">
+              <f:form.radio name="myGender" property="myGender" value="2" checked="{myGender} == 2" class="radio-button" />
+              <div class="radio-tile">
+                <label for="man" class="radio-tile-label">Herr</label>
+              </div>
+            </div>
+          </div>
+        </div>
+<hr />
+        Ich suche
         <div class="radio-mini">
           <div class="radio-tile-group">
             <div class="input-container">
@@ -39,6 +58,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
           </div>
         </div>
 <hr />
+        für
         <div class="radio-mini">
           <div class="radio-tile-group">
             <div class="input-container">
@@ -62,6 +82,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
           </div>
         </div>
 <hr />
+        Niveau
         <div class="radio-mini">
           <div class="radio-tile-group">
             <div class="input-container">
