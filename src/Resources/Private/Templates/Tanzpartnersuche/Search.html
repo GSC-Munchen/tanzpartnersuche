@@ -44,13 +44,13 @@ Otherwise your changes will be overwritten the next time you save the extension 
         <div class="radio-mini">
           <div class="radio-tile-group">
             <div class="input-container">
-              <f:form.radio name="searchGender" property="searchGender" value="1" checked="{searchGender} == 1" class="radio-button" />
+              <f:form.radio name="searchRole" property="searchRole" value="1" checked="{searchRole} == 1" class="radio-button" />
               <div class="radio-tile">
                 <label for="woman" class="radio-tile-label">Tanzpartnerin</label>
               </div>
             </div>       
             <div class="input-container">
-              <f:form.radio name="searchGender" property="searchGender" value="2" checked="{searchGender} == 2" class="radio-button" />
+              <f:form.radio name="searchRole" property="searchRole" value="2" checked="{searchRole} == 2" class="radio-button" />
               <div class="radio-tile">
                 <label for="man" class="radio-tile-label">Tanzpartner</label>
               </div>
@@ -136,7 +136,9 @@ Otherwise your changes will be overwritten the next time you save the extension 
           </div>
         </div>
 <hr />
-        <f:form.submit value="Suche starten" class="justify-center" />
+        <div class="centerbutton">
+          <f:form.submit value="Suche starten" />
+        </div>
       </f:form>
     </div>
 <hr />
@@ -154,7 +156,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
     <f:link.action action="index" class="tpsbutton alignright spacer-bottom30">Zurück</f:link.action><br /><br />
 
     <!-- if a selection via radio button was already done, scroll to result list via javascript -->
-    <f:if condition="{searchGender} || {searchCategory} || {searchLevel}">
+    <f:if condition="{myGender} || {searchRole} || {searchCategory} || {searchLevel}">
       <script src="{f:uri.resource(path: 'Js/search.js')}"></script>
     </f:if>
   </f:section>

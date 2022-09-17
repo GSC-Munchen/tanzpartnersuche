@@ -497,14 +497,14 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
         $this->view->assign('tanzpartnersuches', $tanzpartnersuches);
 
         // if radio buttons have been set, keep state if search form was submitted (again) und filter accordingly
-        if (($this->request->hasArgument('myGender')) || ($this->request->hasArgument('searchGender')) || ($this->request->hasArgument('searchCategory')) || ($this->request->hasArgument('searchLevel'))) {
+        if (($this->request->hasArgument('myGender')) || ($this->request->hasArgument('searchRole')) || ($this->request->hasArgument('searchCategory')) || ($this->request->hasArgument('searchLevel'))) {
             if ($this->request->hasArgument('myGender')) {
-                $gender = $this->request->getArgument('myGender');
-                $this->view->assign('myGender', $gender);
+                $mygender = $this->request->getArgument('myGender');
+                $this->view->assign('myGender', $mygender);
             }
-            if ($this->request->hasArgument('searchGender')) {
-                $gender = $this->request->getArgument('searchGender');
-                $this->view->assign('searchGender', $gender);
+            if ($this->request->hasArgument('searchRole')) {
+                $searchrole = $this->request->getArgument('searchRole');
+                $this->view->assign('searchRole', $searchrole);
             }
             if ($this->request->hasArgument('searchCategory')) {
                 $category = $this->request->getArgument('searchCategory');
@@ -514,7 +514,7 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
                 $level = $this->request->getArgument('searchLevel');
                 $this->view->assign('searchLevel', $level);
             }
-            $tanzpartnersuches = $this->tanzpartnersucheRepository->filterProfiles($gender, $category, $level);
+            $tanzpartnersuches = $this->tanzpartnersucheRepository->filterProfiles($mygender, $searchrole, $category, $level);
             $this->view->assign('tanzpartnersuches', $tanzpartnersuches);
         }
     }

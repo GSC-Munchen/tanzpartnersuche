@@ -218,6 +218,7 @@ class TanzpartnersucheRepository extends \TYPO3\CMS\Extbase\Persistence\Reposito
         // set up query
         $query = $this->createQuery();
         $query->getQuerySettings()->setIgnoreEnableFields(true)->setIncludeDeleted(true);
+        $query->setOrderings(array('tstamp'=> \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING));
         $query->matching(
             $query->logicalAnd(
                 $query->like('hidden','0'),
@@ -240,16 +241,42 @@ class TanzpartnersucheRepository extends \TYPO3\CMS\Extbase\Persistence\Reposito
      * @return QueryResultInterface|array
      * @api
      */
-    public function filterProfiles($gender = '', $category = '', $level = '') {
+    public function filterProfiles($gender = '', $role = '', $category = '', $level = '') {
+        // sort search matrix
+        if ($gender == '1' && $role == '2') {
+            // user is women and looks for man (looking for a woman)
+            $dbgender = 2;
+            $dbrole = 1;
+        }
+        if ($gender == '1' && $role == '1') {
+            // user is women and looks for woman (looking for a woman)
+            $dbgender = 1;
+            $dbrole = 1;
+        }
+        if ($gender == '2' && $role == '1') {
+            // user is man and looks for woman (looking for a man)
+            $dbgender = 1;
+            $dbrole = 2;
+        }
+        if ($gender == '2' && $role == '2') {
+            // user is man and looks for man (looking for a man)
+            $dbgender = 2;
+            $dbrole = 2;
+        }
+        
+        // set up query and execute
         $query = $this->createQuery();
         $query->getQuerySettings()->setIgnoreEnableFields(true)->setIncludeDeleted(true);
+        $query->setOrderings(array('tstamp'=> \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING));
         $query->matching(
             $query->logicalAnd(
                 $query->like('hidden','0'),
                 $query->like('deleted','0'),
-                $query->like('gender', '%'.$gender.'%'),
+                $query->like('gender', '%'.$dbgender.'%'),
+                $query->like('role', '%'.$dbrole.'%'),
                 $query->like('category', '%'.$category.'%'),
-                $query->like('level', '%'.$level.'%')
+                $query->like('level', '%'.$level.'%'),
+                $query->greaterThanOrEqual('created', strtotime("-6 month"))
                 )
             );
         return $query->execute();
