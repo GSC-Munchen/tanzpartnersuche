@@ -267,9 +267,9 @@
     background-color: #FFC300;
  }
   
- .justify-center {
+ .centerbutton {
+  display: flex;
   justify-content: center;
-  width: 100%;
  }
   
 
