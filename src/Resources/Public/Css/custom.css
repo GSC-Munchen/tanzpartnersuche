@@ -499,3 +499,8 @@
   margin: 0;
   padding: 0;
 }
+
+/* hidden flashmessage */
+.noflash {
+  display: none;
+}
