@@ -489,3 +489,10 @@
   border-spacing: 15px 7px;
   font-size: 14px;
 }
+
+/* TYPO3 message styling */
+.typo3-messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
