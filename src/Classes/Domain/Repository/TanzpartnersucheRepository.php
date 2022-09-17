@@ -11,7 +11,7 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- * (c) 2022 Martin Arend <tanzpartnersuche@gsc-muenchen.de>, GSC München e.V.
+ * (c) 2022 Martin Arend <tanzpartner@gsc-muenchen.de>, GSC München e.V.
  */
 
 /**
@@ -253,5 +253,27 @@ class TanzpartnersucheRepository extends \TYPO3\CMS\Extbase\Persistence\Reposito
                 )
             );
         return $query->execute();
+    }
+
+    /**
+     *
+     * @param string $authUsername
+     * @param string $authEmail
+     * @return \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche|null
+     */
+    public function UserPasswordReset($authUsername, $authEmail): ?\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche
+    {
+        // create Query
+        $query = $this->createQuery();
+        $query->getQuerySettings()->setIgnoreEnableFields(true)->setIncludeDeleted(true);
+
+        return $query->matching(
+            $query->logicalAnd(
+                $query->like('username',$authUsername),
+                $query->like('email',$authEmail),
+                $query->like('hidden','0'),
+                $query->like('deleted','0')
+            )
+        )->execute()->getFirst();
     }
 }

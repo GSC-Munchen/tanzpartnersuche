@@ -421,10 +421,67 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
     /**
      * action resendpw
      *
+     * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $resetTanzpartnersuche
      * @return string|object|null|void
      */
-    public function resendpwAction()
+    public function resendpwAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $resetTanzpartnersuche = NULL)
     {
+        // check match with database, if positive send mail
+        if (($this->request->hasArgument('username')) && ($this->request->hasArgument('email'))) {
+            // read full array from database
+            $resetTanzpartnersuche = $this->tanzpartnersucheRepository->UserPasswordReset($this->request->getArgument('username'), $this->request->getArgument('email'));
+
+            // if match is positive
+            if ($resetTanzpartnersuche != NULL) {
+                // create initial password
+                $bytes = openssl_random_pseudo_bytes(5);
+                $initialpw = bin2hex($bytes);
+                
+                // update array
+                $resetTanzpartnersuche->setPassword(password_hash(($initialpw),PASSWORD_DEFAULT, array('cost' => 9)));
+                $resetTanzpartnersuche->setPasswordconfirmation('reset');
+                
+                // update database
+                $this->tanzpartnersucheRepository->update($resetTanzpartnersuche);
+
+                // send mail to user with instructions
+                // assemble message
+                $emailBody = "Hallo ".$resetTanzpartnersuche->getUsername().", \n";
+                $emailBody .= "\n";
+                $emailBody .= "Du hast Dein Passwort in der Tanzpartnersuche des Gelb-Schwarz-Casino München zurückgesetzt. \n";
+                $emailBody .= "\n";
+                $emailBody .= "Bitte logge Dich mit dem folgenden Passwort erneut ein:\n";
+                $emailBody .= "\n";
+                $emailBody .= "--------------------------------------------------------------------------------------------------------------\n";
+                $emailBody .= $initialpw."\n";
+                $emailBody .= "--------------------------------------------------------------------------------------------------------------\n";
+                $emailBody .= "\n";
+                $emailBody .= "Ändere nach der erfolgreichen Anmeldung dieses bitte umgehend!";
+                $emailBody .= "\n";
+                $emailBody .= "Besten Dank für die Nutzung der Tanzpartnersuche und viel Erfolg!\n";
+                $emailBody .= "\n";
+                $emailBody .= "Gelb-Schwarz-Casino München e.V.\n";
+                $emailBody .= "Sonnenstraße 12a / II\n";
+                $emailBody .= "D-80331 München\n";
+                $emailBody .= "\n";
+                $emailBody .= "---\n";
+                $emailBody .= "Vertreten durch den Präsidenten Stefan Göttlinger \n";
+                $emailBody .= "Registergericht: München \n";
+                $emailBody .= "Registernummer: VR 4385\n";
+                $emailBody .= "https://www.gsc-muenchen.de/impressum";
+
+                // send mail
+                $mail = GeneralUtility::makeInstance(MailMessage::class);
+                $mail->from(new \Symfony\Component\Mime\Address('tanzpartner@gsc-muenchen.de', 'Tanzpartnersuche des Gelb-Schwarz Casino München e.V.'));
+                $mail->to(new Address($resetTanzpartnersuche->getEmail(), $resetTanzpartnersuche->getEmail()));
+                $mail->subject('Passwortreset für die Tanzpartnersuche des Gelb-Schwarz Casino München e.V.');
+                $mail->text($emailBody);
+                $mail->send();
+            }
+
+            // clear array
+            $resetTanzpartnersuche = '';
+        }
     }
 
     /**
