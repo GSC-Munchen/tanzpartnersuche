@@ -138,8 +138,10 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
         // assemble message
         $emailBody = "Es wurde erfolgreich ein neuer Eintrag in der Tanzpartnersuche angelegt. \n";
         $emailBody .= "\n";
-        $emailBody .= "Name:".$newTanzpartnersuche->getUsername()."\n";
-        $emailBody .= "Bio:".$newTanzpartnersuche->getBio()."\n";
+        $emailBody .= "------------------------------------------------------------------------\n";
+        $emailBody .= "Name: ".$newTanzpartnersuche->getUsername()."\n";
+        $emailBody .= "Bio:  ".$newTanzpartnersuche->getBio()."\n";
+        $emailBody .= "------------------------------------------------------------------------\n";
         $emailBody .= "Der Verifikationscode wurde verschickt. \n";
         $emailBody .= "-- Ende der Nachricht -- \n";
 

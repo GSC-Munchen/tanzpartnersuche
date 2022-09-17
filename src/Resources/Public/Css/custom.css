@@ -324,6 +324,9 @@
           .row.header .cell {
             display: none; 
           }
+          .row.header-light {
+            display: none;
+          }
         .row .cell {
           margin-bottom: 10px; 
         }
