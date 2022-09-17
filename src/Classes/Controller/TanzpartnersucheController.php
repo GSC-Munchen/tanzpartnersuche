@@ -436,27 +436,27 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
             // if match is positive
             if ($resetTanzpartnersuche != NULL) {
                 // create initial password
-                $bytes = openssl_random_pseudo_bytes(5);
+                $bytes = openssl_random_pseudo_bytes(8);
                 $initialpw = bin2hex($bytes);
                 
                 // update array
                 $resetTanzpartnersuche->setPassword(password_hash(($initialpw),PASSWORD_DEFAULT, array('cost' => 9)));
-                $resetTanzpartnersuche->setPasswordconfirmation('reset');
+                $resetTanzpartnersuche->setPasswordconfirmation('initial');
                 
                 // update database
                 $this->tanzpartnersucheRepository->update($resetTanzpartnersuche);
 
                 // send mail to user with instructions
                 // assemble message
-                $emailBody = "Hallo ".$resetTanzpartnersuche->getUsername().", \n";
+                $emailBody = "Hallo vom Gelb-Schwarz Casino, \n";
                 $emailBody .= "\n";
-                $emailBody .= "Du hast Dein Passwort in der Tanzpartnersuche des Gelb-Schwarz-Casino München zurückgesetzt. \n";
+                $emailBody .= "Du hast Dein Passwort in der Tanzpartnersuche zurückgesetzt. \n";
                 $emailBody .= "\n";
                 $emailBody .= "Bitte logge Dich mit dem folgenden Passwort erneut ein:\n";
                 $emailBody .= "\n";
-                $emailBody .= "--------------------------------------------------------------------------------------------------------------\n";
+                $emailBody .= "-----------------------------------------------------------------\n";
                 $emailBody .= $initialpw."\n";
-                $emailBody .= "--------------------------------------------------------------------------------------------------------------\n";
+                $emailBody .= "-----------------------------------------------------------------\n";
                 $emailBody .= "\n";
                 $emailBody .= "Ändere nach der erfolgreichen Anmeldung dieses bitte umgehend!";
                 $emailBody .= "\n";
@@ -592,6 +592,11 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
         if (($loginTanzpartnersuche->getLoggedin() + 1800) < time()) {
             $this->addFlashMessage('Deine Sitzung ist abgelaufen.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
             $this->forward('logout', NULL, NULL, ['loginTanzpartnersuche' => $loginTanzpartnersuche]);
+        }
+
+        // if password has state "initial" because it was resetted, forward to changepw
+        if ($loginTanzpartnersuche->getPasswordconfirmation() == 'initial') {
+            $this->forward('changepw', NULL, NULL, ['loginTanzpartnersuche' => $loginTanzpartnersuche]);
         }
 
         $this->view->assign('loginTanzpartnersuche', $loginTanzpartnersuche);
