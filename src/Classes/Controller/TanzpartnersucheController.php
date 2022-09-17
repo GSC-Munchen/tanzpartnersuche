@@ -410,6 +410,24 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
     }
 
     /**
+     * action resetpw
+     *
+     * @return string|object|null|void
+     */
+    public function resetpwAction()
+    {
+    }
+
+    /**
+     * action resendpw
+     *
+     * @return string|object|null|void
+     */
+    public function resendpwAction()
+    {
+    }
+
+    /**
      * action search
      *
      * @return string|object|null|void

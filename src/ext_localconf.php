@@ -6,11 +6,11 @@ defined('TYPO3_MODE') || die();
         'Tanzpartnersuche',
         'Tanzpartnersuche',
         [
-            \GSC\Tanzpartnersuche\Controller\TanzpartnersucheController::class => 'index, show, new, create, edit, update, delete, deleted, verify, search, help, detail, login, logout, status, mail, loggedin, loginMenu, changepw, updatepw, feedback'
+            \GSC\Tanzpartnersuche\Controller\TanzpartnersucheController::class => 'index, show, new, create, edit, update, delete, deleted, verify, search, help, detail, login, logout, status, mail, loggedin, loginMenu, changepw, updatepw, feedback, resetpw, resendpw'
         ],
         // non-cacheable actions
         [
-            \GSC\Tanzpartnersuche\Controller\TanzpartnersucheController::class => 'new, create, update, delete, deleted, verify, status, detail, search, mail, login, loggedin, loginMenu, logout, edit, changepw, updatepw'
+            \GSC\Tanzpartnersuche\Controller\TanzpartnersucheController::class => 'new, create, update, delete, deleted, verify, status, detail, search, mail, login, loggedin, loginMenu, logout, edit, changepw, updatepw, resetpw, resendpw'
         ]
     );
 
