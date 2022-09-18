@@ -436,8 +436,9 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
             // if match is positive
             if ($resetTanzpartnersuche != NULL) {
                 // create initial password
-                $bytes = openssl_random_pseudo_bytes(8);
-                $initialpw = bin2hex($bytes);
+                $pool = "0123456789+-!()#*=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                $mix = str_shuffle($pool);
+                $initialpw = substr($mix,0,12);
                 
                 // update array
                 $resetTanzpartnersuche->setPassword(password_hash(($initialpw),PASSWORD_DEFAULT, array('cost' => 9)));
