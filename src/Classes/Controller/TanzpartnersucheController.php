@@ -237,6 +237,24 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
             $this->forward('logout', NULL, NULL, ['loginTanzpartnersuche' => $loginTanzpartnersuche]);
         }
         
+        // send out mail to admin
+        // assemble message
+        $emailBody = "Ein Eintrag in der Tanzpartnersuche wurde geändert. \n";
+        $emailBody .= "\n";
+        $emailBody .= "------------------------------------------------------------------------\n";
+        $emailBody .= "Name: ".$loginTanzpartnersuche->getUsername()."\n";
+        $emailBody .= "Bio:  ".$loginTanzpartnersuche->getBio()."\n";
+        $emailBody .= "------------------------------------------------------------------------\n";
+        $emailBody .= "-- Ende der Nachricht -- \n";
+
+        // send mail
+        $mail = GeneralUtility::makeInstance(MailMessage::class);
+        $mail->from(new \Symfony\Component\Mime\Address('tanzpartner@gsc-muenchen.de', 'Tanzpartnersuche des Gelb-Schwarz Casino München e.V.'));
+        $mail->to(new Address('tanzpartner@gsc-muenchen.de', 'tanzpartner@gsc-muenchen.de'));
+        $mail->subject('Geänderter Eintrag in der Tanzpartnersuche des Gelb-Schwarz Casino München e.V.');
+        $mail->text($emailBody);
+        $mail->send();
+
         // update profile in database
         $this->tanzpartnersucheRepository->update($loginTanzpartnersuche);
         
