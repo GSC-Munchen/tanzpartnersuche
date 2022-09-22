@@ -221,6 +221,7 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
      * action update
      *
      * @param \GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche
+     * @Extbase\Validate(param="loginTanzpartnersuche" , validator="GSC\Tanzpartnersuche\Domain\Validator\EditTanzpartnersucheValidator")
      * @return string|object|null|void
      */
     public function updateAction(\GSC\Tanzpartnersuche\Domain\Model\Tanzpartnersuche $loginTanzpartnersuche)
