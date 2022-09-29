@@ -513,11 +513,8 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
      */
     public function searchAction()
     {
-        $tanzpartnersuches = $this->tanzpartnersucheRepository->findAllActiveProfiles();
-        $this->view->assign('tanzpartnersuches', $tanzpartnersuches);
-
         // if radio buttons have been set, keep state if search form was submitted (again) und filter accordingly
-        if (($this->request->hasArgument('myGender')) || ($this->request->hasArgument('searchRole')) || ($this->request->hasArgument('searchCategory')) || ($this->request->hasArgument('searchLevel'))) {
+        if (($this->request->hasArgument('myGender')) || ($this->request->hasArgument('searchRole')) || ($this->request->hasArgument('searchCategory')) || ($this->request->hasArgument('level01')) || ($this->request->hasArgument('level02')) || ($this->request->hasArgument('level03')) || ($this->request->hasArgument('level04')) || ($this->request->hasArgument('level05')) || ($this->request->hasArgument('level06')) || ($this->request->hasArgument('level07')) || ($this->request->hasArgument('level08'))) {
             if ($this->request->hasArgument('myGender')) {
                 $mygender = $this->request->getArgument('myGender');
                 $this->view->assign('myGender', $mygender);
@@ -530,9 +527,37 @@ class TanzpartnersucheController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
                 $category = $this->request->getArgument('searchCategory');
                 $this->view->assign('searchCategory', $category);
             }
-            if ($this->request->hasArgument('searchLevel')) {
-                $level = $this->request->getArgument('searchLevel');
-                $this->view->assign('searchLevel', $level);
+            if ($this->request->hasArgument('level01')) {
+                $level[1] = $this->request->getArgument('level01');
+                $this->view->assign('level01', $level[1]);
+            }
+            if ($this->request->hasArgument('level02')) {
+                $level[2] = $this->request->getArgument('level02');
+                $this->view->assign('level02', $level[2]);
+            }
+            if ($this->request->hasArgument('level03')) {
+                $level[3] = $this->request->getArgument('level03');
+                $this->view->assign('level03', $level[3]);
+            }
+            if ($this->request->hasArgument('level04')) {
+                $level[4] = $this->request->getArgument('level04');
+                $this->view->assign('level04', $level[4]);
+            }
+            if ($this->request->hasArgument('level05')) {
+                $level[5] = $this->request->getArgument('level05');
+                $this->view->assign('level05', $level[5]);
+            }
+            if ($this->request->hasArgument('level06')) {
+                $level[6] = $this->request->getArgument('level06');
+                $this->view->assign('level06', $level[6]);
+            }
+            if ($this->request->hasArgument('level07')) {
+                $level[7] = $this->request->getArgument('level07');
+                $this->view->assign('level07', $level[7]);
+            }
+            if ($this->request->hasArgument('level08')) {
+                $level[8] = $this->request->getArgument('level08');
+                $this->view->assign('level08', $level[8]);
             }
             $tanzpartnersuches = $this->tanzpartnersucheRepository->filterProfiles($mygender, $searchrole, $category, $level);
             $this->view->assign('tanzpartnersuches', $tanzpartnersuches);

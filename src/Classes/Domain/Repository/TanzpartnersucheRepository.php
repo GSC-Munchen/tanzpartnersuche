@@ -270,15 +270,32 @@ class TanzpartnersucheRepository extends \TYPO3\CMS\Extbase\Persistence\Reposito
         $query->setOrderings(array('tstamp'=> \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING));
         $query->matching(
             $query->logicalAnd(
-                $query->like('hidden','0'),
-                $query->like('deleted','0'),
-                $query->like('gender', '%'.$dbgender.'%'),
-                $query->like('role', '%'.$dbrole.'%'),
-                $query->like('category', '%'.$category.'%'),
-                $query->like('level', '%'.$level.'%'),
-                $query->greaterThanOrEqual('created', strtotime("-6 month"))
-                )
-            );
+                [
+                    $query->logicalAnd(
+                        [
+                            $query->like('hidden','0'),
+                            $query->like('deleted','0'),
+                            $query->like('gender', '%'.$dbgender.'%'),
+                            $query->like('role', '%'.$dbrole.'%'),
+                            $query->like('category', '%'.$category.'%'),
+                            $query->greaterThanOrEqual('created', strtotime("-6 month"))
+                        ]
+                    ),
+                    $query->logicalOr(
+                        [
+                            $query->like('level', $level[1]),
+                            $query->like('level', $level[2]),
+                            $query->like('level', $level[3]),
+                            $query->like('level', $level[4]),
+                            $query->like('level', $level[5]),
+                            $query->like('level', $level[6]),
+                            $query->like('level', $level[7]),
+                            $query->like('level', $level[8])
+                        ]
+                    ),
+                ]
+            )
+        );
         return $query->execute();
     }
 
