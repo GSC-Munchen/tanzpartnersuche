@@ -83,58 +83,72 @@ Otherwise your changes will be overwritten the next time you save the extension 
         </div>
 <hr />
         Niveau
-        <div class="radio-mini">
-          <div class="radio-tile-group">
-            <div class="input-container">
-              <f:form.radio name="searchLevel" property="searchLevel" value="1" checked="{searchLevel} == 1" class="radio-button" />
-              <div class="radio-tile">
-                <label for="jugend" class="radio-tile-label">Jugend</label>
-              </div>
-            </div>
-            <div class="input-container">
-              <f:form.radio name="searchLevel" property="searchLevel" value="2" checked="{searchLevel} == 2" class="radio-button" />
-              <div class="radio-tile">
-                <label for="breitensport" class="radio-tile-label">Breitensport</label>
-              </div>
-            </div>
-            <div class="input-container">
-              <f:form.radio name="searchLevel" property="searchLevel" value="3" checked="{searchLevel} == 3" class="radio-button" />
-              <div class="radio-tile">
-                <label for="vorturnier" class="radio-tile-label">Vorturnier</label>
-              </div>
-            </div>
-            <div class="input-container">
-              <f:form.radio name="searchLevel" property="searchLevel" value="4" checked="{searchLevel} == 4" class="radio-button" />
-              <div class="radio-tile">
-                <label for="d-class" class="radio-tile-label">D-Klasse</label>
-              </div>
-            </div>
-            <div class="input-container">
-              <f:form.radio name="searchLevel" property="searchLevel" value="5" checked="{searchLevel} == 5" class="radio-button" />
-              <div class="radio-tile">
-                <label for="c-class" class="radio-tile-label">C-Klasse</label>
-              </div>
-            </div>
-            <div class="input-container">
-              <f:form.radio name="searchLevel" property="searchLevel" value="6" checked="{searchLevel} == 6" class="radio-button" />
-              <div class="radio-tile">
-                <label for="b-class" class="radio-tile-label">B-Klasse</label>
-              </div>
-            </div>
-            <div class="input-container">
-              <f:form.radio name="searchLevel" property="searchLevel" value="7" checked="{searchLevel} == 7" class="radio-button" />
-              <div class="radio-tile">
-                <label for="a-class" class="radio-tile-label">A-Klasse</label>
-              </div>
-            </div>
-            <div class="input-container">
-              <f:form.radio name="searchLevel" property="searchLevel" value="8" checked="{searchLevel} == 8" class="radio-button" />
-              <div class="radio-tile">
-                <label for="s-class" class="radio-tile-label">S-Klasse</label>
-              </div>
-            </div>
+        <fieldset class="checkbox-group">
+          <div class="checkbox">
+            <label class="checkbox-wrapper">
+              <f:form.checkbox name="level01" property="level01" checked="{level01}" value="1" class="checkbox-input" />
+              <span class="checkbox-tile">
+                <span class="checkbox-label">Jugend</span>
+              </span>
+            </label>
           </div>
-        </div>
+          <div class="checkbox">
+            <label class="checkbox-wrapper">
+              <f:form.checkbox name="level02" property="level02" checked="{level02}" value="2" class="checkbox-input" />
+              <span class="checkbox-tile">
+                <span class="checkbox-label">Breitensport</span>
+              </span>
+            </label>
+          </div>
+            <div class="checkbox">
+            <label class="checkbox-wrapper">
+              <f:form.checkbox name="level03" property="level03" checked="{level03}" value="3" class="checkbox-input" />
+              <span class="checkbox-tile">
+                <span class="checkbox-label">Vorturnier</span>
+              </span>
+            </label>
+          </div>
+            <div class="checkbox">
+            <label class="checkbox-wrapper">
+              <f:form.checkbox name="level04" property="level04" checked="{level04}" value="4" class="checkbox-input" />
+              <span class="checkbox-tile">
+                <span class="checkbox-label">D-Klasse</span>
+              </span>
+            </label>
+          </div>
+            <div class="checkbox">
+            <label class="checkbox-wrapper">
+              <f:form.checkbox name="level05" property="level05" checked="{level05}" value="5" class="checkbox-input" />
+              <span class="checkbox-tile">
+                <span class="checkbox-label">C-Klasse</span>
+              </span>
+            </label>
+          </div>
+            <div class="checkbox">
+            <label class="checkbox-wrapper">
+              <f:form.checkbox name="level06" property="level06" checked="{level06}" value="6" class="checkbox-input" />
+              <span class="checkbox-tile">
+                <span class="checkbox-label">B-Klasse</span>
+              </span>
+            </label>
+          </div>
+            <div class="checkbox">
+            <label class="checkbox-wrapper">
+              <f:form.checkbox name="level07" property="level07" checked="{level07}" value="7" class="checkbox-input" />
+              <span class="checkbox-tile">
+                <span class="checkbox-label">A-Klasse</span>
+              </span>
+            </label>
+          </div>
+            <div class="checkbox">
+            <label class="checkbox-wrapper">
+              <f:form.checkbox name="level08" property="level08" checked="{level08}" value="8" class="checkbox-input" />
+              <span class="checkbox-tile">
+                <span class="checkbox-label">S-Klasse</span>
+              </span>
+            </label>
+          </div>
+        </fieldset>
 <hr />
         <div class="centerbutton">
           <f:form.submit value="Suche starten" />
@@ -146,18 +160,27 @@ Otherwise your changes will be overwritten the next time you save the extension 
     <div id="searchlist">
       <f:render partial="Tanzpartnersuche/Searchlist" arguments="{tanzpartnersuches:tanzpartnersuches}" />
     </div>
-    
-    <!-- if no match between database and filter criterias, notice user accordingly -->
+
     <f:if condition="{tanzpartnersuches}">
       <f:then></f:then>
-      <f:else>Keine zur Suche passenden Einträge gefunden.</f:else>
+      <f:else>
+        <f:if condition="{myGender} || {searchRole} || {searchCategory} || {level01} || {level02} || {level03} || {level04} || {level05} || {level06} || {level07} || {level08}">
+          <!-- no match in database found, inform user accordingly -->
+          <f:then>Keine zur Suche passenden Einträge gefunden.</f:then>
+          <!-- no filter criterias set, inform user accordingly -->
+          <f:else>Bitte Filter setzen und eine Suche starten.</f:else>
+        </f:if>
+      
+      </f:else>
+      
+    </f:if>
+
+    <!-- if a selection via radio button was already done, scroll to result list via javascript -->
+    <f:if condition="{myGender} || {searchRole} || {searchCategory} || {level01} || {level02} || {level03} || {level04} || {level05} || {level06} || {level07} || {level08}">
+      <f:then><script src="{f:uri.resource(path: 'Js/search.js')}"></script></f:then>
     </f:if>
 
     <f:link.action action="index" class="tpsbutton alignright spacer-bottom30">Zurück</f:link.action><br /><br />
 
-    <!-- if a selection via radio button was already done, scroll to result list via javascript -->
-    <f:if condition="{myGender} || {searchRole} || {searchCategory} || {searchLevel}">
-      <script src="{f:uri.resource(path: 'Js/search.js')}"></script>
-    </f:if>
   </f:section>
 </html>
