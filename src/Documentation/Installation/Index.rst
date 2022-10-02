@@ -11,7 +11,7 @@ As the extension is currently not listed within TYPO3 Repository, please downloa
 
 For the moment you have to extract the downloaded file. The source code for the extention can be found in the 'src/' directory. 
 You can zip the whole content of this directory again and log in to your TYPO3 backend. Menu 'Extension' allows you to manually 
-upload files to the backend. By doing so, extension will be installed manually and is activated.
+upload files to the backend. By doing so and uploading the prepared zip-file, extension will be installed manually and activated.
 
 As the extension comes out of the box fully featured with user management to register, verify, edit and delete users and their 
 profiles, as well with all functionality to search within profiles and send mails, there are no dependencies. The extension

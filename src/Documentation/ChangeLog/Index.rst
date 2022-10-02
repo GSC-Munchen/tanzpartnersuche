@@ -6,7 +6,19 @@
 Change log
 ==========
 
-Version 1.0.0
+Version 0.9.0
 -------------
 
-Use this chapter to inform users of your extension about changes you made with each released version.
+feature complete
+
+
+Version 0.9.1
+-------------
+
+allow multiple selections in the search menu for category level
+
+
+Version 0.9.2
+-------------
+
+add documentation and bugfixes

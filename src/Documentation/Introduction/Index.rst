@@ -33,13 +33,16 @@ the right categories in no time.
 
 On the other side the system provides filters to quickly find potentially matching profiles.
 
-Please note, that ever username and every e-mail address can only be registered once. If the profile gets deleted
+Please note, that every username and every e-mail address can only be registered once. If the profile gets deleted
 or expires after 6 months (default setting), e-mail and username can be registered again.
 
 You can also add terms and conditions for using the extensions functionality as well as data privacy policies.
 The extension comes out of the box with a default description fitting to our needs.
 
-.. important::
+.. _important:
+
+Important
+=========
 
    - Don't forget to include the static template brought by this extension to your TYPO3 configuration.
 
@@ -61,12 +64,14 @@ happens to their data.
    :alt: Main Menu
    :width: 300px
 
+
 In the Search Menu filters can be set and a search can be started.
 
 .. figure:: ../Images/SearchMenu.png
    :class: with-shadow
    :alt: Search Menu
    :width: 300px
+
 
 Users can easily set up a profile with their personalized information and publish it 
 online after a verification of their e-mail address.
