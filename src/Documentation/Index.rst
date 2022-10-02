@@ -16,7 +16,7 @@ tanzpartnersuche
    |release|
 
 :Language:
-   en
+   de
 
 :Authors:
    Martin Arend
@@ -29,7 +29,8 @@ tanzpartnersuche
    `CC BY-NC-SA 4.0 <https://creativecommons.org/licenses/by-nc-sa/4.0/>`__ (Creative Commons)
    license
 
-Tanzpartnersuche des GSC München e.V.
+A typo3 extension for our dancing club, used to find a dancing partner.
+Based on Typo3 10.x, Extbase and Fluid.
 
 **TYPO3**
 
