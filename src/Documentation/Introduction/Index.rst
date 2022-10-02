@@ -17,7 +17,7 @@ Users can either search in published profiles and get in touch by sending an ema
 profile on their own and get contacted via mail.
 
 The beauty of the system is, that the intial contact mail is sent via the TYPO3 server to the profile owner.
-Therefore the profie is anonymous (if a proper username was chosen and not the real name) until the very moment 
+Therefore the profile is anonymous (if a username/nickname was chosen and not the real name) until the very moment 
 a reply to the contact e-mail is sent. The latter happens via normal e-mail servers and communication and outside 
 of the TYPO3 instance. As the profile was verified with a verification mail and code, and a profile is valid for
 a maximum of 6 months (default setting), fake profiles should be in theory reduced to a minimum.
@@ -43,8 +43,7 @@ The extension comes out of the box with a default description fitting to our nee
 
    - Don't forget to include the static template brought by this extension to your TYPO3 configuration.
 
-   - Check terms and conditions as well as the data privacy policies delivered with the extension and fit it
-   to our needs
+   - Check terms and conditions as well as the data privacy policies delivered with the extension and fit it to your needs
 
    - You might want to edit the CSS settings provided with the box to make them fit to your website.
 
@@ -62,20 +61,12 @@ happens to their data.
    :alt: Main Menu
    :width: 300px
 
-   Main Menu after installation (caption of the image).
-
-How the Main Menu of the extension looks like after installation (legend of the image).
-
 In the Search Menu filters can be set and a search can be started.
 
 .. figure:: ../Images/SearchMenu.png
    :class: with-shadow
    :alt: Search Menu
    :width: 300px
-
-   Search Menu and its possibilites (caption of the image).
-
-How the Search Menu of the extension looks like  (legend of the image).
 
 Users can easily set up a profile with their personalized information and publish it 
 online after a verification of their e-mail address.
@@ -84,7 +75,3 @@ online after a verification of their e-mail address.
    :class: with-shadow
    :alt: User Profile
    :width: 300px
-
-   User Profile with possibility to send a mail to get in touch (caption of the image).
-
-How the Profiles of users looks like  (legend of the image).
