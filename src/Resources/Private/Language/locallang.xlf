@@ -10,13 +10,13 @@
 				<source>Benutzername</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.password" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.password">
-				<source>Password (8-50 Zeichen)</source>
+				<source>Passwort (8-50 Zeichen)</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.email" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.email">
-				<source>Email</source>
+				<source>E-Mail</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.height" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.height">
-				<source>Größe (in cm)</source>
+				<source>Größe (in cm ohne Schuhe)</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.heightshort" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.heightshort">
 				<source>Größe</source>
@@ -71,7 +71,7 @@
             			Einträgen gesucht werden. Wir wünschen dabei viel Erfolg!</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.legal" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.legal">
-				<source>Mit Benutzung unserer Tanzpartnersuche, erkläre ich meine Einwilligung in die Nutzungsbestimmungen, sowie die Verarbeitung meiner Angaben. Diese Einwilligung kann ich jederzeit widerrufen, wodurch die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung nicht berührt wird.</source>
+				<source>Mit Benutzung unserer Tanzpartnersuche erkläre ich meine Einwilligung in die Nutzungsbestimmungen, sowie in die Verarbeitung meiner Angaben. Diese Einwilligung kann ich jederzeit widerrufen, wodurch die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung nicht berührt wird.</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.login" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.login">
 				<source>Login</source>
@@ -140,7 +140,7 @@
 				<source>Verfikationscode</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.password2" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.password2">
-				<source>Passwort (Wdh.)</source>
+				<source>Passwort wiederholen</source>
 			</trans-unit>
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender-female" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.gender-female">
 				<source>Frau</source>
@@ -190,18 +190,18 @@
 			<trans-unit id="tx_tanzpartnersuche_domain_model_tanzpartnersuche.register-gdpr" resname="tx_tanzpartnersuche_domain_model_tanzpartnersuche.register-gdpr">
 				<source>
 					Ich willige ein, dass das Gelb-Schwarz-Casino München e.V. als verantwortliche Stelle die
-					in der Tanzpartnersuche erhobenen personenbezogenen Daten wie E-Mail und Alter, darüberhinaus die weiteren
+					in der Tanzpartnersuche erhobenen personenbezogenen Daten wie E-Mail und Alter, darüber hinaus die weiteren
 					eingegebenen Daten wie Geschlecht, Selbstbeschreibung, Tanzniveau usw. im Klartext ausschließlich zum Zwecke der Bereitstellung 
 					der Tanzpartnersuche verarbeitet und nutzt. Mir ist bekannt, dass ich ein Pseudonym verwenden kann und meinen Klarnamen
-					nicht angeben muss, lediglich eine E-Mail Adresse unter der mich die Kontaktanfragen auf mein eigenen Profil hin erreichen.
-					Mir ist weiter bekannt, dass meine E-Mail Adresse seitens des Gelb-Schwarz-Casino München e.V. als verantwortliche 
+					nicht angeben muss, lediglich eine E-Mail-Adresse unter der mich die Kontaktanfragen auf mein eigenen Profil hin erreichen.
+					Mir ist weiter bekannt, dass meine E-Mail-Adresse seitens des Gelb-Schwarz-Casinos München e.V. als verantwortliche 
 					Stelle auch bei einer Kontaktanfrage nicht weitergegeben wird. Eine Antwort auf diese Anfragen finden über normalen
-					E-Mail Verkehr außerhalb der von uns bereitgestellten Plattform statt.
-					Das angebene Passwort wird verschlüsselt in der Datenbank abgelegt.
+					E-Mail-Verkehr außerhalb der von uns bereitgestellten Plattform statt.
+					Das angegebene Passwort wird verschlüsselt in der Datenbank abgelegt.
 					Eine Datenübermittlung an Dritte über diesen Zweck hinaus findet nicht statt. Eine Datennutzung für Werbezwecke findet ebenfalls nicht statt. 
 					Bei Löschung meines Profils werden meine personenbezogenen Daten gelöscht, soweit sie nicht entsprechend der gesetzlichen 
 					Vorgaben aufbewahrt werden müssen.
-					Des weiteren stimme ich den Nutzungsbedingungen der Plattform zu.
+					Des Weiteren stimme ich den Nutzungsbedingungen der Plattform zu.
 				</source>
 			</trans-unit>
 		</body>
