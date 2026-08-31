@@ -1,0 +1,22 @@
+{
+    "name": "gsc/tanzpartnersuche",
+    "description": "Tanzpartnersuche des GSC München e.V.",
+    "type": "typo3-cms-extension",
+    "version": "1.0.0",
+    "license": "MIT",
+    "require": {
+        "typo3/cms-core": "^14.3",
+        "symfony/rate-limiter": "^6.4|^7.0|^8.0",
+        "symfony/cache": "^6.4|^7.0|^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gsc\\Tanzpartnersuche\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "tanzpartnersuche"
+        }
+    }
+}

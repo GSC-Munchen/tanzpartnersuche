@@ -1,0 +1,85 @@
+{namespace gsc = Gsc\Tanzpartnersuche\ViewHelpers} 
+
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    
+    <div id="searchresults" class="wrapper spacer10">
+      
+        <div class="table">
+          
+          <div class="row like-table-row header-light">
+              <div class="col-4">
+                  <f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_username" />
+              </div>
+              <div class="col-1">
+                  <f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_height" />
+              </div>
+              <div class="col-1">
+                  <f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_age" />
+              </div>
+              <div class="col-2">
+                  <f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_gender" />
+              </div>
+              <div class="col-2">
+                  <f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_category" />
+              </div>
+              <div class="col-2">
+                  <f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_level" />
+              </div>
+          </div>
+
+          <f:for each="{users}" as="user">
+            
+            <div class="row like-table-row">
+              <div class="col-4">
+                  <f:link.action action="detail" arguments="{
+                      user:user,
+                      myGender:myGender,
+                      searchRole:searchRole,
+                      searchCategory:searchCategory,
+                      level01:level01,
+                      level02:level02,
+                      level03:level03,
+                      level04:level04,
+                      level05:level05,
+                      level06:level06,
+                      level07:level07,
+                      level08:level08
+                  }">{user.username}</f:link.action>
+              </div>
+              <div class="col-1">
+                  <div data-title="Größe">{user.height}</div>
+              </div>
+              <div class="col-1">
+                  <div data-title="Alter">{user.age}</div>
+              </div>
+              <div class="col-2">
+                  <f:form.select name="gender" value="{user.gender}" id="gender" class="selreadonly" disabled="TRUE">
+                    <f:form.select.option value="1"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:gender-female" /></f:form.select.option>
+                    <f:form.select.option value="2"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:gender-male" /></f:form.select.option>
+                  </f:form.select>
+              </div>
+              <div class="col-2">
+                  <f:form.select name="category" value="{user.category}" id="category" class="selreadonly" disabled="TRUE">
+                    <f:form.select.option value="1"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:category-00" />&nbsp;&nbsp;</f:form.select.option>
+                    <f:form.select.option value="2"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:category-01" />&nbsp;&nbsp;</f:form.select.option>
+                    <f:form.select.option value="3"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:category-02" />&nbsp;&nbsp;</f:form.select.option>
+                  </f:form.select>
+              </div>
+              <div class="col-2">
+                  <f:form.select name="level" value="{user.level}" id="level" class="selreadonly" disabled="TRUE">
+                    <f:form.select.option value="1"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-00" />&nbsp;&nbsp;</f:form.select.option>
+                    <f:form.select.option value="2"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-01" />&nbsp;&nbsp;</f:form.select.option>
+                    <f:form.select.option value="3"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-02" />&nbsp;&nbsp;</f:form.select.option>
+                    <f:form.select.option value="4"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-03" />&nbsp;&nbsp;</f:form.select.option>
+                    <f:form.select.option value="5"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-04" />&nbsp;&nbsp;</f:form.select.option>
+                    <f:form.select.option value="6"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-05" />&nbsp;&nbsp;</f:form.select.option>
+                    <f:form.select.option value="7"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-06" />&nbsp;&nbsp;</f:form.select.option>
+                    <f:form.select.option value="8"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-07" />&nbsp;&nbsp;</f:form.select.option>
+                  </f:form.select>
+              </div>
+            </div>
+          </f:for>
+          
+        </div>
+    </div>
+</html>

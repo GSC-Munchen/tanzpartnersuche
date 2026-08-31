@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2026-01-01T21:05:10Z" product-name="tanzpartnersuche">
+		<header/>
+		<body>
+			<trans-unit id="menuSearch" xml:space="preserve">
+				<source>Suche</source>
+			</trans-unit>
+            <trans-unit id="menuSearchDetail" xml:space="preserve">
+				<source>Suche nach Tanzpartnern</source>
+			</trans-unit>
+            <trans-unit id="menuHelp" xml:space="preserve">
+				<source>Hinweise</source>
+			</trans-unit>
+            <trans-unit id="menuHelpDetail" xml:space="preserve">
+				<source>Datenschutz und Nutzungshinweise</source>
+			</trans-unit>
+            <trans-unit id="menuNew" xml:space="preserve">
+				<source>Registrierung</source>
+			</trans-unit>
+            <trans-unit id="menuNewDetail" xml:space="preserve">
+				<source>Anlegen eines eigenen Profils</source>
+			</trans-unit>
+            <trans-unit id="menuLogin" xml:space="preserve">
+				<source>Login</source>
+			</trans-unit>
+            <trans-unit id="menuLoginDetail" xml:space="preserve">
+				<source>Ändern/Löschen von Inhalten</source>
+			</trans-unit>
+            <trans-unit id="db_username" xml:space="preserve">
+				<source>Nutzername</source>
+			</trans-unit>
+            <trans-unit id="db_password" xml:space="preserve">
+				<source>Passwort</source>
+			</trans-unit>
+            <trans-unit id="db_currentpassword" xml:space="preserve">
+				<source>Aktuelles Passwort</source>
+			</trans-unit>
+            <trans-unit id="db_passwordconfirmation" xml:space="preserve">
+				<source>Passwort (Wdh.)</source>
+			</trans-unit>
+            <trans-unit id="db_email" xml:space="preserve">
+				<source>E-Mail</source>
+			</trans-unit>
+            <trans-unit id="db_height" xml:space="preserve">
+				<source>Größe</source>
+			</trans-unit>
+            <trans-unit id="db_age" xml:space="preserve">
+				<source>Alter</source>
+			</trans-unit>
+            <trans-unit id="db_gender" xml:space="preserve">
+				<source>Geschlecht</source>
+			</trans-unit>
+            <trans-unit id="db_level" xml:space="preserve">
+				<source>Niveau</source>
+			</trans-unit>
+            <trans-unit id="db_bio" xml:space="preserve">
+				<source>Über mich</source>
+			</trans-unit>
+            <trans-unit id="db_role" xml:space="preserve">
+				<source>Ich suche</source>
+			</trans-unit>
+            <trans-unit id="db_category" xml:space="preserve">
+				<source>Disziplin</source>
+			</trans-unit>
+            <trans-unit id="db_verificationcode" xml:space="preserve">
+				<source>Verifizierungscode</source>
+			</trans-unit>
+            <trans-unit id="db_loggedin" xml:space="preserve">
+				<source>Eingeloggt</source>
+			</trans-unit>
+            <trans-unit id="db_created" xml:space="preserve">
+				<source>Eintrag erstellt</source>
+			</trans-unit>
+            <trans-unit id="db_changed" xml:space="preserve">
+				<source>Zuletzt geändert</source>
+			</trans-unit>
+            <trans-unit id="db_record_type.0" xml:space="preserve">
+				<source>Vollständiger Datensatz</source>
+			</trans-unit>
+            <trans-unit id="db_record_type.1" xml:space="preserve">
+				<source>Record Type 1</source>
+			</trans-unit>
+            <trans-unit id="db_record_type.2" xml:space="preserve">
+				<source>Record Type 2</source>
+			</trans-unit>
+            <trans-unit id="mainTitle" xml:space="preserve">
+				<source>Auf der Suche nach einer Tanzpartnerin/einem Tanzpartner?</source>
+			</trans-unit>
+            <trans-unit id="mainIntro" xml:space="preserve">
+				<source>Herzlich willkommen auf unserer Plattform. Hier können eigene Profile angelegt oder in vorhandenen Einträgen gesucht werden. Wir wünschen dabei viel Erfolg!</source>
+			</trans-unit>
+            <trans-unit id="mainDescription" xml:space="preserve">
+				<source>Mit Benutzung unserer Tanzpartnersuche stimme ich den Nutzungsbestimmungen zu, sowie der Verarbeitung meiner Angaben. Diese Einwilligung kann ich jederzeit mit einer formlosen Mail an tanzpartner@gsc-muenchen.de unter Nutzung der registrierten E-Mail Adresse widerrufen, wodurch die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung nicht berührt wird.</source>
+			</trans-unit>
+            <trans-unit id="searchTitle" xml:space="preserve">
+				<source>Suche</source>
+			</trans-unit>
+            <trans-unit id="searchIntro" xml:space="preserve">
+				<source>Bitte beginne hier mit Deiner Suche.</source>
+			</trans-unit>
+            <trans-unit id="searchIam" xml:space="preserve">
+				<source>Ich bin</source>
+			</trans-unit>
+            <trans-unit id="searchIsearch" xml:space="preserve">
+				<source>Ich suche</source>
+			</trans-unit>
+            <trans-unit id="searchfor" xml:space="preserve">
+				<source>für</source>
+			</trans-unit>
+            <trans-unit id="searchLevel" xml:space="preserve">
+				<source>Niveau (Mehrfachauswahl möglich)</source>
+			</trans-unit>
+
+			<trans-unit id="detailTitle" xml:space="preserve">
+				<source>Profilansicht</source>
+			</trans-unit>
+
+            <trans-unit id="helpTitle" xml:space="preserve">
+				<source>Datenschutz und Nutzungshinweise</source>
+			</trans-unit>
+            <trans-unit id="helpIntro" xml:space="preserve">
+				<source>Um die Tanzpartnersuche nutzen zu können, ist die Akzeptanz der folgenden Bestimmungen Voraussetzung.</source>
+			</trans-unit>
+            <trans-unit id="newTitle" xml:space="preserve">
+				<source>Registrierung</source>
+			</trans-unit>
+            <trans-unit id="newIntro" xml:space="preserve">
+				<source>Willkommen bei der Registrierung. Bitte fülle die folgenden Felder aus um Dich auf unserer Plattform anzumelden:</source>
+			</trans-unit>
+            <trans-unit id="newDescription" xml:space="preserve">
+				<source>Ich willige ein, dass das Gelb-Schwarz-Casino München e.V. als verantwortliche Stelle die in der Tanzpartnersuche erhobenen personenbezogenen Daten wie E-Mail und Alter, darüber hinaus die weiteren eingegebenen Daten wie Geschlecht, Selbstbeschreibung, Tanzniveau usw. im Klartext ausschließlich zum Zwecke der Bereitstellung der Tanzpartnersuche verarbeitet und nutzt. Mir ist bekannt, dass ich ein Pseudonym verwenden kann und meinen Klarnamen nicht angeben muss, lediglich eine E-Mail-Adresse unter der mich die Kontaktanfragen auf mein eigenen Profil hin erreichen. Mir ist weiter bekannt, dass meine E-Mail-Adresse seitens des Gelb-Schwarz-Casinos München e.V. als verantwortliche Stelle auch bei einer Kontaktanfrage nicht weitergegeben wird. Eine Antwort auf diese Anfragen finden über normalen E-Mail-Verkehr außerhalb der von uns bereitgestellten Plattform statt. Das angegebene Passwort wird verschlüsselt in der Datenbank abgelegt. Eine Datenübermittlung an Dritte über diesen Zweck hinaus findet nicht statt. Eine Datennutzung für Werbezwecke findet ebenfalls nicht statt. Bei Löschung meines Profils werden meine personenbezogenen Daten gelöscht, soweit sie nicht entsprechend der gesetzlichen Vorgaben aufbewahrt werden müssen. Des Weiteren stimme ich den Nutzungsbedingungen der Plattform zu.</source>
+			</trans-unit>
+            <trans-unit id="newStep1" xml:space="preserve">
+				<source>Profil</source>
+			</trans-unit>
+            <trans-unit id="newStep2" xml:space="preserve">
+				<source>Verifikation</source>
+			</trans-unit>
+            <trans-unit id="newStep3" xml:space="preserve">
+				<source>Fertig</source>
+			</trans-unit>
+            <trans-unit id="select" xml:space="preserve">
+				<source>--- bitte wählen ---</source>
+			</trans-unit>
+            <trans-unit id="gender-female" xml:space="preserve">
+				<source>Frau</source>
+			</trans-unit>
+            <trans-unit id="gender-male" xml:space="preserve">
+				<source>Mann</source>
+			</trans-unit>
+            <trans-unit id="gender-woman" xml:space="preserve">
+				<source>Dame</source>
+			</trans-unit>
+            <trans-unit id="gender-man" xml:space="preserve">
+				<source>Herr</source>
+			</trans-unit>
+
+
+            <trans-unit id="role-00" xml:space="preserve">
+				<source>Tanzpartnerin</source>
+			</trans-unit>
+            <trans-unit id="role-01" xml:space="preserve">
+				<source>Tanzpartner</source>
+			</trans-unit>
+            <trans-unit id="category-00" xml:space="preserve">
+				<source>Latein</source>
+			</trans-unit>
+            <trans-unit id="category-01" xml:space="preserve">
+				<source>Standard</source>
+			</trans-unit>
+            <trans-unit id="category-02" xml:space="preserve">
+				<source>10 Tänze</source>
+			</trans-unit>
+            <trans-unit id="level-00" xml:space="preserve">
+				<source>Jugend</source>
+			</trans-unit>
+            <trans-unit id="level-01" xml:space="preserve">
+				<source>Breitensport</source>
+			</trans-unit>
+            <trans-unit id="level-02" xml:space="preserve">
+				<source>Vorturnier</source>
+			</trans-unit>
+            <trans-unit id="level-03" xml:space="preserve">
+				<source>D-Klasse</source>
+			</trans-unit>
+            <trans-unit id="level-04" xml:space="preserve">
+				<source>C-Klasse</source>
+			</trans-unit>
+            <trans-unit id="level-05" xml:space="preserve">
+				<source>B-Klasse</source>
+			</trans-unit>
+            <trans-unit id="level-06" xml:space="preserve">
+				<source>A-Klasse</source>
+			</trans-unit>
+            <trans-unit id="level-07" xml:space="preserve">
+				<source>S-Klasse</source>
+			</trans-unit>
+
+			<trans-unit id="createTitle" xml:space="preserve">
+				<source>Verifikation des Eintrags</source>
+			</trans-unit>
+
+			<trans-unit id="createIntro" xml:space="preserve">
+				<source>Bitte bestätige Deine Anmeldung durch Eingabe des registrierten Nutzernamens und des Verfikationscodes, den Du an 	Deine angegebene Mail geschickt bekommen hast. Bitte schaue ggfs. in Deinem Spam-Ordner nach. Der Code ist max. 48h Stunden gültig. Danach musst Du Dich erneut registrieren.</source>
+			</trans-unit>
+
+
+            <trans-unit id="loginTitle" xml:space="preserve">
+				<source>Login</source>
+			</trans-unit>
+            <trans-unit id="loginIntro" xml:space="preserve">
+				<source>Bitte melde Dich an, um Deine Einträge oder Dein Profil ändern zu können:</source>
+			</trans-unit>
+            <trans-unit id="loginPassword" xml:space="preserve">
+				<source>Passwort vergessen</source>
+			</trans-unit>
+
+
+            <trans-unit id="btn_back" xml:space="preserve">
+				<source>Zurück</source>
+			</trans-unit>
+            <trans-unit id="btn_back_main" xml:space="preserve">
+				<source>Zurück zum Hauptmenü</source>
+			</trans-unit>
+            <trans-unit id="btn_cancel" xml:space="preserve">
+				<source>Abbruch</source>
+			</trans-unit>
+            <trans-unit id="btn_send" xml:space="preserve">
+				<source>Absenden</source>
+			</trans-unit>
+            <trans-unit id="btn_skip" xml:space="preserve">
+				<source>Überspringen</source>
+			</trans-unit>
+
+            <trans-unit id="error_notfound" xml:space="preserve">
+				<source>Keine zur Suche passenden Einträge gefunden.</source>
+			</trans-unit>
+            <trans-unit id="error_missingfilter" xml:space="preserve">
+				<source>Bitte Filter setzen und eine Suche starten.</source>
+			</trans-unit>
+
+            <trans-unit id="db_resetcode" xml:space="preserve">
+				<source>Reset-Code</source>
+			</trans-unit>
+            <trans-unit id="db_resetcodecreated" xml:space="preserve">
+				<source>Reset-Code erstellt</source>
+			</trans-unit>
+
+            <trans-unit id="resetpwTitle" xml:space="preserve">
+				<source>Passwort zurücksetzen</source>
+			</trans-unit>
+            <trans-unit id="resetpwIntro" xml:space="preserve">
+				<source>Bitte gib Deine registrierte E-Mail-Adresse ein. Wir senden Dir einen Link, mit dem Du ein neues Passwort vergeben kannst.</source>
+			</trans-unit>
+            <trans-unit id="newpasswordTitle" xml:space="preserve">
+				<source>Neues Passwort vergeben</source>
+			</trans-unit>
+            <trans-unit id="newpasswordIntro" xml:space="preserve">
+				<source>Bitte vergib ein neues Passwort für Dein Profil.</source>
+			</trans-unit>
+
+            <trans-unit id="mainLoggedInAs" xml:space="preserve">
+				<source>Eingeloggt als</source>
+			</trans-unit>
+            <trans-unit id="menuLogout" xml:space="preserve">
+				<source>Logout</source>
+			</trans-unit>
+            <trans-unit id="menuLogoutDetail" xml:space="preserve">
+				<source>Abmeldung von der Plattform</source>
+			</trans-unit>
+            <trans-unit id="menuMyAccount" xml:space="preserve">
+				<source>Mein Konto</source>
+			</trans-unit>
+
+            <trans-unit id="loggedinIntro" xml:space="preserve">
+				<source>Hier kannst Du Deine Anzeige bearbeiten, Dein Passwort ändern oder Deinen Account löschen.</source>
+			</trans-unit>
+            <trans-unit id="loggedinLegal" xml:space="preserve">
+				<source>Deine Angaben werden ausschließlich für die Tanzpartnersuche verwendet. Du kannst Deine Einwilligung jederzeit widerrufen, indem Du Deinen Account löschst.</source>
+			</trans-unit>
+            <trans-unit id="menuEdit" xml:space="preserve">
+				<source>Editieren</source>
+			</trans-unit>
+            <trans-unit id="menuEditDetail" xml:space="preserve">
+				<source>Ändern der Profilinhalte</source>
+			</trans-unit>
+            <trans-unit id="menuChangepassword" xml:space="preserve">
+				<source>Passwort</source>
+			</trans-unit>
+            <trans-unit id="menuChangepasswordDetail" xml:space="preserve">
+				<source>Vergabe eines neuen Passwortes</source>
+			</trans-unit>
+            <trans-unit id="menuDelete" xml:space="preserve">
+				<source>Löschen</source>
+			</trans-unit>
+            <trans-unit id="menuDeleteDetail" xml:space="preserve">
+				<source>Entfernen des Accounts</source>
+			</trans-unit>
+
+            <trans-unit id="editTitle" xml:space="preserve">
+				<source>Profil bearbeiten</source>
+			</trans-unit>
+            <trans-unit id="editIntro" xml:space="preserve">
+				<source>Hier kannst Du die Inhalte Deines Profils ändern.</source>
+			</trans-unit>
+            <trans-unit id="changepasswordTitle" xml:space="preserve">
+				<source>Passwort ändern</source>
+			</trans-unit>
+            <trans-unit id="changepasswordIntro" xml:space="preserve">
+				<source>Bitte gib Dein aktuelles Passwort sowie Dein neues Passwort ein.</source>
+			</trans-unit>
+            <trans-unit id="deleteTitle" xml:space="preserve">
+				<source>Account löschen</source>
+			</trans-unit>
+            <trans-unit id="deleteIntro" xml:space="preserve">
+				<source>Diese Aktion kann nicht rückgängig gemacht werden. Bitte bestätige die Löschung Deines Accounts mit Deinem Passwort.</source>
+			</trans-unit>
+
+            <trans-unit id="error_invalid_username" xml:space="preserve">
+				<source>Der Nutzername ist ungültig (3–50 Zeichen: Buchstaben, Zahlen, Leerzeichen, - oder _).</source>
+			</trans-unit>
+            <trans-unit id="error_invalid_email" xml:space="preserve">
+				<source>Die E-Mail-Adresse ist ungültig.</source>
+			</trans-unit>
+            <trans-unit id="error_invalid_password" xml:space="preserve">
+				<source>Die Passwörter stimmen nicht überein oder das Passwort ist zu kurz (mindestens 10 Zeichen).</source>
+			</trans-unit>
+            <trans-unit id="error_invalid_height" xml:space="preserve">
+				<source>Bitte eine gültige Körpergröße angeben (100–250 cm).</source>
+			</trans-unit>
+            <trans-unit id="error_invalid_age" xml:space="preserve">
+				<source>Bitte ein gültiges Alter angeben (16–120 Jahre).</source>
+			</trans-unit>
+            <trans-unit id="error_invalid_selection" xml:space="preserve">
+				<source>Bitte bei Geschlecht, Ich suche, Disziplin und Niveau eine gültige Auswahl treffen.</source>
+			</trans-unit>
+            <trans-unit id="error_invalid_bio" xml:space="preserve">
+				<source>Der Text über Dich ist zu lang (max. 2000 Zeichen).</source>
+			</trans-unit>
+            <trans-unit id="error_duplicate_email" xml:space="preserve">
+				<source>Diese E-Mail-Adresse ist bereits registriert.</source>
+			</trans-unit>
+            <trans-unit id="success_registration" xml:space="preserve">
+				<source>Registrierung erfolgreich. Bitte prüfe Dein E-Mail-Postfach und bestätige Deine Anmeldung mit dem zugesandten Code.</source>
+			</trans-unit>
+
+            <trans-unit id="error_verification_failed" xml:space="preserve">
+				<source>Der Code ist ungültig oder abgelaufen.</source>
+			</trans-unit>
+            <trans-unit id="success_verification" xml:space="preserve">
+				<source>Dein Konto wurde erfolgreich bestätigt. Möchtest Du Deine Anzeige verändern, kannst Du Dich im Hauptmenü mit Deinen Nutzerdaten (E-Mail und Passwort) anmelden.</source>
+			</trans-unit>
+
+            <trans-unit id="error_rate_limited" xml:space="preserve">
+				<source>Zu viele Versuche. Bitte warte einen Moment und versuche es dann erneut.</source>
+			</trans-unit>
+            <trans-unit id="error_login_failed" xml:space="preserve">
+				<source>Login fehlgeschlagen. Bitte Nutzername und Passwort prüfen oder zunächst die Registrierung per E-Mail bestätigen.</source>
+			</trans-unit>
+            <trans-unit id="success_login" xml:space="preserve">
+				<source>Erfolgreich eingeloggt.</source>
+			</trans-unit>
+            <trans-unit id="success_logout" xml:space="preserve">
+				<source>Du wurdest ausgeloggt.</source>
+			</trans-unit>
+            <trans-unit id="info_session_timeout" xml:space="preserve">
+				<source>Du wurdest wegen 30 Minuten Inaktivität automatisch ausgeloggt. Bitte melde Dich erneut an.</source>
+			</trans-unit>
+
+            <trans-unit id="error_current_password_invalid" xml:space="preserve">
+				<source>Das eingegebene Passwort ist nicht korrekt.</source>
+			</trans-unit>
+            <trans-unit id="success_profile_updated" xml:space="preserve">
+				<source>Dein Profil wurde erfolgreich aktualisiert.</source>
+			</trans-unit>
+            <trans-unit id="success_password_changed" xml:space="preserve">
+				<source>Dein Passwort wurde erfolgreich geändert.</source>
+			</trans-unit>
+            <trans-unit id="success_account_deleted" xml:space="preserve">
+				<source>Dein Account wurde unwiderruflich gelöscht.</source>
+			</trans-unit>
+
+            <trans-unit id="deleteSurveyTitle" xml:space="preserve">
+				<source>Dein Feedback zählt</source>
+			</trans-unit>
+            <trans-unit id="deleteSurveyIntro" xml:space="preserve">
+				<source>Vielen Dank, dass Du unsere Tanzpartnersuche genutzt hast. Dein Profil wurde erfolgreich gelöscht. Bitte hilf uns, unseren Service besser einschätzen zu können, indem Du uns freiwillig die folgende Frage beantwortest.</source>
+			</trans-unit>
+            <trans-unit id="deleteSurveyQuestion" xml:space="preserve">
+				<source>Warum hast Du Deinen Account gelöscht?</source>
+			</trans-unit>
+            <trans-unit id="deleteSurveyReason1" xml:space="preserve">
+				<source>Keine Angabe von Gründen</source>
+			</trans-unit>
+            <trans-unit id="deleteSurveyReason2" xml:space="preserve">
+				<source>Habe erfolgreich eine(n) Tanzpartner(in) durch die Vermittlung eines Trainers gefunden</source>
+			</trans-unit>
+            <trans-unit id="deleteSurveyReason3" xml:space="preserve">
+				<source>Habe erfolgreich eine(n) Tanzpartner(in) durch die Vermittlung eines Mitglieds gefunden</source>
+			</trans-unit>
+            <trans-unit id="deleteSurveyReason4" xml:space="preserve">
+				<source>Habe erfolgreich eine(n) Tanzpartner(in) außerhalb des Clubs gefunden</source>
+			</trans-unit>
+            <trans-unit id="deleteSurveyReason5" xml:space="preserve">
+				<source>Habe leider keine Tanzpartner(in) gefunden</source>
+			</trans-unit>
+            <trans-unit id="deleteSurveyReason6" xml:space="preserve">
+				<source>Komme mit dem System nicht zurecht/finde es unübersichtlich</source>
+			</trans-unit>
+            <trans-unit id="deleteSurveyCommentLabel" xml:space="preserve">
+				<source>Feedback / Anregungen (optional)</source>
+			</trans-unit>
+            <trans-unit id="mail_survey_subject" xml:space="preserve">
+				<source>Tanzpartnersuche des GSC München: Feedback zur Account-Löschung</source>
+			</trans-unit>
+            <trans-unit id="mail_new_profile_subject" xml:space="preserve">
+				<source>Tanzpartnersuche des GSC München: Neues Profil angelegt</source>
+			</trans-unit>
+            <trans-unit id="mail_updated_profile_subject" xml:space="preserve">
+				<source>Tanzpartnersuche des GSC München: Profil geändert</source>
+			</trans-unit>
+            <trans-unit id="success_survey_submitted" xml:space="preserve">
+				<source>Daten wurden erfolgreich übermittelt. Herzlichen Dank für Dein Feedback.</source>
+			</trans-unit>
+
+            <trans-unit id="error_mail_form_invalid" xml:space="preserve">
+				<source>Bitte die markierten Felder der Kontaktanfrage korrigieren.</source>
+			</trans-unit>
+            <trans-unit id="error_mail_invalid_sender" xml:space="preserve">
+				<source>Bitte einen gültigen Namen angeben (mindestens 5 Zeichen, nur Buchstaben, Zahlen, Leerzeichen sowie . , ' -).</source>
+			</trans-unit>
+            <trans-unit id="error_mail_invalid_email" xml:space="preserve">
+				<source>Bitte eine gültige E-Mail-Adresse angeben.</source>
+			</trans-unit>
+            <trans-unit id="error_mail_invalid_message" xml:space="preserve">
+				<source>Die Nachricht muss mindestens 10 Zeichen lang sein und darf keinen HTML- oder Script-Code enthalten.</source>
+			</trans-unit>
+            <trans-unit id="error_mail_recipient_not_found" xml:space="preserve">
+				<source>Das Profil wurde nicht gefunden.</source>
+			</trans-unit>
+            <trans-unit id="success_mail_sent" xml:space="preserve">
+				<source>Deine Nachricht wurde versendet.</source>
+			</trans-unit>
+            <trans-unit id="mail_contact_subject" xml:space="preserve">
+				<source>Tanzpartnersuche des GSC München: Kontaktanfrage</source>
+			</trans-unit>
+
+            <trans-unit id="info_reset_requested" xml:space="preserve">
+				<source>Falls die E-Mail-Adresse bei uns registriert ist, wurde eine E-Mail mit einem Link zum Zurücksetzen des Passworts verschickt.</source>
+			</trans-unit>
+            <trans-unit id="error_reset_invalid" xml:space="preserve">
+				<source>Der Link ist ungültig oder abgelaufen.</source>
+			</trans-unit>
+            <trans-unit id="success_password_updated" xml:space="preserve">
+				<source>Dein Passwort wurde erfolgreich geändert. Du kannst Dich jetzt einloggen.</source>
+			</trans-unit>
+            <trans-unit id="mail_verification_subject" xml:space="preserve">
+				<source>Tanzpartnersuche: Bitte bestätige Deine Registrierung</source>
+			</trans-unit>
+            <trans-unit id="mail_reset_subject" xml:space="preserve">
+				<source>Tanzpartnersuche: Passwort zurücksetzen</source>
+			</trans-unit>
+
+            <trans-unit id="backend_status" xml:space="preserve">
+				<source>Status</source>
+			</trans-unit>
+            <trans-unit id="backend_status_verified" xml:space="preserve">
+				<source>Verifiziert</source>
+			</trans-unit>
+            <trans-unit id="backend_status_pending" xml:space="preserve">
+				<source>Wartet auf Verifikation</source>
+			</trans-unit>
+            <trans-unit id="backend_no_entries" xml:space="preserve">
+				<source>Es sind noch keine Einträge vorhanden.</source>
+			</trans-unit>
+            <trans-unit id="backend_total_count" xml:space="preserve">
+				<source>Anzahl Einträge</source>
+			</trans-unit>
+            <trans-unit id="backend_actions" xml:space="preserve">
+				<source>Aktionen</source>
+			</trans-unit>
+            <trans-unit id="backend_delete" xml:space="preserve">
+				<source>Eintrag löschen</source>
+			</trans-unit>
+            <trans-unit id="backend_delete_confirm_title" xml:space="preserve">
+				<source>Eintrag unwiderruflich löschen?</source>
+			</trans-unit>
+            <trans-unit id="backend_delete_confirm_message" xml:space="preserve">
+				<source>Dieser Eintrag wird endgültig aus der Datenbank gelöscht. Diese Aktion kann nicht rückgängig gemacht werden.</source>
+			</trans-unit>
+            <trans-unit id="backend_delete_success" xml:space="preserve">
+				<source>Der Eintrag wurde unwiderruflich gelöscht.</source>
+			</trans-unit>
+            <trans-unit id="backend_detail" xml:space="preserve">
+				<source>Details anzeigen</source>
+			</trans-unit>
+            <trans-unit id="backend_detail_title" xml:space="preserve">
+				<source>Eintrag Details</source>
+			</trans-unit>
+            <trans-unit id="backend_detail_back" xml:space="preserve">
+				<source>Zurück zur Übersicht</source>
+			</trans-unit>
+            <trans-unit id="backend_detail_not_found" xml:space="preserve">
+				<source>Der Eintrag wurde nicht gefunden.</source>
+			</trans-unit>
+            <trans-unit id="backend_yes" xml:space="preserve">
+				<source>Ja</source>
+			</trans-unit>
+            <trans-unit id="backend_no" xml:space="preserve">
+				<source>Nein</source>
+			</trans-unit>
+            <trans-unit id="backend_detail_created_at" xml:space="preserve">
+				<source>angelegt am:</source>
+			</trans-unit>
+            <trans-unit id="backend_detail_changed_at" xml:space="preserve">
+				<source>zuletzt geändert am:</source>
+			</trans-unit>
+            <trans-unit id="backend_detail_visible_until" xml:space="preserve">
+				<source>sichtbar bis:</source>
+			</trans-unit>
+            <trans-unit id="backend_edit" xml:space="preserve">
+				<source>Eintrag bearbeiten</source>
+			</trans-unit>
+            <trans-unit id="backend_edit_title" xml:space="preserve">
+				<source>Eintrag bearbeiten</source>
+			</trans-unit>
+            <trans-unit id="backend_edit_forbidden" xml:space="preserve">
+				<source>Diese Aktion ist nur für Systemmaintainer verfügbar.</source>
+			</trans-unit>
+            <trans-unit id="backend_edit_success" xml:space="preserve">
+				<source>Der Eintrag wurde erfolgreich aktualisiert.</source>
+			</trans-unit>
+            <trans-unit id="backend_save" xml:space="preserve">
+				<source>Speichern</source>
+			</trans-unit>
+            <trans-unit id="backend_password_reset" xml:space="preserve">
+				<source>Passwort-Reset</source>
+			</trans-unit>
+            <trans-unit id="backend_password_reset_confirm_title" xml:space="preserve">
+				<source>Passwort-Reset-E-Mail versenden?</source>
+			</trans-unit>
+            <trans-unit id="backend_password_reset_confirm_message" xml:space="preserve">
+				<source>Dem Nutzer wird eine E-Mail mit einem Code zum Zurücksetzen des Passworts geschickt.</source>
+			</trans-unit>
+            <trans-unit id="backend_password_reset_success" xml:space="preserve">
+				<source>Die Passwort-Reset-E-Mail wurde verschickt.</source>
+			</trans-unit>
+            <trans-unit id="backend_password_reset_no_page" xml:space="preserve">
+				<source>Es konnte keine Seite mit dem Tanzpartnersuche-Plugin gefunden werden. Der Passwort-Reset-Link kann nicht erzeugt werden.</source>
+			</trans-unit>
+
+            <trans-unit id="mail_org_name" xml:space="preserve">
+				<source>Gelb-Schwarz-Casino München e.V.</source>
+			</trans-unit>
+            <trans-unit id="mail_footer_street" xml:space="preserve">
+				<source>Sonnenstraße 12a / II</source>
+			</trans-unit>
+            <trans-unit id="mail_footer_city" xml:space="preserve">
+				<source>D-80331 München</source>
+			</trans-unit>
+            <trans-unit id="mail_footer_registergericht" xml:space="preserve">
+				<source>Registergericht: München </source>
+			</trans-unit>
+            <trans-unit id="mail_footer_registernummer" xml:space="preserve">
+				<source>Registernummer: VR 4385</source>
+			</trans-unit>
+            <trans-unit id="mail_closing_greeting" xml:space="preserve">
+				<source>Herzliche Grüße</source>
+			</trans-unit>
+            <trans-unit id="mail_closing_thanks" xml:space="preserve">
+				<source>Besten Dank für die Nutzung der Tanzpartnersuche und viel Erfolg!</source>
+			</trans-unit>
+            <trans-unit id="mail_no_info" xml:space="preserve">
+				<source>(keine Angabe)</source>
+			</trans-unit>
+            <trans-unit id="mail_greeting_hello" xml:space="preserve">
+				<source>Hallo %s, </source>
+			</trans-unit>
+            <trans-unit id="mail_link_validity_line" xml:space="preserve">
+				<source>Der Link ist %d Stunden gültig.</source>
+			</trans-unit>
+            <trans-unit id="mail_ignore_if_not_requested" xml:space="preserve">
+				<source>Falls Du das nicht selbst angefordert hast, ignoriere einfach diese E-Mail.</source>
+			</trans-unit>
+
+            <trans-unit id="mail_delete_survey_intro" xml:space="preserve">
+				<source>Ein Nutzer hat soeben seinen Account in der Tanzpartnersuche gelöscht und folgendes Feedback hinterlassen: </source>
+			</trans-unit>
+            <trans-unit id="mail_delete_survey_reason_line" xml:space="preserve">
+				<source>Grund: %s</source>
+			</trans-unit>
+            <trans-unit id="mail_delete_survey_feedback_line" xml:space="preserve">
+				<source>Feedback: %s</source>
+			</trans-unit>
+
+            <trans-unit id="mail_new_profile_intro" xml:space="preserve">
+				<source>Ein Nutzer hat soeben ein neues Profil in der Tanzpartnersuche angelegt: </source>
+			</trans-unit>
+            <trans-unit id="mail_updated_profile_intro" xml:space="preserve">
+				<source>Ein Nutzer hat soeben sein Profil in der Tanzpartnersuche geändert: </source>
+			</trans-unit>
+            <trans-unit id="mail_profile_username_line" xml:space="preserve">
+				<source>Nutzername: %s</source>
+			</trans-unit>
+            <trans-unit id="mail_profile_height_line" xml:space="preserve">
+				<source>Körpergröße: %d cm</source>
+			</trans-unit>
+            <trans-unit id="mail_profile_age_line" xml:space="preserve">
+				<source>Alter: %d Jahre</source>
+			</trans-unit>
+            <trans-unit id="mail_profile_gender_line" xml:space="preserve">
+				<source>Geschlecht: %s</source>
+			</trans-unit>
+            <trans-unit id="mail_profile_role_line" xml:space="preserve">
+				<source>Sucht: %s</source>
+			</trans-unit>
+            <trans-unit id="mail_profile_category_line" xml:space="preserve">
+				<source>Disziplin: %s</source>
+			</trans-unit>
+            <trans-unit id="mail_profile_level_line" xml:space="preserve">
+				<source>Niveau: %s</source>
+			</trans-unit>
+            <trans-unit id="mail_profile_bio_line" xml:space="preserve">
+				<source>Über mich: %s</source>
+			</trans-unit>
+
+            <trans-unit id="mail_contact_intro" xml:space="preserve">
+				<source>Du hast eine Kontaktanfrage über die Tanzpartnersuche des Gelb-Schwarz-Casino München erhalten. </source>
+			</trans-unit>
+            <trans-unit id="mail_contact_replied_line" xml:space="preserve">
+				<source>%s hat auf Dein Profil in der Tanzpartnersuche des GSC München e.V. geantwortet.</source>
+			</trans-unit>
+            <trans-unit id="mail_contact_name_line" xml:space="preserve">
+				<source>Name: %s</source>
+			</trans-unit>
+            <trans-unit id="mail_contact_email_line" xml:space="preserve">
+				<source>E-Mail: %s</source>
+			</trans-unit>
+            <trans-unit id="mail_contact_message_line" xml:space="preserve">
+				<source>Nachricht: %s</source>
+			</trans-unit>
+            <trans-unit id="mail_contact_notice" xml:space="preserve">
+				<source>Bitte beachte, dass jede weitere Kontaktaufnahme Deinerseits nun nicht mehr anonymisiert über unsere Plattform, sondern direkt über Deinen E-Mail Account erfolgt. </source>
+			</trans-unit>
+            <trans-unit id="mail_contact_reply_instruction" xml:space="preserve">
+				<source>Daher antworte bitte %s auch direkt per Mail. Du kannst dies direkt über die Antworten-Funktion Deines Mailclients tun.</source>
+			</trans-unit>
+
+            <trans-unit id="mail_verification_greeting" xml:space="preserve">
+				<source>Hallo aus der Sonnenstraße, </source>
+			</trans-unit>
+            <trans-unit id="mail_verification_intro" xml:space="preserve">
+				<source>Bitte bestätige Deine Registrierung zur Nutzung der Tanzpartnersuche des GSC München e.V. mit folgendem Code: </source>
+			</trans-unit>
+            <trans-unit id="mail_verification_activation_info" xml:space="preserve">
+				<source>Mit Eingabe des Codes wird Dein Profil sofort auf unserer Webseite freigeschaltet und ist dann für sechs Monate sichtbar.</source>
+			</trans-unit>
+            <trans-unit id="mail_verification_link_intro" xml:space="preserve">
+				<source>Du kannst den Code unter folgendem Link eingeben: </source>
+			</trans-unit>
+
+            <trans-unit id="mail_reset_intro" xml:space="preserve">
+				<source>Für Dein Profil auf der Tanzpartnersuche des GSC München e.V. wurde ein Passwortreset angefragt. </source>
+			</trans-unit>
+            <trans-unit id="mail_reset_link_intro" xml:space="preserve">
+				<source>Über folgenden Link kannst Du Dein Passwort zurücksetzen:</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

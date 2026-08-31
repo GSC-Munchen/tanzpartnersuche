@@ -1,0 +1,93 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:layout name="Module" />
+<f:section name="Content">
+
+    <h1><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:backend_edit_title" /></h1>
+
+    <f:form action="update" name="edit" additionalAttributes="{role: 'form'}">
+        <f:form.hidden name="uid" value="{editUser.uid}" />
+
+        <div class="form-group">
+            <label for="username"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_username" /></label>
+            <f:form.textfield name="username" value="{editUser.username}" id="username" class="form-control" required="TRUE" />
+        </div>
+
+        <div class="form-group">
+            <label for="email"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_email" /></label>
+            <f:form.textfield type="email" name="email" value="{editUser.email}" id="email" class="form-control" required="TRUE" />
+        </div>
+
+        <div class="form-group">
+            <label for="height"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_height" /></label>
+            <f:form.textfield type="number" name="height" value="{editUser.height}" id="height" class="form-control" required="TRUE" />
+        </div>
+
+        <div class="form-group">
+            <label for="age"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_age" /></label>
+            <f:form.textfield type="number" name="age" value="{editUser.age}" id="age" class="form-control" required="TRUE" />
+        </div>
+
+        <div class="form-group">
+            <label for="gender"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_gender" /></label>
+            <f:form.select name="gender" id="gender" value="{editUser.gender}" class="form-control">
+                <f:form.select.option value="1"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:gender-woman" /></f:form.select.option>
+                <f:form.select.option value="2"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:gender-man" /></f:form.select.option>
+            </f:form.select>
+        </div>
+
+        <div class="form-group">
+            <label for="role"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_role" /></label>
+            <f:form.select name="role" id="role" value="{editUser.role}" class="form-control">
+                <f:form.select.option value="1"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:role-00" /></f:form.select.option>
+                <f:form.select.option value="2"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:role-01" /></f:form.select.option>
+            </f:form.select>
+        </div>
+
+        <div class="form-group">
+            <label for="category"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_category" /></label>
+            <f:form.select name="category" id="category" value="{editUser.category}" class="form-control">
+                <f:form.select.option value="1"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:category-00" /></f:form.select.option>
+                <f:form.select.option value="2"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:category-01" /></f:form.select.option>
+                <f:form.select.option value="3"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:category-02" /></f:form.select.option>
+            </f:form.select>
+        </div>
+
+        <div class="form-group">
+            <label for="level"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_level" /></label>
+            <f:form.select name="level" id="level" value="{editUser.level}" class="form-control">
+                <f:form.select.option value="1"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-00" /></f:form.select.option>
+                <f:form.select.option value="2"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-01" /></f:form.select.option>
+                <f:form.select.option value="3"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-02" /></f:form.select.option>
+                <f:form.select.option value="4"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-03" /></f:form.select.option>
+                <f:form.select.option value="5"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-04" /></f:form.select.option>
+                <f:form.select.option value="6"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-05" /></f:form.select.option>
+                <f:form.select.option value="7"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-06" /></f:form.select.option>
+                <f:form.select.option value="8"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-07" /></f:form.select.option>
+            </f:form.select>
+        </div>
+
+        <div class="form-group">
+            <label for="bio"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_bio" /></label>
+            <f:form.textarea name="bio" value="{editUser.bio}" id="bio" class="form-control" rows="6" />
+        </div>
+
+        <div class="form-check">
+            <f:form.checkbox name="hidden" value="1" checked="{editUser.hidden}" id="hidden" class="form-check-input" />
+            <label for="hidden" class="form-check-label"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:backend_status_pending" /></label>
+        </div>
+
+        <p>
+            <f:form.submit value="{f:translate(key: 'LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:backend_save')}" class="btn btn-primary" />
+            <f:link.action action="index" class="btn btn-default">
+                <f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:btn_cancel" />
+            </f:link.action>
+        </p>
+    </f:form>
+
+</f:section>
+</html>

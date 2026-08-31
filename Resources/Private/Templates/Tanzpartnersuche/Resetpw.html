@@ -1,0 +1,23 @@
+<html
+    lang="de"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+<!-- Templates/Resetpw.html -->
+    <div class="extension_frame">
+        <h1><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:resetpwTitle" /></h1>
+
+        <p><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:resetpwIntro" /></p>
+
+        <f:flashMessages />
+
+        <f:form action="sendreset" additionalAttributes="{role:'form'}">
+        <f:render partial="Tanzpartnersuche/ResetpwFields" />
+        <f:form.submit class="tpsbutton" value="Absenden" />
+        </f:form>
+
+        <f:link.action action="main" class="tpsbutton alignright"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:btn_cancel" /></f:link.action>
+    </div>
+
+</html>

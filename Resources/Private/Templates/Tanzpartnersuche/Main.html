@@ -1,0 +1,53 @@
+<html 
+    lang="de"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+<!-- Templates/Main.html -->
+    <div class="extension_frame">
+        <h1><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:mainTitle" /></h1>
+
+        <p><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:mainIntro" /></p>
+
+        <f:flashMessages />
+
+        <p><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:mainDescription" /></p>
+
+        <f:if condition="{isLoggedIn}">
+            <p>
+                <f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:mainLoggedInAs" />
+                <strong>{loggedInUsername}</strong>
+                &#183;
+                <f:link.action action="loggedin"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:menuMyAccount" /></f:link.action>
+                &#183;
+                <f:link.action action="logout"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:menuLogout" /></f:link.action>
+            </p>
+        </f:if>
+
+        <div id="appmenu" class="appmenu">
+        <f:link.action action="search" class="tile yellow">
+            <div class="info"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:menuSearch" /></div>
+            <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/find.png" width="50px" height="50px" />
+            <h4 class="fittext"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:menuSearchDetail" /></h4>
+        </f:link.action>
+        <f:link.action action="help" class="tile">
+            <div class="info"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:menuHelp" /></div>
+            <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/docs.png" width="50px" height="50px" />
+            <h4 class="fittext"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:menuHelpDetail" /></h4>
+        </f:link.action>
+        <f:link.action action="new" class="tile">
+            <div class="info"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:menuNew" /></div>
+            <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/signup.png" width="50px" height="50px" />
+            <h4 class="fittext"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:menuNewDetail" /></h4>
+        </f:link.action>
+        <f:link.action action="login" class="tile">
+            <div class="info"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:menuLogin" /></div>
+            <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/login.png" width="50px" height="50px" />
+            <h4 class="fittext"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:menuLoginDetail" /></h4>
+        </f:link.action>
+        </div>
+
+    </div>
+
+</html>

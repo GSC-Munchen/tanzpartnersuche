@@ -1,0 +1,6 @@
+page = PAGE
+page {
+    includeCSS {
+        custom_theme = EXT:tanzpartnersuche/Resources/Public/Css/basic.css
+    }
+}

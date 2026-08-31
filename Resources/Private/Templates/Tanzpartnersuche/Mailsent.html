@@ -1,0 +1,45 @@
+<html
+    lang="de"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+<!-- Templates/MailSent.html -->
+    <div class="extension_frame">
+        <h1><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:detailTitle" /></h1>
+
+        <f:flashMessages />
+
+        <p>Hallo {sender}</p>
+
+        <p>Du hast die folgende Nachricht erfolgreich verschickt:</p>
+
+        <f:if condition="{sender}">
+            <div class="mailbox" style="margin-bottom: 20px; padding-left: 20px;">
+                <p><strong>Empfänger:</strong> {recipientName}</p>
+                <p><strong>Absender:</strong> {sender} ({sendermail})</p>
+                <p><strong>Nachricht:</strong></p>
+                <p><f:format.nl2br>{message}</f:format.nl2br></p>
+            </div>
+
+            <p>Bitte beachte, dass jede weitere Kommunikation nun nicht mehr über unsere Plattform, sondern direkt über E-Mail erfolgt.</p>
+
+            <p>Besten Dank für die Nutzung der Tanzpartnersuche und viel Erfolg!<br/>
+            Gelb-Schwarz-Casino München e.V.</p>
+        </f:if>
+
+        <f:link.action action="search" class="tpsbutton alignright" arguments="{
+            myGender:myGender,
+            searchRole:searchRole,
+            searchCategory:searchCategory,
+            level01:level01,
+            level02:level02,
+            level03:level03,
+            level04:level04,
+            level05:level05,
+            level06:level06,
+            level07:level07,
+            level08:level08
+        }"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:btn_back" /></f:link.action>
+    </div>
+</html>

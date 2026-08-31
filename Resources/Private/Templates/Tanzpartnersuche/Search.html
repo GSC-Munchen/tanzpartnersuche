@@ -1,0 +1,189 @@
+<html 
+    lang="de"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+<!-- Templates/Search.html -->
+    <div class="extension_frame">
+        <h1><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:searchTitle" /></h1>
+
+        <p><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:searchIntro" /></p>
+
+        <div id="searchform">
+        <f:form action="search" additionalAttributes="{role:'form'}">
+            <f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:searchIam" />
+            <div class="radio-mini">
+            <div class="radio-tile-group">
+                <div class="input-container">
+                <f:form.radio name="myGender" property="myGender" value="1" checked="{myGender} == 1" class="radio-button" />
+                <div class="radio-tile">
+                    <label for="woman" class="radio-tile-label"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:gender-woman" /></label>
+                </div>
+                </div>       
+                <div class="input-container">
+                <f:form.radio name="myGender" property="myGender" value="2" checked="{myGender} == 2" class="radio-button" />
+                <div class="radio-tile">
+                    <label for="man" class="radio-tile-label"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:gender-man" /></label>
+                </div>
+                </div>
+            </div>
+            </div>
+    <hr />
+            <f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:searchIsearch" />
+            <div class="radio-mini">
+            <div class="radio-tile-group">
+                <div class="input-container">
+                <f:form.radio name="searchRole" property="searchRole" value="1" checked="{searchRole} == 1" class="radio-button" />
+                <div class="radio-tile">
+                    <label for="woman" class="radio-tile-label"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:role-00" /></label>
+                </div>
+                </div>       
+                <div class="input-container">
+                <f:form.radio name="searchRole" property="searchRole" value="2" checked="{searchRole} == 2" class="radio-button" />
+                <div class="radio-tile">
+                    <label for="man" class="radio-tile-label"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:role-01" /></label>
+                </div>
+                </div>
+            </div>
+            </div>
+    <hr />
+            <f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:searchfor" />
+            <div class="radio-mini">
+            <div class="radio-tile-group">
+                <div class="input-container">
+                <f:form.radio name="searchCategory" property="searchCategory" value="1" checked="{searchCategory} == 1" class="radio-button" />
+                <div class="radio-tile">
+                    <label for="latin" class="radio-tile-label"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:category-00" /></label>
+                </div>
+                </div>       
+                <div class="input-container">
+                <f:form.radio name="searchCategory" property="searchCategory" value="2" checked="{searchCategory} == 2" class="radio-button" />
+                <div class="radio-tile">
+                    <label for="standard" class="radio-tile-label"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:category-01" /></label>
+                </div>
+                </div>
+                <div class="input-container">
+                <f:form.radio name="searchCategory" property="searchCategory" value="3" checked="{searchCategory} == 3" class="radio-button" />
+                <div class="radio-tile">
+                    <label for="10dance" class="radio-tile-label"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:category-02" /></label>
+                </div>
+                </div>
+            </div>
+            </div>
+    <hr />
+            <f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:searchLevel" />
+            <fieldset class="checkbox-group">
+            <div class="checkbox">
+                <label class="checkbox-wrapper">
+                <f:form.checkbox name="level01" property="level01" checked="{level01}" value="1" class="checkbox-input" />
+                <span class="checkbox-tile">
+                    <span class="checkbox-label"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-00" /></span>
+                </span>
+                </label>
+            </div>
+            <div class="checkbox">
+                <label class="checkbox-wrapper">
+                <f:form.checkbox name="level02" property="level02" checked="{level02}" value="2" class="checkbox-input" />
+                <span class="checkbox-tile">
+                    <span class="checkbox-label"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-01" /></span>
+                </span>
+                </label>
+            </div>
+                <div class="checkbox">
+                <label class="checkbox-wrapper">
+                <f:form.checkbox name="level03" property="level03" checked="{level03}" value="3" class="checkbox-input" />
+                <span class="checkbox-tile">
+                    <span class="checkbox-label"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-02" /></span>
+                </span>
+                </label>
+            </div>
+                <div class="checkbox">
+                <label class="checkbox-wrapper">
+                <f:form.checkbox name="level04" property="level04" checked="{level04}" value="4" class="checkbox-input" />
+                <span class="checkbox-tile">
+                    <span class="checkbox-label"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-03" /></span>
+                </span>
+                </label>
+            </div>
+                <div class="checkbox">
+                <label class="checkbox-wrapper">
+                <f:form.checkbox name="level05" property="level05" checked="{level05}" value="5" class="checkbox-input" />
+                <span class="checkbox-tile">
+                    <span class="checkbox-label"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-04" /></span>
+                </span>
+                </label>
+            </div>
+                <div class="checkbox">
+                <label class="checkbox-wrapper">
+                <f:form.checkbox name="level06" property="level06" checked="{level06}" value="6" class="checkbox-input" />
+                <span class="checkbox-tile">
+                    <span class="checkbox-label"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-05" /></span>
+                </span>
+                </label>
+            </div>
+                <div class="checkbox">
+                <label class="checkbox-wrapper">
+                <f:form.checkbox name="level07" property="level07" checked="{level07}" value="7" class="checkbox-input" />
+                <span class="checkbox-tile">
+                    <span class="checkbox-label"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-06" /></span>
+                </span>
+                </label>
+            </div>
+                <div class="checkbox">
+                <label class="checkbox-wrapper">
+                <f:form.checkbox name="level08" property="level08" checked="{level08}" value="8" class="checkbox-input" />
+                <span class="checkbox-tile">
+                    <span class="checkbox-label"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-07" /></span>
+                </span>
+                </label>
+            </div>
+            </fieldset>
+    <hr />
+            <div class="centerbutton">
+            <f:form.submit value="Suche starten" />
+            </div>
+        </f:form>
+        </div>
+    <hr />
+
+        <div id="searchlist">
+            <f:render partial="Tanzpartnersuche/Searchlist" arguments="{
+                users:users,
+                myGender:myGender,
+                searchRole:searchRole,
+                searchCategory:searchCategory,
+                level01:level01,
+                level02:level02,
+                level03:level03,
+                level04:level04,
+                level05:level05,
+                level06:level06,
+                level07:level07,
+                level08:level08
+            }" />
+        </div>
+
+        <f:if condition="{users}">
+        <f:then></f:then>
+        <f:else>
+            <f:if condition="{myGender} || {searchRole} || {searchCategory} || {level01} || {level02} || {level03} || {level04} || {level05} || {level06} || {level07} || {level08}">
+            <!-- no match in database found, inform user accordingly -->
+            <f:then><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:error_notfound" /></f:then>
+            <!-- no filter criterias set, inform user accordingly -->
+            <f:else><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:error_missingfilter" /></f:else>
+            </f:if>
+        
+        </f:else>
+        
+        </f:if>
+
+        <!-- if a selection via radio button was already done, scroll to result list via javascript -->
+        <f:if condition="{myGender} || {searchRole} || {searchCategory} || {level01} || {level02} || {level03} || {level04} || {level05} || {level06} || {level07} || {level08}">
+        <f:then><script src="{f:uri.resource(path: 'JavaScript/search.js')}"></script></f:then>
+        </f:if>
+        
+        <f:link.action action="main" class="tpsbutton alignright spacer-bottom30"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:btn_back" /></f:link.action>
+    
+    </div>
+</html>

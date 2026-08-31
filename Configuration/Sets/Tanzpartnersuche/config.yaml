@@ -1,0 +1,4 @@
+name: gsc/tanzpartnersuche
+label: 'Tanzpartnersuche'
+dependencies:
+  - bootstrap-package/full

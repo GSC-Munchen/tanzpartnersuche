@@ -1,0 +1,14 @@
+{namespace gsc = GSC\Tanzpartnersuche\ViewHelpers}
+
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<label for="email">
+		<f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_email" />
+	</label><br />
+		<f:form.textfield property="email" name="email" id="email" required="TRUE"/><br />
+		<f:render partial="FormFieldErrors" arguments="{field: 'loginTanzpartnersuche.email'}" />
+	<label for="password">
+		<f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_password" />
+	</label><br />
+		<f:form.password property="password" name="password" id="password" /><br />
+		<f:render partial="FormFieldErrors" arguments="{field: 'loginTanzpartnersuche.password'}" />
+</html>

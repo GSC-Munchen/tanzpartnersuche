@@ -1,0 +1,212 @@
+<html 
+    lang="de"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+<!-- Templates/Search.html -->
+    <div class="extension_frame">
+        <h1><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:detailTitle" />: {user.username}</h1>
+
+        <f:flashMessages />
+
+        <div class="tanzpartnersuche">
+        <div class="container profil">       
+            <div class="row justify-content-start">
+                <div class="col-xs-12">
+                    <f:if condition="{user.category} == 1">
+                        <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/profil_latein.png" class="img-fluid" width="999" />      
+                    </f:if>
+                    <f:if condition="{user.category} == 2">
+                        <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/profil_standard.png" class="img-fluid" width="999" />
+                    </f:if>
+                    <f:if condition="{user.category} == 3">
+                        <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/profil_latein+standard.png" class="img-fluid" width="999" />
+                    </f:if>
+                    <div class="tps_user-profile">
+                        <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/avatar-GSC.png" />
+                        <div class="tps_user-details">
+                        {user.username}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-start">
+                <div class="col-xs-12 col-sm-6 pborder" style="display: flex; flex-direction: column;">
+                    <div class="row" style="margin-top: 20px; margin-left: 0px; margin-right: 0px;">
+                        <div class="col spacer-bottom30">
+                            {user.bio}
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-sm-1 spacer10">
+                            <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/age.png" />
+                        </div>
+                        <div class="col-sm-3 spacer10">Alter:</div>
+                        <div class="col-sm-7 spacer10">
+                            {user.age} Jahre
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-sm-1 spacer10">
+                            <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/height.png" />
+                            
+                        </div>
+                        <div class="col-sm-3 spacer10">Größe:</div>
+                        <div class="col-sm-7 spacer10">
+                            {user.height} cm
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-sm-1 spacer10">
+                            <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/age.png" />
+                        </div>
+                        <div class="col-sm-3 spacer10">Geschlecht:</div>
+                        <div class="col-sm-7 spacer10">
+                            <f:form.select name="gender" value="{user.gender}" id="gender" class="selreadonly" disabled="TRUE">
+                                <f:form.select.option value="1"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:gender-female" />&nbsp;&nbsp;</f:form.select.option>
+                                <f:form.select.option value="2"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:gender-male" />&nbsp;&nbsp;</f:form.select.option>
+                            </f:form.select>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-sm-1 spacer10">
+                            <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/level.png" />  
+                        </div>
+                        <div class="col-sm-3 spacer10">Niveau:</div>
+                        <div class="col-sm-7 spacer10">
+                            <f:form.select name="level" value="{user.level}" id="level" class="selreadonly" disabled="TRUE">
+                                <f:form.select.option value="1"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-00" />&nbsp;&nbsp;</f:form.select.option>
+                                <f:form.select.option value="2"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-01" />&nbsp;&nbsp;</f:form.select.option>
+                                <f:form.select.option value="3"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-02" />&nbsp;&nbsp;</f:form.select.option>
+                                <f:form.select.option value="4"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-03" />&nbsp;&nbsp;</f:form.select.option>
+                                <f:form.select.option value="5"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-04" />&nbsp;&nbsp;</f:form.select.option>
+                                <f:form.select.option value="6"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-05" />&nbsp;&nbsp;</f:form.select.option>
+                                <f:form.select.option value="7"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-06" />&nbsp;&nbsp;</f:form.select.option>
+                                <f:form.select.option value="8"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-07" />&nbsp;&nbsp;</f:form.select.option>
+	                        </f:form.select>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-sm-1 spacer10">
+                            <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/discipline.png" />
+                        </div>
+                        <div class="col-sm-3 spacer10">Diszplin:</div>
+                        <div class="col-sm-7 spacer10">
+                            <f:form.select name="category" value="{user.category}" id="category" class="selreadonly" disabled="TRUE">
+                                <f:form.select.option value="1"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:category-00" />&nbsp;&nbsp;</f:form.select.option>
+                                <f:form.select.option value="2"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:category-01" />&nbsp;&nbsp;</f:form.select.option>
+                                <f:form.select.option value="3"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:category-02" />&nbsp;&nbsp;</f:form.select.option>
+                            </f:form.select>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-sm-1 spacer10">
+                            <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/search.png" />
+                        </div>
+                        <div class="col-sm-3 spacer10">Suche:</div>
+                        <div class="col-sm-7 spacer10">
+                            <f:form.select name="role" value="{user.role}" id="role" class="selreadonly" disabled="TRUE">
+                                <f:form.select.option value="1"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:role-00" />&nbsp;&nbsp;</f:form.select.option>
+                                <f:form.select.option value="2"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:role-01" />&nbsp;&nbsp;</f:form.select.option>
+                            </f:form.select>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-sm-1 spacer10">
+                            <f:image src="EXT:tanzpartnersuche/Resources/Public/Images/clock.png" />
+                        </div>
+                        <div class="col-sm-3 spacer10">Eintrag:</div>
+                        <div class="col-sm-7 spacer10">
+                            <f:format.date format="d.m.Y">{user.created}</f:format.date>
+                        </div>
+                        <div class="w-100"></div>
+                        <br />
+
+                    </div>
+                    <div style="margin-top: auto; padding-top: 15px;">
+                        <f:link.action action="search" class="tpsbutton" arguments="{
+                            myGender:myGender,
+                            searchRole:searchRole,
+                            searchCategory:searchCategory,
+                            level01:level01,
+                            level02:level02,
+                            level03:level03,
+                            level04:level04,
+                            level05:level05,
+                            level06:level06,
+                            level07:level07,
+                            level08:level08
+                        }"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:btn_back" /></f:link.action>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 pborder mailbox">
+                    <div style="margin-top: 20px; margin-left: 0px; margin-right: 0px;">
+                        
+                        <f:form action="mail" additionalAttributes="{novalidate:'novalidate'}">
+                        
+                            <label for="sender">
+                                Name des Absenders
+                            </label><br />
+                            <f:form.textfield name="sender" value="{sender}" required="TRUE" /><br />
+                            <f:if condition="{mailErrors.sender}">
+                                <p class="text-danger">{mailErrors.sender}</p>
+                            </f:if>
+
+                            <label for="sendermail">
+                                E-Mail des Absenders
+                            </label><br />
+                            <f:form.textfield type="email" name="sendermail" value="{sendermail}" required="TRUE" /><br />
+                            <f:if condition="{mailErrors.sendermail}">
+                                <p class="text-danger">{mailErrors.sendermail}</p>
+                            </f:if>
+                        
+                            <label for="username">
+                                Empfänger
+                            </label><br />
+                            <f:form.textfield name="username" id="username" value="{user.username}" class="freadonly" readonly="TRUE" /><br />
+                        
+                            <label for="subject">
+                                Betreff
+                            </label><br />
+                            <f:form.textfield name="subject" id="subject" value="Tanzpartnersuche des GSC München: Kontaktanfrage" class="freadonly" readonly="TRUE" /><br />
+                        
+                            <label for="message">
+                                Nachricht
+                            </label><br />
+                            <f:form.textarea rows="5" cols="83" name="message" value="{message}" required="TRUE" /> <br/>
+                            <f:if condition="{mailErrors.message}">
+                                <p class="text-danger">{mailErrors.message}</p>
+                            </f:if>
+
+                            <f:form.hidden name="recipientUid" value="{recipientUid}" /><br />
+
+                            <f:form.hidden name="myGender" value="{myGender}" />
+                            <f:form.hidden name="searchRole" value="{searchRole}" />
+                            <f:form.hidden name="searchCategory" value="{searchCategory}" />
+                            <f:form.hidden name="level01" value="{level01}" />
+                            <f:form.hidden name="level02" value="{level02}" />
+                            <f:form.hidden name="level03" value="{level03}" />
+                            <f:form.hidden name="level04" value="{level04}" />
+                            <f:form.hidden name="level05" value="{level05}" />
+                            <f:form.hidden name="level06" value="{level06}" />
+                            <f:form.hidden name="level07" value="{level07}" />
+                            <f:form.hidden name="level08" value="{level08}" />
+
+                            <p>Mir ist bekannt, dass das Gelb-Schwarz-Casino München e.V. die hier eingegebenen Daten, insbesondere die personenbezogenen,
+							nicht verarbeitet, sondern lediglich die Plattform zur Versendung der Kontaktanfrage an das hier hinterlegte Profil zur 
+							Verfügung stellt. <br /><br />
+
+							Alle weitere Kommunikation und Antworten auf Deine Anfrage finden über normalen E-Mail-Verkehr außerhalb der von uns 
+							bereitgestellten Plattform statt. <br /><br />
+
+							Des Weiteren ist mir bekannt, dass die Anfrage per E-Mail an das hier hinterlegte Profil erfolgen wird. Die 
+							E-Mail Kommunikation findet unverschlüsselt statt und liegt außerhalb unseres Einflussbereiches. <br /><br />
+
+							Mit dem Versenden erkenne ich die  Einhaltung unserer Nutzungsbedingungen ausdrücklich an.
+							Unsere Datenschutzbestimmungen sind über den Link unten rechts auf jeder Webseite abrufbar.<br /><br />
+                            </p>
+                            <f:form.submit value="Senden" />
+                        </f:form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+    </div>
+    </div>
+</html>

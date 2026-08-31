@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+    <label for="username">
+	    <f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_username" />
+    </label><br />
+	<f:form.textfield property="username" name="username" id="username" required="TRUE"/><br />
+	<f:render partial="FormFieldErrors" arguments="{field: 'verifyTanzpartnersuche.username'}" />
+    <label for="email">
+	    <f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_email" />
+    </label><br />
+	<f:form.textfield property="email" name="email" id="email" required="TRUE"/><br />
+	<f:render partial="FormFieldErrors" arguments="{field: 'verifyTanzpartnersuche.email'}" />
+    <label for="verificationcode">
+	    <f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_verificationcode" />
+    </label><br />
+	<f:form.textfield property="verificationcode" name="verificationcode" id="verificationcode" required="TRUE"/><br />
+	<f:render partial="FormFieldErrors" arguments="{field: 'verifyTanzpartnersuche.verificationcode'}" /><br />
+    <br />
+</html>

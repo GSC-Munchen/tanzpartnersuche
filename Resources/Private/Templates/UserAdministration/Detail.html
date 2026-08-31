@@ -1,0 +1,139 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+    xmlns:tp="http://typo3.org/ns/Gsc/Tanzpartnersuche/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:layout name="Module" />
+<f:section name="Content">
+
+    <h1><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:backend_detail_title" /></h1>
+
+    <p>
+        <a href="{f:uri.action(action: 'index')}" class="btn btn-default btn-sm">
+            <core:icon identifier="actions-view-go-back" size="small" />
+            <f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:backend_detail_back" />
+        </a>
+    </p>
+
+    <div class="table-fit">
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <th><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_username" /></th>
+                    <td>{user.username}</td>
+                </tr>
+                <tr>
+                    <th><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_email" /></th>
+                    <td>
+                        <f:if condition="{isSystemMaintainer}">
+                            <f:then>{user.email}</f:then>
+                            <f:else><tp:maskEmail email="{user.email}" /></f:else>
+                        </f:if>
+                    </td>
+                </tr>
+                <tr>
+                    <th><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_height" /></th>
+                    <td>{user.height}</td>
+                </tr>
+                <tr>
+                    <th><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_age" /></th>
+                    <td>{user.age}</td>
+                </tr>
+                <tr>
+                    <th><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_gender" /></th>
+                    <td>
+                        <f:switch expression="{user.gender}">
+                            <f:case value="1"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:gender-woman" /></f:case>
+                            <f:case value="2"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:gender-man" /></f:case>
+                            <f:defaultCase>-</f:defaultCase>
+                        </f:switch>
+                    </td>
+                </tr>
+                <tr>
+                    <th><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_role" /></th>
+                    <td>
+                        <f:switch expression="{user.role}">
+                            <f:case value="1"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:role-00" /></f:case>
+                            <f:case value="2"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:role-01" /></f:case>
+                            <f:defaultCase>-</f:defaultCase>
+                        </f:switch>
+                    </td>
+                </tr>
+                <tr>
+                    <th><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_category" /></th>
+                    <td>
+                        <f:switch expression="{user.category}">
+                            <f:case value="1"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:category-00" /></f:case>
+                            <f:case value="2"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:category-01" /></f:case>
+                            <f:case value="3"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:category-02" /></f:case>
+                            <f:defaultCase>-</f:defaultCase>
+                        </f:switch>
+                    </td>
+                </tr>
+                <tr>
+                    <th><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_level" /></th>
+                    <td>
+                        <f:switch expression="{user.level}">
+                            <f:case value="1"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-00" /></f:case>
+                            <f:case value="2"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-01" /></f:case>
+                            <f:case value="3"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-02" /></f:case>
+                            <f:case value="4"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-03" /></f:case>
+                            <f:case value="5"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-04" /></f:case>
+                            <f:case value="6"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-05" /></f:case>
+                            <f:case value="7"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-06" /></f:case>
+                            <f:case value="8"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:level-07" /></f:case>
+                            <f:defaultCase>-</f:defaultCase>
+                        </f:switch>
+                    </td>
+                </tr>
+                <tr>
+                    <th><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_bio" /></th>
+                    <td>
+                        <f:if condition="{user.bio}">
+                            <f:then><f:format.nl2br>{user.bio}</f:format.nl2br></f:then>
+                            <f:else>-</f:else>
+                        </f:if>
+                    </td>
+                </tr>
+                <tr>
+                    <th><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:backend_status" /></th>
+                    <td>
+                        <f:if condition="{user.hidden}">
+                            <f:then>
+                                <span class="badge badge-warning"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:backend_status_pending" /></span>
+                            </f:then>
+                            <f:else>
+                                <span class="badge badge-success"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:backend_status_verified" /></span>
+                            </f:else>
+                        </f:if>
+                    </td>
+                </tr>
+                <tr>
+                    <th><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:db_loggedin" /></th>
+                    <td>
+                        <f:if condition="{user.loggedin}">
+                            <f:then><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:backend_yes" /></f:then>
+                            <f:else><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:backend_no" /></f:else>
+                        </f:if>
+                    </td>
+                </tr>
+                <tr>
+                    <th><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:backend_detail_created_at" /></th>
+                    <td><f:format.date format="d.m.Y H:i">{user.created}</f:format.date></td>
+                </tr>
+                <tr>
+                    <th><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:backend_detail_changed_at" /></th>
+                    <td><f:format.date format="d.m.Y H:i">{user.changed}</f:format.date></td>
+                </tr>
+                <tr>
+                    <th><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:backend_detail_visible_until" /></th>
+                    <td><f:format.date format="d.m.Y H:i">{user.visibleUntil}</f:format.date></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</f:section>
+</html>

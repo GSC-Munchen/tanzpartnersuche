@@ -1,0 +1,31 @@
+<html 
+    lang="de"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+<!-- Templates/New.html -->
+    <div class="extension_frame">
+        <h1><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:newTitle" /></h1>
+        
+        <p><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:newIntro" /></p>
+
+        <f:flashMessages />
+
+        <!-- progress bar -->
+        <ul id="progressbar">
+        <li class="active"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:newStep1" /></li>
+        <li><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:newStep2" /></li>
+        <li><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:newStep3" /></li>
+        </ul>
+
+        <f:form action="create" name="newTanzpartnersuche" object="{newTanzpartnersuche}" additionalAttributes="{role:'form'}">   <!-- create -->
+        <f:render partial="Tanzpartnersuche/RegisterFields" />
+        <p><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:newDescription" /></p>
+        <f:form.submit class="tpsbutton" value="Eintrag erstellen" />
+        </f:form>
+
+        <f:link.action action="main" class="tpsbutton alignright"><f:translate key="LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:btn_cancel" /></f:link.action>
+    </div>
+    
+</html>
