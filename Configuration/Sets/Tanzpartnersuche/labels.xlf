@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="EXT:tanzpartnersuche/Configuration/Sets/Tanzpartnersuche/labels.xlf" date="2026-09-01T00:00:00Z" product-name="tanzpartnersuche">
+    <header/>
+    <body>
+      <trans-unit id="categories.tanzpartnersuche">
+        <source>Tanzpartnersuche</source>
+        <target>Tanzpartnersuche</target>
+      </trans-unit>
+      <trans-unit id="settings.tanzpartnersuche.sessionTimeoutMinutes">
+        <source>Session timeout (minutes)</source>
+        <target>Session-Timeout (Minuten)</target>
+      </trans-unit>
+      <trans-unit id="settings.description.tanzpartnersuche.sessionTimeoutMinutes">
+        <source>Duration of inactivity after which a logged-in user's frontend session expires.</source>
+        <target>Zeitspanne der Inaktivität, nach der die Frontend-Session eines eingeloggten Nutzers abläuft.</target>
+      </trans-unit>
+      <trans-unit id="settings.tanzpartnersuche.surveyRecipient">
+        <source>Survey/notification recipient</source>
+        <target>Empfänger für Umfrage- und Profilbenachrichtigungen</target>
+      </trans-unit>
+      <trans-unit id="settings.description.tanzpartnersuche.surveyRecipient">
+        <source>Email address that receives new-profile, updated-profile and account-deletion-survey notifications.</source>
+        <target>E-Mail-Adresse, an die Benachrichtigungen über neue/geänderte Profile sowie die Lösch-Umfrage gesendet werden.</target>
+      </trans-unit>
+      <trans-unit id="settings.tanzpartnersuche.impressumUrl">
+        <source>Imprint URL</source>
+        <target>Impressum-URL</target>
+      </trans-unit>
+      <trans-unit id="settings.description.tanzpartnersuche.impressumUrl">
+        <source>URL to the imprint page, included in the footer of outgoing emails.</source>
+        <target>URL zur Impressum-Seite, wird im Footer ausgehender E-Mails verlinkt.</target>
+      </trans-unit>
+      <trans-unit id="settings.tanzpartnersuche.verificationValidityMinutes">
+        <source>Verification code validity (minutes)</source>
+        <target>Gültigkeitsdauer Verifizierungscode (Minuten)</target>
+      </trans-unit>
+      <trans-unit id="settings.description.tanzpartnersuche.verificationValidityMinutes">
+        <source>Duration after registration during which the emailed verification code remains valid.</source>
+        <target>Zeitspanne nach der Registrierung, in der der per E-Mail versendete Verifizierungscode gültig bleibt.</target>
+      </trans-unit>
+      <trans-unit id="settings.tanzpartnersuche.resetValidityMinutes">
+        <source>Password reset link validity (minutes)</source>
+        <target>Gültigkeitsdauer Passwort-Reset-Link (Minuten)</target>
+      </trans-unit>
+      <trans-unit id="settings.description.tanzpartnersuche.resetValidityMinutes">
+        <source>Duration during which an emailed password reset link remains valid.</source>
+        <target>Zeitspanne, in der ein per E-Mail versendeter Passwort-Reset-Link gültig bleibt.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,24 @@
+categories:
+  tanzpartnersuche: ~
+
+settings:
+  tanzpartnersuche.sessionTimeoutMinutes:
+    type: int
+    default: 30
+    category: tanzpartnersuche
+  tanzpartnersuche.surveyRecipient:
+    type: string
+    default: 'webservice@gsc-muenchen.de'
+    category: tanzpartnersuche
+  tanzpartnersuche.impressumUrl:
+    type: url
+    default: 'https://www.gsc-muenchen.de/impressum'
+    category: tanzpartnersuche
+  tanzpartnersuche.verificationValidityMinutes:
+    type: int
+    default: 2880
+    category: tanzpartnersuche
+  tanzpartnersuche.resetValidityMinutes:
+    type: int
+    default: 120
+    category: tanzpartnersuche

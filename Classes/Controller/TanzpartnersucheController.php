@@ -23,7 +23,6 @@ class TanzpartnersucheController extends ActionController {
     private const LANGUAGE_FILE = 'LLL:EXT:tanzpartnersuche/Resources/Private/Language/de.tanzpartnersuche.xlf:';
     private const SESSION_KEY = 'tx_tanzpartnersuche_userId';
     private const SESSION_ACTIVITY_KEY = 'tx_tanzpartnersuche_lastActivity';
-    private const SESSION_TIMEOUT_SECONDS = 30 * 60;
 
     private const GENDER_VALUES = [1, 2];
     private const CATEGORY_VALUES = [1, 2, 3];
@@ -47,12 +46,6 @@ class TanzpartnersucheController extends ActionController {
         5 => 'deleteSurveyReason5',
         6 => 'deleteSurveyReason6',
     ];
-    private const SURVEY_RECIPIENT = 'webservice@gsc-muenchen.de';
-    private const IMPRESSUM_URL = 'https://www.gsc-muenchen.de/impressum';
-
-    private const VERIFICATION_VALIDITY_SECONDS = 48 * 3600;
-    private const RESET_VALIDITY_SECONDS = 2 * 3600;
-
     // Wird von getLoggedInUser() gesetzt, sobald eine vorhandene Session wegen Inaktivität
     // verworfen wurde, damit redirectDueToLoginRequired() die passende Meldung anzeigen kann.
     private bool $sessionTimedOut = false;
@@ -252,6 +245,11 @@ class TanzpartnersucheController extends ActionController {
         $this->tanzpartnersucheRepository->add($newTanzpartnersuche);
         $this->persistenceManager->persistAll();
 
+        // Jede Neuregistrierung stößt zusätzlich die Bereinigung seit >9 Monaten inaktiver
+        // Profile an (Hard-Delete), damit dies auch ohne eingerichteten Scheduler-Task
+        // (siehe CleanupExpiredProfilesCommand) regelmäßig passiert.
+        $this->tanzpartnersucheRepository->removeExpiredProfiles();
+
         $this->sendVerificationMail($email, $username, $verificationcode);
         $this->sendProfileNotificationMail($newTanzpartnersuche, true);
 
@@ -287,7 +285,7 @@ class TanzpartnersucheController extends ActionController {
             && $code !== ''
             && $user->getVerificationcode() !== ''
             && hash_equals($user->getVerificationcode(), $code)
-            && (time() - $user->getCreated()) <= self::VERIFICATION_VALIDITY_SECONDS;
+            && (time() - $user->getCreated()) <= $this->verificationValiditySeconds();
 
         if (!$isValid) {
             $this->addFlashMessage($this->translate('error_verification_failed'), '', ContextualFeedbackSeverity::ERROR);
@@ -528,7 +526,7 @@ class TanzpartnersucheController extends ActionController {
         $emailBody .= $this->translate('mail_org_name')."\n";
 
         $mail = GeneralUtility::makeInstance(MailMessage::class);
-        $mail->setTo(self::SURVEY_RECIPIENT)
+        $mail->setTo($this->surveyRecipient())
             ->setSubject($this->translate('mail_survey_subject'))
             ->text($emailBody);
         $this->mailer->send($mail);
@@ -715,7 +713,7 @@ class TanzpartnersucheController extends ActionController {
             && $token !== ''
             && $user->getResetcode() !== ''
             && hash_equals($user->getResetcode(), $token)
-            && (time() - $user->getResetcodecreated()) <= self::RESET_VALIDITY_SECONDS;
+            && (time() - $user->getResetcodecreated()) <= $this->resetValiditySeconds();
 
         if (!$tokenValid) {
             $this->addFlashMessage($this->translate('error_reset_invalid'), '', ContextualFeedbackSeverity::ERROR);
@@ -748,7 +746,7 @@ class TanzpartnersucheController extends ActionController {
         // Inaktivitäts-Timeout: läuft die Session ab, wird sie sofort beendet und der Aufrufer
         // (via redirectDueToLoginRequired()) zeigt eine entsprechende Meldung statt eines stillen Logins-Redirects.
         $lastActivity = $frontendUser->getSessionData(self::SESSION_ACTIVITY_KEY);
-        if (!is_int($lastActivity) || (time() - $lastActivity) > self::SESSION_TIMEOUT_SECONDS) {
+        if (!is_int($lastActivity) || (time() - $lastActivity) > $this->sessionTimeoutSeconds()) {
             $frontendUser->setAndSaveSessionData(self::SESSION_KEY, null);
             $frontendUser->setAndSaveSessionData(self::SESSION_ACTIVITY_KEY, null);
             $this->sessionTimedOut = true;
@@ -912,6 +910,26 @@ class TanzpartnersucheController extends ActionController {
         return $value >= $min && $value <= $max;
     }
 
+    private function sessionTimeoutSeconds(): int {
+        return (int)($this->settings['sessionTimeoutMinutes'] ?? 30) * 60;
+    }
+
+    private function surveyRecipient(): string {
+        return (string)($this->settings['surveyRecipient'] ?? '');
+    }
+
+    private function impressumUrl(): string {
+        return (string)($this->settings['impressumUrl'] ?? '');
+    }
+
+    private function verificationValiditySeconds(): int {
+        return (int)($this->settings['verificationValidityMinutes'] ?? 2880) * 60;
+    }
+
+    private function resetValiditySeconds(): int {
+        return (int)($this->settings['resetValidityMinutes'] ?? 120) * 60;
+    }
+
     private function translate(string $key): string {
         return LocalizationUtility::translate(self::LANGUAGE_FILE . $key) ?? $key;
     }
@@ -929,7 +947,7 @@ class TanzpartnersucheController extends ActionController {
         $footer .= "---\n";
         $footer .= $this->translate('mail_footer_registergericht')."\n";
         $footer .= $this->translate('mail_footer_registernummer')."\n";
-        $footer .= self::IMPRESSUM_URL;
+        $footer .= $this->impressumUrl();
         return $footer;
     }
 
@@ -951,7 +969,7 @@ class TanzpartnersucheController extends ActionController {
         $emailBody .= $verifyUri."\n";
         $emailBody .= "--------------------------------------------------------------------------------------------------------------\n";
         $emailBody .= "\n";
-        $emailBody .= $this->translateFormat('mail_link_validity_line', (int)(self::VERIFICATION_VALIDITY_SECONDS / 3600))."\n";
+        $emailBody .= $this->translateFormat('mail_link_validity_line', (int)($this->verificationValiditySeconds() / 3600))."\n";
         $emailBody .= $this->translate('mail_ignore_if_not_requested')."\n";
         $emailBody .= "\n";
         $emailBody .= $this->translate('mail_closing_thanks')."\n";
@@ -965,7 +983,7 @@ class TanzpartnersucheController extends ActionController {
         $this->mailer->send($mail);
     }
 
-    // Benachrichtigt SURVEY_RECIPIENT über Neuanlage/Änderung eines Profils, mit einer
+    // Benachrichtigt surveyRecipient() über Neuanlage/Änderung eines Profils, mit einer
     // Zusammenfassung der Profildaten (ohne Passwort).
     private function sendProfileNotificationMail(Tanzpartnersuche $user, bool $isNew): void {
         $genderLabels = [1 => 'gender-female', 2 => 'gender-male'];
@@ -998,7 +1016,7 @@ class TanzpartnersucheController extends ActionController {
         $emailBody .= $this->translate('mail_org_name')."\n";
 
         $mail = GeneralUtility::makeInstance(MailMessage::class);
-        $mail->setTo(self::SURVEY_RECIPIENT)
+        $mail->setTo($this->surveyRecipient())
             ->setSubject($this->translate($isNew ? 'mail_new_profile_subject' : 'mail_updated_profile_subject'))
             ->text($emailBody);
         $this->mailer->send($mail);
@@ -1024,7 +1042,7 @@ class TanzpartnersucheController extends ActionController {
         $emailBody .= $resetUri."\n";
         $emailBody .= "--------------------------------------------------------------------------------------------------------------\n";
         $emailBody .= "\n";
-        $emailBody .= $this->translateFormat('mail_link_validity_line', (int)(self::RESET_VALIDITY_SECONDS / 3600))."\n";
+        $emailBody .= $this->translateFormat('mail_link_validity_line', (int)($this->resetValiditySeconds() / 3600))."\n";
         $emailBody .= $this->translate('mail_ignore_if_not_requested')."\n";
         $emailBody .= "\n";
         $emailBody .= $this->translate('mail_closing_thanks')."\n";

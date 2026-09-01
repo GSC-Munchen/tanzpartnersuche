@@ -22,8 +22,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 )]
 class CleanupExpiredProfilesCommand extends Command
 {
-    private const EXPIRY_THRESHOLD = '-9 months';
-
     public function __construct(
         private readonly TanzpartnersucheRepository $repository,
     ) {
@@ -32,16 +30,9 @@ class CleanupExpiredProfilesCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $threshold = new \DateTimeImmutable(self::EXPIRY_THRESHOLD);
-        $expiredProfiles = $this->repository->findOlderThan($threshold);
+        $count = $this->repository->removeExpiredProfiles();
 
-        $count = 0;
-        foreach ($expiredProfiles as $profile) {
-            $this->repository->removePermanently($profile);
-            $count++;
-        }
-
-        $output->writeln(sprintf('%d Profil(e) endgültig gelöscht (letzte Änderung vor %s).', $count, $threshold->format('Y-m-d')));
+        $output->writeln(sprintf('%d Profil(e) endgültig gelöscht (letzte Änderung vor mehr als 9 Monaten).', $count));
 
         return Command::SUCCESS;
     }

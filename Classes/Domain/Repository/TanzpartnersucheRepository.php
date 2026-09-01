@@ -127,4 +127,25 @@ class TanzpartnersucheRepository extends Repository
 
         return $query->execute();
     }
+
+    /**
+     * Löscht alle Profile endgültig, deren letzte Änderung mehr als 9 Monate zurückliegt
+     * (Hard-Delete, nicht nur "deleted"-Flag). Wird sowohl vom CleanupExpiredProfilesCommand
+     * (Scheduler) als auch bei jeder Neuregistrierung im Frontend aufgerufen (siehe
+     * TanzpartnersucheController::createAction()), damit die Bereinigung auch dann läuft,
+     * wenn kein Scheduler-Task eingerichtet ist.
+     */
+    public function removeExpiredProfiles(): int
+    {
+        $threshold = new \DateTimeImmutable('-9 months');
+        $expiredProfiles = $this->findOlderThan($threshold);
+
+        $count = 0;
+        foreach ($expiredProfiles as $profile) {
+            $this->removePermanently($profile);
+            $count++;
+        }
+
+        return $count;
+    }
 }

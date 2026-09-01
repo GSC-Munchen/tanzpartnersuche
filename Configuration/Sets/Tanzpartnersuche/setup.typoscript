@@ -4,3 +4,11 @@ page {
         custom_theme = EXT:tanzpartnersuche/Resources/Public/Css/basic.css
     }
 }
+
+plugin.tx_tanzpartnersuche.settings {
+    sessionTimeoutMinutes = {$tanzpartnersuche.sessionTimeoutMinutes}
+    surveyRecipient = {$tanzpartnersuche.surveyRecipient}
+    impressumUrl = {$tanzpartnersuche.impressumUrl}
+    verificationValidityMinutes = {$tanzpartnersuche.verificationValidityMinutes}
+    resetValidityMinutes = {$tanzpartnersuche.resetValidityMinutes}
+}
