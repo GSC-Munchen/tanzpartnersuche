@@ -8,7 +8,7 @@ settings:
     category: tanzpartnersuche
   tanzpartnersuche.surveyRecipient:
     type: string
-    default: 'webservice@gsc-muenchen.de'
+    default: 'name@domain.tld'
     category: tanzpartnersuche
   tanzpartnersuche.impressumUrl:
     type: url

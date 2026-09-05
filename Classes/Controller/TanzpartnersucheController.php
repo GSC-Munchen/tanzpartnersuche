@@ -37,6 +37,10 @@ class TanzpartnersucheController extends ActionController {
     private const SENDER_NAME_MIN_LENGTH = 5;
     private const SENDER_NAME_MAX_LENGTH = 100;
     private const SURVEY_COMMENT_MAX_LENGTH = 2000;
+    // Platzhalterwert für tanzpartnersuche.surveyRecipient (siehe settings.definitions.yaml):
+    // Solange im Backend nur dieser Platzhalter konfiguriert ist, gilt kein Empfänger als
+    // eingerichtet (siehe hasSurveyRecipientConfigured()).
+    private const DUMMY_SURVEY_RECIPIENT = 'name@domain.tld';
     private const SURVEY_REASON_VALUES = [1, 2, 3, 4, 5, 6];
     private const SURVEY_REASON_TRANSLATION_KEYS = [
         1 => 'deleteSurveyReason1',
@@ -251,7 +255,9 @@ class TanzpartnersucheController extends ActionController {
         $this->tanzpartnersucheRepository->removeExpiredProfiles();
 
         $this->sendVerificationMail($email, $username, $verificationcode);
-        $this->sendProfileNotificationMail($newTanzpartnersuche, true);
+        if ($this->hasSurveyRecipientConfigured()) {
+            $this->sendProfileNotificationMail($newTanzpartnersuche, true);
+        }
 
         $this->addFlashMessage($this->translate('success_registration'), '', ContextualFeedbackSeverity::OK);
         return $this->redirect('verify');
@@ -490,6 +496,13 @@ class TanzpartnersucheController extends ActionController {
         $frontendUser?->setAndSaveSessionData(self::SESSION_KEY, null);
         $frontendUser?->setAndSaveSessionData(self::SESSION_ACTIVITY_KEY, null);
 
+        // Ohne konfigurierten Empfänger gibt es niemanden, der die Umfrage auswerten würde:
+        // Nutzer ist bereits ausgeloggt (s.o.), die Umfrage wird übersprungen und es geht
+        // direkt zurück ins Hauptmenü.
+        if (!$this->hasSurveyRecipientConfigured()) {
+            return $this->redirect('main');
+        }
+
         return $this->redirect('deletesurvey');
     }
 
@@ -500,6 +513,10 @@ class TanzpartnersucheController extends ActionController {
 
     // Delete survey (processes the optional, voluntary feedback submitted after account deletion)
     public function deletesurveysendAction(int $reason, string $comment = ''): ResponseInterface {
+        if (!$this->hasSurveyRecipientConfigured()) {
+            return $this->redirect('main');
+        }
+
         if (!$this->rateLimiterService->forDeleteSurvey($this->getClientIp())->consume(1)->isAccepted()) {
             return $this->redirect('deletesurveysent');
         }
@@ -916,6 +933,15 @@ class TanzpartnersucheController extends ActionController {
 
     private function surveyRecipient(): string {
         return (string)($this->settings['surveyRecipient'] ?? '');
+    }
+
+    // Ein Empfänger gilt nur dann als eingerichtet, wenn im Backend eine von der
+    // Platzhalteradresse abweichende, gültige E-Mail-Adresse konfiguriert wurde.
+    private function hasSurveyRecipientConfigured(): bool {
+        $recipient = trim($this->surveyRecipient());
+        return $recipient !== ''
+            && strcasecmp($recipient, self::DUMMY_SURVEY_RECIPIENT) !== 0
+            && GeneralUtility::validEmail($recipient);
     }
 
     private function impressumUrl(): string {

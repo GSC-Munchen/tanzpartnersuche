@@ -20,8 +20,8 @@
         <target>Empfänger für Umfrage- und Profilbenachrichtigungen</target>
       </trans-unit>
       <trans-unit id="settings.description.tanzpartnersuche.surveyRecipient">
-        <source>Email address that receives new-profile, updated-profile and account-deletion-survey notifications.</source>
-        <target>E-Mail-Adresse, an die Benachrichtigungen über neue/geänderte Profile sowie die Lösch-Umfrage gesendet werden.</target>
+        <source>Email address that receives new-profile notifications and account-deletion-survey feedback. As long as this is left at the placeholder value "name@domain.tld", no new-profile notification is sent and the deletion survey is skipped entirely.</source>
+        <target>E-Mail-Adresse, an die Benachrichtigungen über neue Profile sowie das Feedback der Lösch-Umfrage gesendet werden. Solange hier der Platzhalterwert "name@domain.tld" eingetragen ist, wird keine Neuanlage-Benachrichtigung versendet und die Lösch-Umfrage wird komplett übersprungen.</target>
       </trans-unit>
       <trans-unit id="settings.tanzpartnersuche.impressumUrl">
         <source>Imprint URL</source>
